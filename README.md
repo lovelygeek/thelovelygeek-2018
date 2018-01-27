@@ -1,4 +1,4 @@
-#The Lovely Geek 2018
+# The Lovely Geek 2018
 
 Theme build for The Lovely Geek based on the Plate development theme.
 
