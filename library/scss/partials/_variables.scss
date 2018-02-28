@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: The Lovely Geek 2018
+Author: Cristina Robinson
 
 Stylesheet: Variables
 
@@ -27,7 +27,7 @@ $white:             #fff;
 
 $light-gray:        #f8f9fa;
 $gray:              #eaedf2;
-// $text-color:        #5c6b80;
+$text-color:        #4D4D4D;
 
 $meta-gray:         #9fa6b4;
 
@@ -47,9 +47,10 @@ $sb-red:           #f23e2f;
 $sb-black:         #111111;
 $sb-grey:          #808080;
 
-$text-color:        lighten($sb-black, 18%);
+$tlg-gold:         #BB8A40;
+$tlg-light-aqua:   #E5F5F6;
 
-$link-color:        $sb-blue;
+$link-color:        $tlg-gold;
 $link-hover:        darken($link-color, 9%);
 
 $border-color:      #ccc;

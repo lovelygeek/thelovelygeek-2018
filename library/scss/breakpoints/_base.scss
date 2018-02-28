@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: The Lovely Geek
+Author: Cristina Robinson
 
 Stylesheet: Base Stylesheet
 
@@ -30,6 +30,7 @@ body {
     font-size: 100%;
     font-family: $sans;
     line-height: 1.5;
+    background-color:#E5F5F6;
 
     // Adjust for your type
     -webkit-font-smoothing: antialiased;
@@ -56,8 +57,9 @@ LINK STYLES
 *********************/
 
 a, a:visited {
+	color:$link-color;
     /* on hover */
-    &:hover, &:focus {}
+    &:hover, &:focus {color:$link-hover;}
 
     /* on click */
     &:active {}
@@ -138,11 +140,11 @@ HEADER STYLES
 *********************/
 
 .header {
-    background: #efefef;
+    background-color:#fff;
 }
 
 #site-title {
-    font-size: 2em;
+    font-size: 3em;
 }
 
 #banner {
