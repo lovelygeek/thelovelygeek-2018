@@ -72,9 +72,9 @@ FONT STACKS
 // Let's use OS system fonts and let the system do the work. We've included all the major desktop and mobile OS's.
 // See here: https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/. 
 
-$sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$sans: "brandon-grotesque",sans-serif;
 
-$serif: "Georgia", Cambria, Times New Roman, Times, serif;
+$serif: "jubilat",sans-serif;
 
 /*
  Commented out since WP uses system fonts now but if you can't let go I won't be upset. 

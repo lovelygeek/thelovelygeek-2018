@@ -183,8 +183,8 @@ body#tinymce.wp-editor {
  * Add the correct display in IE 10-.
  */
   /******************************************************************
-Site Name:
-Author:
+Site Name: The Lovely Geek 2018
+Author: Cristina Robinson
 
 Stylesheet: Variables
 
@@ -412,8 +412,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor hr {
     overflow: visible;
     /* 2 */
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+    box-sizing: content-box;
     /* 1 */
     height: 0;
     /* 1 */ }
@@ -440,8 +439,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     /* 1 */
     text-decoration: underline;
     /* 2 */
-    -webkit-text-decoration: underline dotted;
-            text-decoration: underline dotted;
+    text-decoration: underline dotted;
     /* 2 */ }
   body#tinymce.wp-editor b,
   body#tinymce.wp-editor strong {
@@ -526,8 +524,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor legend {
     display: table;
     /* 1 */
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     /* 1 */
     padding: 0;
     /* 3 */
@@ -546,8 +543,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     overflow: auto; }
   body#tinymce.wp-editor [type="checkbox"],
   body#tinymce.wp-editor [type="radio"] {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     /* 1 */
     padding: 0;
     /* 2 */ }
@@ -587,6 +583,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
       clear: both; }
   body#tinymce.wp-editor * {
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box; }
   body#tinymce.wp-editor .image-replacement,
   body#tinymce.wp-editor .ir {
@@ -598,12 +595,13 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     word-wrap: break-word;
     word-break: break-word;
     -webkit-hyphens: none;
-    -ms-hyphens: none;
-        hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
     -webkit-hyphenate-before: 2;
     -webkit-hyphenate-after: 3;
     hyphenate-lines: 3;
     -webkit-font-feature-settings: "liga", "dlig";
+    -moz-font-feature-settings: "liga=1, dlig=1";
     -ms-font-feature-settings: "liga", "dlig";
     -o-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig"; }
@@ -683,4 +681,3 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor .size-thumbnail {
     max-width: 100%;
     height: auto; }
-/*# sourceMappingURL=editor-style.css.map */

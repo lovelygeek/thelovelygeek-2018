@@ -19,8 +19,8 @@ understand (what's inside the media queries). We also need to
 import the mixins file so SASS can understand the variables.
 ******************************************************************/
 /******************************************************************
-Site Name:
-Author:
+Site Name: The Lovely Geek 2018
+Author: Cristina Robinson
 
 Stylesheet: Variables
 
@@ -116,12 +116,13 @@ p {
   word-wrap: break-word;
   word-break: break-word;
   -webkit-hyphens: none;
-  -ms-hyphens: none;
-      hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
   -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
   -ms-font-feature-settings: "liga", "dlig";
   -o-font-feature-settings: "liga", "dlig";
   font-feature-settings: "liga", "dlig"; }
@@ -417,6 +418,9 @@ be seen on the Desktop.
 .wrap {
   width: 1040px; }
 
+.post {
+  padding: 3em 13em; }
+
 /*
 you can call the larger styles if you want, but there's really no need
 */
@@ -440,4 +444,3 @@ header.php file to see what they are:
 .lt-ie8 .class { ... }
 
 */
-/*# sourceMappingURL=ie.css.map */

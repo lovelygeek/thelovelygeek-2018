@@ -26,9 +26,9 @@ html {
 }
 
 body {
-    color: #333333;
+    color: $text-color;
     font-size: 100%;
-    font-family: $sans;
+    font-family: $serif;
     line-height: 1.5;
     background-color:#E5F5F6;
 
@@ -91,7 +91,7 @@ http://type-scale.com which we used to get our base sizes.
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     margin: 1.333em 0 0.5em;
-    color: lighten($sb-black, 12%);
+    color: lighten($text-color, 12%);
     font-weight: 500;
     line-height: 1.2;
     text-rendering: optimizelegibility;
@@ -111,30 +111,39 @@ h1, .h1 {
     margin-top: 0;
     margin-bottom: 0.319em;
     font-size: 3.157em;
-    font-family: "jubilat",sans-serif;
+    font-family: $serif;
     font-weight:300;
 }
 
 h2, .h2 {
     margin-top: 0.88em;
     font-size: 2.369em;
+    font-weight:300;
+    font-style:italic;
 }
 
 h3, .h3 {
     font-size: 1.777em;
+    font-weight:300;
 }
 
 h4, .h4 {
     font-size: 1.333em;
+    font-weight:400;
+    font-family:$sans;
+    text-transform:uppercase;
 }
 
 h5, .h5 {
     font-size: 1em;
+    font-family:$sans;
+    text-transform:uppercase;
+    font-weight:600;
 }
 
 h6, .h6 {
-    text-transform: uppercase;
-    letter-spacing: 4.333px;
+    font-weight:600;
+    font-size:1em;
 }
 
 /*********************
@@ -335,7 +344,7 @@ POSTS & CONTENT STYLES
 .post-id {}
 
 /* post by id (i.e. post-3) */
-.post {}
+.post {background-color:$white;}
 
 /* general post style */
 .page {}
