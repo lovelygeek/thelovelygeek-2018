@@ -7,7 +7,7 @@
 		"uuidString": "F1DA9654-D2FE-435B-8B7A-3CC18D114C21"
 		}
 	],
-"creatorBuild": "26268",
+"creatorBuild": "26680",
 "files": {
 	"\/404.php": {
 		"cB": 0,
@@ -539,6 +539,7 @@
 	"\/library\/images\/custom-gravatar.jpg": {
 		"ft": 16384,
 		"iS": 4896,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/library\/images\/custom-gravatar.jpg",
 		"oF": 0,
@@ -1561,7 +1562,7 @@
 		"oAP": "\/readme.html",
 		"oF": 0
 		},
-	"\/readme.md": {
+	"\/README.md": {
 		"cB": 0,
 		"cS": 0,
 		"eF": 1,
@@ -1582,6 +1583,7 @@
 	"\/screenshot.jpg": {
 		"ft": 16384,
 		"iS": 67902,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/screenshot.jpg",
 		"oF": 0,
@@ -1749,6 +1751,7 @@
 	"displayValue": "thelovelygeek-2018",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets_green",
+	"iconImageWasSetByUser": 0,
 	"lastBuiltDate": 541545357
 	},
 "projectSettings": {
@@ -3552,6 +3555,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {
