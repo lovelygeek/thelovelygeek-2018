@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: The Lovely Geek
+Author: Cristina Robinson
 
 Stylesheet: Tablet & Small Desktop Stylesheet
 
@@ -16,6 +16,12 @@ GLOBAL STYLES
 
 body {}
 
+#content {margin-top:40px;}
+
+.post-content {padding-left: 40px;}	
+
+
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -28,7 +34,7 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {padding: 10px 0;}
 
 #logo {
     img {}
@@ -38,12 +44,15 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
-nav {}
+nav {    
+	text-align:right;
+}
 
 .main-menu {}
 
 .header-nav {
     // class on the main navigation nav element
+    margin-top:50px;
 }
 
 .nav {
@@ -56,6 +65,7 @@ nav {}
     li {
         float: left;
         list-style: none;
+        margin-left:1.875em;
 
         a {
             display: block;

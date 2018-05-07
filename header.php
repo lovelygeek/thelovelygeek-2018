@@ -48,7 +48,9 @@
 			    },
 			    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 			  })(document);
-			</script>		
+			</script>
+			
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">		
 		<?php // end fonts ?>
 
 		<?php // wordpress head functions ?>
@@ -84,11 +86,11 @@
 				<div id="inner-header" class="wrap cf">
 
 					<?php // You can use text or a logo (or both) in your header. Uncomment the below to use text. ?>
-					<div id="site-title" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></div>
+					<!-- <div id="site-title" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></div> -->
 
-					<!-- <div id="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_theme_file_uri(); ?>/library/images/logo.png" /></a></div> -->
+					<div id="logo" class="d-1of2 t-1of2 m-all" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_theme_file_uri(); ?>/library/images/the-lovely-geek-logo.svg" /></a></div>
 
-					<nav class="header-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<nav class="header-nav d-1of2 t-1of2 m-all" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
 					<?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
 

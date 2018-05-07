@@ -254,8 +254,8 @@ do they need tweaking?
 */
 /* end .footer-links */
 /******************************************************************
-Site Name:
-Author:
+Site Name: The Lovely Geek
+Author: Cristina Robinson
 
 Stylesheet: Tablet & Small Desktop Stylesheet
 
@@ -267,6 +267,12 @@ busy with more stylings.
 /*********************
 GLOBAL STYLES
 *********************/
+#content {
+  margin-top: 40px; }
+
+.post-content {
+  padding-left: 40px; }
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -276,9 +282,18 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
+.header {
+  padding: 10px 0; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
+nav {
+  text-align: right; }
+
+.header-nav {
+  margin-top: 50px; }
+
 .nav {
   margin: 0;
   padding: 0;
@@ -290,6 +305,7 @@ NAVIGATION STYLES
   .nav li {
     float: left;
     list-style: none;
+    margin-left: 1.875em;
     /*
         plan your menus and drop-downs wisely.
         */
@@ -406,8 +422,8 @@ mobile. Make sure to double check these!
 
 /* end .footer-links */
 /******************************************************************
-Site Name:
-Author:
+Site Name: The Lovely Geek
+Author: Cristina Robinson
 
 Stylesheet: Desktop Stylsheet
 
@@ -418,7 +434,19 @@ be seen on the Desktop.
 .wrap {
   width: 1040px; }
 
-.post {
+.nav li {
+  margin-left: 3.125em; }
+
+article.post {
+  padding: 1em; }
+
+.inner-article {
+  padding: 1.875em; }
+
+.post-content {
+  padding-left: 40px; }
+
+.single .hentry {
   padding: 3em 13em; }
 
 /*

@@ -529,6 +529,16 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/library\/images\/bullet.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/library\/images\/bullet.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/library\/images\/custom-gravatar.ai": {
 		"cB": 0,
 		"ft": 8192,
@@ -648,6 +658,16 @@
 		"opt": 1,
 		"oT": 1,
 		"q": 100
+		},
+	"\/library\/images\/the-lovely-geek-logo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/library\/images\/the-lovely-geek-logo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/library\/images\/win8-tile-icon.png": {
 		"ft": 32768,

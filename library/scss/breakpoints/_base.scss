@@ -27,9 +27,9 @@ html {
 
 body {
     color: $text-color;
-    font-size: 100%;
+    font-size: 106.3%;
     font-family: $serif;
-    line-height: 1.5;
+    line-height: 1.75;
     background-color:#E5F5F6;
 
     // Adjust for your type
@@ -152,6 +152,7 @@ HEADER STYLES
 
 .header {
     background-color:#fff;
+    box-shadow: 0 1px 3px 0 rgba(179,225,229,0.50);
 }
 
 #site-title {
@@ -162,7 +163,13 @@ HEADER STYLES
     .header-image {}
 }
 
-#logo {}
+#logo {
+	img {
+		display: block;
+		margin: 0 auto 20px auto;
+		padding:10px 0 0 0;
+	}
+}
 
 /*********************
 LIST STYLES
@@ -203,6 +210,13 @@ default menu.
 For your main navigation, styles are in 768up.scss.
 */
 
+nav {    
+	font-family: $sans;
+	text-transform:uppercase;
+	font-weight:600;
+	text-align:center;
+}
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -241,7 +255,9 @@ style a page via class
 .error404 {}
 
 /* 404 page */
-.single {}
+.single {
+	.hentry {padding:50px; background-color:$white;}
+}
 
 /* single post page */
 .postid-1 {}
@@ -318,19 +334,49 @@ style a page via class
 POSTS & CONTENT STYLES
 *********************/
 
-#content {}
+#content {margin-top:10px;}
+
+article.post {
+	border:3px solid $white;
+	margin-bottom:40px;
+	padding:1em;
+}
+	
+article .inner-article {
+	background-color:$white;
+	padding:1.875em;
+}
+
+.post-content p.header-category, .post-content h1 {text-align:left;}	
+
+#filters {margin-bottom:40px; text-align:center;}
+ 
 
 .hentry {
+// 	background-color:$white; padding:15px;
+	
     header {}
 
     footer {}
 }
 
+.header-category {
+	text-align:center;
+    font-weight:600;
+    font-family:$sans;
+    text-transform:uppercase;
+    
+    a {text-decoration:none;}	
+	}
+
 /* end .hentry */
 
 .single-title,
 .page-title,
-.entry-title {}
+.entry-title {
+	text-align: center;
+	font-style:normal;
+	}
 
 .single-title {}
 
@@ -344,7 +390,7 @@ POSTS & CONTENT STYLES
 .post-id {}
 
 /* post by id (i.e. post-3) */
-.post {background-color:$white;}
+// .post {background-color:$white; padding:15px;}
 
 /* general post style */
 .page {}
@@ -378,15 +424,52 @@ POSTS & CONTENT STYLES
     ul, ol, table, dl {}
 
     ul, ol {
-        li {}
+	    margin: 0 0 1.5em 1.75em;
+	    list-style-type: none;
+	    
+        li {padding:0.25em 0;}
     }
 
     ul {
-        li {}
+        li {
+	        background-image: url(../images/bullet.svg);
+			background-repeat: no-repeat;
+			background-position: 0 8px;
+			padding:3px 30px
+        }
     }
 
     ol {
-        li {}
+		list-style-type: none;
+		margin: 0 0 2em 0;
+		margin-left: 3em;
+		padding: 0;
+		counter-reset: li-counter;	    
+        
+        li {
+	        position: relative;
+			margin-bottom: 5px;
+			padding-left: 0.5em;
+			min-height: 0.5em;
+			
+			&:before {
+				position: absolute;
+				top: 0.2em;
+				left: -2em;
+				width: 1em;
+				height: 1em;	     
+				font-size: 1em;
+				line-height: 1;
+				font-weight: 500;
+				text-align: center;
+				color:$white;
+				background-color:$tlg-main-aqua;
+				border-radius:50%;
+				padding:5px;	 
+				content: counter(li-counter);
+				counter-increment: li-counter;						
+			}
+        }
     }
 
     table {
@@ -425,16 +508,39 @@ POSTS & CONTENT STYLES
     }
 
     blockquote p {
-        &:before {}
+		margin: 0 0 1.5em 1.75em;
+		padding: 0 0 0 0.75em;
+		font-style: italic;
+		color: $meta-gray;
+		font-size:112.5%;
+		position: relative;	    
+        
+        &:before {
+			display: block;
+			content: "\201C";
+			font-size: 4.5em;
+			position: absolute;
+			left: -30px;
+			top: -34px;
+			color: $tlg-main-aqua;
+        }
     }
 
     dl {}
 
     dt {}
 
-    dd {}
+    dd {
+	    margin-left: 0;
+		font-size: 0.9em;
+		color: #787878;
+		margin-bottom: 1.5em;
+    }
 
-    img {}
+    img {
+	    max-width: 100%;
+		height: auto;
+    }
 
     /*
     image alignment on a screen this size may be
@@ -442,17 +548,29 @@ POSTS & CONTENT STYLES
     and floating images at the next breakpoint,
     but it's up to you. Feel free to change it up.
     */
-    .alignleft, img.alignleft {}
+    .alignleft, img.alignleft {
+   	 float: left;
+   	 margin:0 15px 30px 0;
+    }
 
-    .alignright, img.alignright {}
+    .alignright, img.alignright {
+    	float: right;
+		margin:0 0 30px 15px;	    
+    }
 
-    .aligncenter, img.aligncenter {}
+    .aligncenter, img.aligncenter {
+		display: block;
+		margin: 0 auto 30px auto;
+    }
 
     .size-auto,
     .size-full,
     .size-large,
     .size-medium,
-    .size-thumbnail {}
+    .size-thumbnail {
+	    height:auto;
+		margin:0 0 30px 0;
+    }
 
     pre {}
 
@@ -776,6 +894,7 @@ FOOTER STYLES
 
 .footer {
     clear: both;
+    font-size:16px;
 }
 
 .footer-links {

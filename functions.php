@@ -530,9 +530,20 @@ function plate_excerpt_more( $more ) {
     global $post;
 
      // edit here if you like
-    return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'platetheme' ) .'</a>';
+    return '...  <p><a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Continue Reading &#8250;', 'platetheme' ) .'</a></p>';
 
 }
+
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 30;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 
 /*********************

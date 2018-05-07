@@ -965,7 +965,12 @@ input[type="color"],
 select,
 textarea,
 .field {
-  display: block; }
+  display: block;
+  background-color: #fff;
+  font-family: "jubilat", sans-serif;
+  color: #9fa6b4;
+  border: 0;
+  padding: 10px; }
   input[type="text"][disabled], input[type="text"].is-disabled,
   input[type="password"][disabled],
   input[type="password"].is-disabled,
@@ -1008,12 +1013,11 @@ input[type="password"] {
 textarea {
   max-width: 100%; }
 
-fieldset {
-  border: 1px solid #ccc; }
-  fieldset label {
-    font-weight: 600; }
-  fieldset p {
-    margin-bottom: 0; }
+fieldset label {
+  font-weight: 600; }
+
+fieldset p {
+  margin-bottom: 0; }
 
 legend {
   padding: 0 0.5em; }
@@ -1025,6 +1029,22 @@ legend {
     list-style-type: none; }
   .radio-buttons label {
     font-weight: normal; }
+
+select {
+  width: 100%;
+  height: 40px; }
+
+input.search-submit {
+  position: relative;
+  float: right;
+  padding: 0 12px;
+  top: -40px;
+  left: 0px;
+  height: 40px; }
+
+input[type="search"] {
+  width: 100%;
+  margin-bottom: -35px; }
 
 /*********************
 BASE (MOBILE) SIZE
@@ -1055,10 +1075,10 @@ html {
   font-size: 1em; }
 
 body {
-  color: #4D4D4D;
-  font-size: 100%;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 106.3%;
   font-family: "jubilat", sans-serif;
-  line-height: 1.5;
+  line-height: 1.75;
   background-color: #E5F5F6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1106,7 +1126,7 @@ http://type-scale.com which we used to get our base sizes.
 */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin: 1.333em 0 0.5em;
-  color: #6c6c6c;
+  color: rgba(31, 31, 31, 0.6);
   font-weight: 500;
   line-height: 1.2;
   text-rendering: optimizelegibility;
@@ -1155,10 +1175,16 @@ h6, .h6 {
 HEADER STYLES
 *********************/
 .header {
-  background-color: #fff; }
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(179, 225, 229, 0.5); }
 
 #site-title {
   font-size: 3em; }
+
+#logo img {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px 0 0 0; }
 
 /*********************
 LIST STYLES
@@ -1190,6 +1216,12 @@ default menu.
 
 For your main navigation, styles are in 768up.scss.
 */
+nav {
+  font-family: "brandon-grotesque", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center; }
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -1205,6 +1237,10 @@ style a page via class
 /* no results search page */
 /* individual paged search (i.e. body.search-paged-3) */
 /* 404 page */
+.single .hentry {
+  padding: 50px;
+  background-color: #fff; }
+
 /* single post page */
 /* individual post page by id (i.e. body.postid-73) */
 /* individual paged single (i.e. body.single-paged-3) */
@@ -1232,12 +1268,42 @@ style a page via class
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+#content {
+  margin-top: 10px; }
+
+article.post {
+  border: 3px solid #fff;
+  margin-bottom: 40px;
+  padding: 1em; }
+
+article .inner-article {
+  background-color: #fff;
+  padding: 1.875em; }
+
+.post-content p.header-category, .post-content h1 {
+  text-align: left; }
+
+#filters {
+  margin-bottom: 40px;
+  text-align: center; }
+
+.header-category {
+  text-align: center;
+  font-weight: 600;
+  font-family: "brandon-grotesque", sans-serif;
+  text-transform: uppercase; }
+  .header-category a {
+    text-decoration: none; }
+
 /* end .hentry */
+.single-title,
+.page-title,
+.entry-title {
+  text-align: center;
+  font-style: normal; }
+
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
-.post {
-  background-color: #fff; }
-
 /* general post style */
 /* general article on a page style */
 /* general style on an attatchment */
@@ -1254,6 +1320,43 @@ POSTS & CONTENT STYLES
     and floating images at the next breakpoint,
     but it's up to you. Feel free to change it up.
     */ }
+  .entry-content ul, .entry-content ol {
+    margin: 0 0 1.5em 1.75em;
+    list-style-type: none; }
+    .entry-content ul li, .entry-content ol li {
+      padding: 0.25em 0; }
+  .entry-content ul li {
+    background-image: url(../images/bullet.svg);
+    background-repeat: no-repeat;
+    background-position: 0 8px;
+    padding: 3px 30px; }
+  .entry-content ol {
+    list-style-type: none;
+    margin: 0 0 2em 0;
+    margin-left: 3em;
+    padding: 0;
+    counter-reset: li-counter; }
+    .entry-content ol li {
+      position: relative;
+      margin-bottom: 5px;
+      padding-left: 0.5em;
+      min-height: 0.5em; }
+      .entry-content ol li:before {
+        position: absolute;
+        top: 0.2em;
+        left: -2em;
+        width: 1em;
+        height: 1em;
+        font-size: 1em;
+        line-height: 1;
+        font-weight: 500;
+        text-align: center;
+        color: #fff;
+        background-color: #80CDD4;
+        border-radius: 50%;
+        padding: 5px;
+        content: counter(li-counter);
+        counter-increment: li-counter; }
   .entry-content table {
     margin-bottom: 1.5em;
     width: 100%;
@@ -1273,6 +1376,45 @@ POSTS & CONTENT STYLES
     background-color: #dedede; }
     .entry-content th:last-child {
       border-right: 0; }
+  .entry-content blockquote p {
+    margin: 0 0 1.5em 1.75em;
+    padding: 0 0 0 0.75em;
+    font-style: italic;
+    color: #9fa6b4;
+    font-size: 112.5%;
+    position: relative; }
+    .entry-content blockquote p:before {
+      display: block;
+      content: "\201C";
+      font-size: 4.5em;
+      position: absolute;
+      left: -30px;
+      top: -34px;
+      color: #80CDD4; }
+  .entry-content dd {
+    margin-left: 0;
+    font-size: 0.9em;
+    color: #787878;
+    margin-bottom: 1.5em; }
+  .entry-content img {
+    max-width: 100%;
+    height: auto; }
+  .entry-content .alignleft, .entry-content img.alignleft {
+    float: left;
+    margin: 0 15px 30px 0; }
+  .entry-content .alignright, .entry-content img.alignright {
+    float: right;
+    margin: 0 0 30px 15px; }
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    display: block;
+    margin: 0 auto 30px auto; }
+  .entry-content .size-auto,
+  .entry-content .size-full,
+  .entry-content .size-large,
+  .entry-content .size-medium,
+  .entry-content .size-thumbnail {
+    height: auto;
+    margin: 0 0 30px 0; }
 
 /* end .entry-content */
 .wp-caption {
@@ -1371,7 +1513,8 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 .footer {
-  clear: both; }
+  clear: both;
+  font-size: 16px; }
 
 /* end .footer-links */
 /*********************
@@ -1479,7 +1622,7 @@ NAVIGATION STYLES
 *********************/
   .nav {
     margin: 0;
-    padding: 0;
+    padding: 0 0 20px 0;
     border-bottom: 0;
     list-style-type: none;
     /* end .menu li */
@@ -1508,8 +1651,8 @@ you can add resource intensive styles.
 *********************/
 @media only screen and (min-width: 768px) {
   /******************************************************************
-Site Name:
-Author:
+Site Name: The Lovely Geek
+Author: Cristina Robinson
 
 Stylesheet: Tablet & Small Desktop Stylesheet
 
@@ -1521,6 +1664,10 @@ busy with more stylings.
   /*********************
 GLOBAL STYLES
 *********************/
+  #content {
+    margin-top: 40px; }
+  .post-content {
+    padding-left: 40px; }
   /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -1529,9 +1676,15 @@ LAYOUT & GRID STYLES
   /*********************
 HEADER STYLES
 *********************/
+  .header {
+    padding: 10px 0; }
   /*********************
 NAVIGATION STYLES
 *********************/
+  nav {
+    text-align: right; }
+  .header-nav {
+    margin-top: 50px; }
   .nav {
     margin: 0;
     padding: 0;
@@ -1543,6 +1696,7 @@ NAVIGATION STYLES
     .nav li {
       float: left;
       list-style: none;
+      margin-left: 1.875em;
       /*
         plan your menus and drop-downs wisely.
         */
@@ -1663,8 +1817,8 @@ you can add resource intensive styles.
 *********************/
 @media only screen and (min-width: 1030px) {
   /******************************************************************
-Site Name:
-Author:
+Site Name: The Lovely Geek
+Author: Cristina Robinson
 
 Stylesheet: Desktop Stylsheet
 
@@ -1674,7 +1828,15 @@ be seen on the Desktop.
 ******************************************************************/
   .wrap {
     width: 1040px; }
-  .post {
+  .nav li {
+    margin-left: 3.125em; }
+  article.post {
+    padding: 1em; }
+  .inner-article {
+    padding: 1.875em; }
+  .post-content {
+    padding-left: 40px; }
+  .single .hentry {
     padding: 3em 13em; } }
 
 /*********************
