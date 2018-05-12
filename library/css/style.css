@@ -1460,10 +1460,10 @@ article .inner-article {
   color: #fff; }
 
 .previous_post_link {
-  float: left; }
+  float: right; }
 
 .next_post_link {
-  float: right; }
+  float: left; }
 
 /******************************************************************
 SCREEN READER STYLES
