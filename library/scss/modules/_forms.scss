@@ -133,16 +133,24 @@ select {
 	height:40px;
 }
 
-input.search-submit  {
+button.search-submit  {
     position: relative;
     float: right;
     padding: 0 12px;
-    top: -40px;
-    left: 0px;
+    top: -5px;
+    left: -10px;
     height: 40px;
+    color:$link-color;
 }
 
 input[type="search"] {
 	width: 100%;
     margin-bottom: -35px;
-	}
+}
+
+.search-form .search-submit {
+	background-color: inherit;
+	border: none;
+}
+
+input::placeholder {color:$meta-gray;}
