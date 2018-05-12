@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="11px" viewBox="0 0 18 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>angle-down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="----▶-1.0-–-Blog" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tlg-01-blog" transform="translate(-815.000000, -238.000000)" fill="#BB8A40" fill-rule="nonzero">
+            <g id="Filter" transform="translate(273.000000, 195.000000)">
+                <g id="Group-Copy" transform="translate(322.500000, 0.000000)">
+                    <g id="angle-down" transform="translate(220.000000, 43.000000)">
+                        <path d="M16.996673,1.863812 C16.996673,1.729883 16.929709,1.579213 16.829262,1.478767 L15.992208,0.641712 C15.891761,0.541265 15.741091,0.474301 15.607163,0.474301 C15.473234,0.474301 15.322564,0.541265 15.222118,0.641712 L8.642869,7.220961 L2.06362,0.641712 C1.963173,0.541265 1.812503,0.474301 1.678575,0.474301 C1.527905,0.474301 1.393976,0.541265 1.29353,0.641712 L0.456475,1.478767 C0.356028,1.579213 0.289064,1.729883 0.289064,1.863812 C0.289064,1.99774 0.356028,2.14841 0.456475,2.248857 L8.257824,10.050205 C8.35827,10.150652 8.50894,10.217616 8.642869,10.217616 C8.776797,10.217616 8.927467,10.150652 9.027914,10.050205 L16.829262,2.248857 C16.929709,2.14841 16.996673,1.99774 16.996673,1.863812 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

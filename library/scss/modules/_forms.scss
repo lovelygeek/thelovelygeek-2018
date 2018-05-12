@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: The Lovely Geek 2018
+Author: Cristina Robinson
 
 Stylesheet: Form Styles
 
@@ -129,8 +129,14 @@ legend {
 }
 
 select {
+	-webkit-appearance: none; /* 1 */
+	-moz-appearance: none;
+	appearance: none;
 	width:100%;
 	height:40px;
+	background-image:url('../images/angle-down.svg');
+	background-repeat: no-repeat;
+	background-position: 97.5% center;
 }
 
 button.search-submit  {
@@ -138,7 +144,7 @@ button.search-submit  {
     float: right;
     padding: 0 12px;
     top: -5px;
-    left: -10px;
+    left: 0px;
     height: 40px;
     color:$link-color;
 }

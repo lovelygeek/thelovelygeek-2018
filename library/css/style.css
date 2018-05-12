@@ -913,24 +913,39 @@ use @extend instead of @include:
 http://thesassway.com/intermediate/understanding-placeholder-selectors
 
 *********************/
-.button, .blue-button {
+.button, .blue-button, .previous_post_link a, .next_post_link a {
   position: relative;
   display: inline-block;
   margin-bottom: .5em;
   padding: 0.5em 1em;
   border: 0;
-  border-radius: 2px;
+  border-radius: 0;
   text-decoration: none;
-  cursor: pointer; }
-  .button:active, .blue-button:active {
+  cursor: pointer;
+  font-family: "brandon-grotesque", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: #BB8A40;
+  color: #fff !important; }
+  .button:hover, .blue-button:hover, .previous_post_link a:hover, .next_post_link a:hover, .button:focus, .blue-button:focus, .previous_post_link a:focus, .next_post_link a:focus {
+    background-color: #997134; }
+  .button:active, .blue-button:active, .previous_post_link a:active, .next_post_link a:active {
     top: 1px; }
+
+.button {
+  background: #BB8A40; }
+  .button a {
+    color: #fff !important;
+    font-family: "brandon-grotesque", sans-serif;
+    text-transform: uppercase;
+    font-weight: 600; }
 
 .blue-button {
   background: #0088CC; }
 
 /******************************************************************
-Site Name:
-Author:
+Site Name: The Lovely Geek 2018
+Author: Cristina Robinson
 
 Stylesheet: Form Styles
 
@@ -1031,15 +1046,22 @@ legend {
     font-weight: normal; }
 
 select {
+  -webkit-appearance: none;
+  /* 1 */
+  -moz-appearance: none;
+  appearance: none;
   width: 100%;
-  height: 40px; }
+  height: 40px;
+  background-image: url("../images/angle-down.svg");
+  background-repeat: no-repeat;
+  background-position: 97.5% center; }
 
 button.search-submit {
   position: relative;
   float: right;
   padding: 0 12px;
   top: -5px;
-  left: -10px;
+  left: 0px;
   height: 40px;
   color: #BB8A40; }
 
@@ -1107,6 +1129,7 @@ LINK STYLES
 *********************/
 a, a:visited {
   color: #BB8A40;
+  text-decoration: none;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
@@ -1432,6 +1455,16 @@ article .inner-article {
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
+.post-navigation p {
+  background-color: #BB8A40;
+  color: #fff; }
+
+.previous_post_link {
+  float: left; }
+
+.next_post_link {
+  float: right; }
+
 /******************************************************************
 SCREEN READER STYLES
 ******************************************************************/

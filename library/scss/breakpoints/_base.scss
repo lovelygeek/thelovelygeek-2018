@@ -58,6 +58,7 @@ LINK STYLES
 
 a, a:visited {
 	color:$link-color;
+	text-decoration:none;
     /* on hover */
     &:hover, &:focus {color:$link-hover;}
 
@@ -616,6 +617,19 @@ article .inner-article {
 
 // the tag output
 .tags {}
+
+.post-navigation {
+	
+	p { background-color:$tlg-gold; color:$white;}
+
+}
+
+.previous_post_link, .next_post_link {
+	a {@extend %button;}	
+}
+
+.previous_post_link {float:left;}
+.next_post_link {float:right;}		
 
 /******************************************************************
 SCREEN READER STYLES
