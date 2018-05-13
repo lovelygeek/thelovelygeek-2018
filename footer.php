@@ -11,10 +11,10 @@
 				<div id="inner-footer" class="wrap cf">
 
 					<p>
-						<a href="#"><i class="fab fa-dribbble"></i></a>
-						<a href="#"><i class="fab fa-facebook-f"></i></a>
-						<a href="#"><i class="fab fa-twitter"></i></a>
-						<a href="#"><i class="fab fa-pinterest"></i></a>
+						<a href="https://dribbble.com/LovelyGeek"><i class="fab fa-dribbble"></i></a>
+						<a href="https://www.facebook.com/lovelygeek/"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://twitter.com/LovelyGeek"><i class="fab fa-twitter"></i></a>
+						<a href="https://www.pinterest.com/lovelygeek/"><i class="fab fa-pinterest"></i></a>
 					</p>
 						
 
