@@ -1,12 +1,25 @@
+			<footer class="subfooter">
+				<div id="inner-subfooter" class="wrap cf">
+					<h3>Follow Me on Instagram</h3>
+					<p><a href="">@TheLovelyGeek</a></p>
+					<?php echo do_shortcode('[jr_instagram id="2"]'); ?>
+				</div>	
+			</footer>
+			
 			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
 				<div id="inner-footer" class="wrap cf">
 
-					<?php /* Uncomment this and the 'Footer Links' menu registration in template.php to use. 
-					Or delete it if you're not using it.
+					<p>
+						<a href="#"><i class="fab fa-dribbble"></i></a>
+						<a href="#"><i class="fab fa-facebook-f"></i></a>
+						<a href="#"><i class="fab fa-twitter"></i></a>
+						<a href="#"><i class="fab fa-pinterest"></i></a>
+					</p>
+						
 
 					<nav role="navigation">
-						wp_nav_menu(array(
+						<?php wp_nav_menu(array(
     					'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
     					'container_class' => 'footer-links cf',         // class of container (should you choose to use it)
     					'menu' => __( 'Footer Links', 'platetheme' ),   // nav name
@@ -18,10 +31,10 @@
     					'link_after' => '',                             // after each link
     					'depth' => 0,                                   // limit the depth of the nav
     					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
-						)); 
+						)); ?> 
 					</nav> 
 
-					*/ ?>
+					
 
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. All rights reserved. <br /> <a href="https://thelovelygeek.com/humans.txt">Crafted with &hearts; in California</a>.</p>
 

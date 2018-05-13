@@ -906,16 +906,39 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
+.subfooter {
+	background:$white;
+	text-align:center;
+	margin-top:50px;
+}
+
+#inner-subfooter {
+	padding:10px 0 40px 0;
+}
+
+.jr-insta-thumb ul.thumbnails li {
+	margin: 0 0 2.5% 1.5%;
+}
+
+#inner-footer {
+	padding: 20px 0;
+}		
+
 .footer {
     clear: both;
     font-size:16px;
+    text-align:center;
 }
 
 .footer-links {
+	text-align:center;
     ul {
+	    display: inline-block;
         li {}
     }
 }
+
+.fab {padding: 0 10px;}
 
 /* end .footer-links */
 
