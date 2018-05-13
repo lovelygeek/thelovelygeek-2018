@@ -1577,7 +1577,7 @@ FOOTER STYLES
   .footer-links ul {
     display: inline-block; }
 
-.fab {
+.fab, .fas {
   padding: 0 10px; }
 
 /* end .footer-links */

@@ -1,7 +1,7 @@
 			<footer class="subfooter">
 				<div id="inner-subfooter" class="wrap cf">
 					<h3>Follow Me on Instagram</h3>
-					<p><a href="">@TheLovelyGeek</a></p>
+					<p><a href="https://www.instagram.com/thelovelygeek/">@TheLovelyGeek</a></p>
 					<?php echo do_shortcode('[jr_instagram id="2"]'); ?>
 				</div>	
 			</footer>
@@ -13,8 +13,11 @@
 					<p>
 						<a href="https://dribbble.com/LovelyGeek"><i class="fab fa-dribbble"></i></a>
 						<a href="https://www.facebook.com/lovelygeek/"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://www.flickr.com/photos/darth_cena/"><i class="fab fa-flickr"></i></a>
+						<a href="https://www.instagram.com/thelovelygeek/"><i class="fab fa-instagram"></i></a>
 						<a href="https://twitter.com/LovelyGeek"><i class="fab fa-twitter"></i></a>
 						<a href="https://www.pinterest.com/lovelygeek/"><i class="fab fa-pinterest"></i></a>
+						<a href="http://feeds.feedburner.com/thelovelygeek"><i class="fas fa-rss"></i></a>
 					</p>
 						
 
