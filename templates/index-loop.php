@@ -4,7 +4,7 @@
 		<div class="inner-article cf">
 			
 			<div id="feat-img" class="d-1of2 t-1of2 m-all">
-				<img src="http://via.placeholder.com/455x607">
+				<img src="http://via.placeholder.com/455x596">
 			</div>
 			
 			<div class="post-content d-1of2 t-1of2 m-all">
@@ -23,11 +23,7 @@
 				</section>
 		
 				<footer class="article-footer cf">
-		
-					<?php get_template_part( 'templates/comment', 'count'); ?>
-		
-		            <?php get_template_part( 'templates/byline'); ?>
-		
+					<?php the_tags( '<p class="footer-tags tags"><i class="fas fa-tags"></i><span class="tags-title">' . __( '', 'platetheme' ) . '</span> ', ', ', '</p>' ); ?>
 				</footer>
 			</div>
 			

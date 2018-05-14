@@ -160,3 +160,5 @@ input[type="search"] {
 }
 
 input::placeholder {color:$meta-gray;}
+
+#respond input, #respond textarea {border:1px solid rgba(0, 0, 0, .15)}

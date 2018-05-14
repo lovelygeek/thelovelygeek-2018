@@ -88,6 +88,9 @@ add_image_size( 'plate-image-600', 600, 600, true );
 add_image_size( 'plate-image-300', 300, 300, true );
 add_image_size( 'plate-image-300', 150, 150, true );
 
+
+add_image_size( 'single-post-feat-img', 592, 9999 ); //592 pixels wide (and unlimited height)
+
 /*
 to add more sizes, simply copy a line from above
 and change the dimensions & name. As long as you

@@ -12,7 +12,7 @@
 
         <section class="entry-content cf" itemprop="articleBody">
 	        
-	        <img src="http://via.placeholder.com/592x887" class="aligncenter">
+	        <img src="http://via.placeholder.com/592x776" class="aligncenter">
 
         	<?php if ( has_post_format()) { 
         		get_template_part( 'format', get_post_format() ); 

@@ -1076,6 +1076,9 @@ input[type="search"] {
 input::placeholder {
   color: #999999; }
 
+#respond input, #respond textarea {
+  border: 1px solid rgba(0, 0, 0, 0.15); }
+
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -1577,7 +1580,10 @@ FOOTER STYLES
   .footer-links ul {
     display: inline-block; }
 
-.fab, .fas {
+.footer-tags {
+  color: #999999; }
+
+.fab, .fas, .far {
   padding: 0 10px; }
 
 /* end .footer-links */
