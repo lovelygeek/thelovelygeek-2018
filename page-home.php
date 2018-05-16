@@ -14,14 +14,65 @@
 
 		<div id="inner-content" class="wrap cf">
 
-			<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+			<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-				<?php // Edit the loop in /templates/loop. Or roll your own. ?>
-				<?php get_template_part( 'templates/loop'); ?>
+				<!--Most recent post-->
+				<?php
+				global $post;
+				$args = array( 'posts_per_page' => 1, 'order'=> 'DESC');
+				$postslist = get_posts( $args );
+				foreach ( $postslist as $post ) :
+				  setup_postdata( $post ); ?> 
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
+						<div class="inner-article cf">
+							
+							<div id="feat-img" class="d-1of2 t-1of2 m-all">
+								<img src="http://via.placeholder.com/455x596">
+							</div>
+							
+							<div class="post-content d-1of2 t-1of2 m-all">
+								<header class="article-header">
+									
+									<?php get_template_part( 'templates/category-tags'); ?>
+						
+									<?php get_template_part( 'templates/header', 'title'); ?>
+						
+								</header>
+						
+								<section class="entry-content cf">
+															
+									<?php the_excerpt(); ?>
+						
+								</section>
+						
+								<footer class="article-footer cf">
+									<?php the_tags( '<p class="footer-tags tags"><i class="fas fa-tags"></i><span class="tags-title">' . __( '', 'platetheme' ) . '</span> ', ', ', '</p>' ); ?>
+								</footer>
+							</div>
+							
+						</div>
+					</article>
+				
+				<?php
+				endforeach; 
+				wp_reset_postdata();
+				?>
 
 			</main>
-
-			<?php get_sidebar(); ?>
+			
+			<div id="select-categories" class="wrap cf">
+				<div class="d-1of3">
+					<h5>Home</h5>
+				</div>
+				
+				<div class="d-1of3">
+					<h5>Popular Posts</h5>
+				</div>	
+				
+				<div class="d-1of3">
+					<h5>Life</h5>
+				</div>				
+			</div>
 
 		</div>
 

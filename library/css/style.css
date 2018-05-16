@@ -913,7 +913,7 @@ use @extend instead of @include:
 http://thesassway.com/intermediate/understanding-placeholder-selectors
 
 *********************/
-.button, .blue-button, .previous_post_link a, .next_post_link a {
+.button, .blue-button, input[type="submit"], .previous_post_link a, .next_post_link a {
   position: relative;
   display: inline-block;
   margin-bottom: .5em;
@@ -927,9 +927,9 @@ http://thesassway.com/intermediate/understanding-placeholder-selectors
   font-weight: 600;
   background: #BB8A40;
   color: #fff !important; }
-  .button:hover, .blue-button:hover, .previous_post_link a:hover, .next_post_link a:hover, .button:focus, .blue-button:focus, .previous_post_link a:focus, .next_post_link a:focus {
+  .button:hover, .blue-button:hover, input:hover[type="submit"], .previous_post_link a:hover, .next_post_link a:hover, .button:focus, .blue-button:focus, input:focus[type="submit"], .previous_post_link a:focus, .next_post_link a:focus {
     background-color: #997134; }
-  .button:active, .blue-button:active, .previous_post_link a:active, .next_post_link a:active {
+  .button:active, .blue-button:active, input:active[type="submit"], .previous_post_link a:active, .next_post_link a:active {
     top: 1px; }
 
 .button {
@@ -1078,6 +1078,9 @@ input::placeholder {
 
 #respond input, #respond textarea {
   border: 1px solid rgba(0, 0, 0, 0.15); }
+
+input[type="submit"] {
+  border: 0 !important; }
 
 /*********************
 BASE (MOBILE) SIZE
