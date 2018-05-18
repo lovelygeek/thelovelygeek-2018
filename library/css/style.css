@@ -1239,6 +1239,26 @@ ul, ol {
   padding-left: 0;
   list-style-type: none; }
 
+ul.wpp-list li, ul.featured-posts li {
+  border-bottom: 1px solid #E5F5F6;
+  padding: 20px;
+  list-style: none; }
+
+ul.featured-posts li {
+  overflow: hidden;
+  float: none;
+  clear: both; }
+
+ul.featured-posts li img {
+  display: inline;
+  float: left;
+  margin: 0 5px 0 0;
+  border: none; }
+
+img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {
+  vertical-align: middle;
+  border-radius: 50%; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -1305,6 +1325,12 @@ style a page via class
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+#select-categories {
+  background: #fff;
+  padding: 40px; }
+  #select-categories h5 {
+    text-align: center; }
+
 #content {
   margin-top: 10px; }
 

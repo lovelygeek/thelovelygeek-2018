@@ -60,17 +60,51 @@
 
 			</main>
 			
-			<div id="select-categories" class="wrap cf">
-				<div class="d-1of3">
+			<div id="select-categories" class="m-all t-all d-all cf">
+				<div class="d-1of3 t-1of3 m-all">
 					<h5>Home</h5>
+						<ul class="featured-posts">
+						<?php
+						global $post;
+						$args = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'category_name' => 'life' );
+						$postslist = get_posts( $args );
+						foreach ( $postslist as $post ) :
+						  setup_postdata( $post ); ?> 
+							
+								<li><span class="thumb"><img src="http://via.placeholder.com/50x50"></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></span></li>   
+					
+						<?php
+						endforeach; 
+						wp_reset_postdata();
+						?>
+						</ul>				
 				</div>
 				
-				<div class="d-1of3">
+				<div class="d-1of3 t-1of3 m-all">
 					<h5>Popular Posts</h5>
+					<?php
+						if (function_exists('wpp_get_mostpopular'))
+						wpp_get_mostpopular('limit=3&range=all&order_by=views&post_type=post&thumbnail_width=50&thumbnail_height=50&stats_views=0&post_html="<li><span class=thumb>{thumb}</span> <span class=title><a href=\'{url}\'>{text_title}</a></span></li>"');
+					?>					
 				</div>	
 				
-				<div class="d-1of3">
+				<div class="d-1of3 t-1of3 m-all">
 					<h5>Life</h5>
+						<ul class="featured-posts">
+						<?php
+						global $post;
+						$args = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'category_name' => 'life' );
+						$postslist = get_posts( $args );
+						foreach ( $postslist as $post ) :
+						  setup_postdata( $post ); ?> 
+							
+								<li><span class="thumb"><img src="http://via.placeholder.com/50x50"></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></span></li>   
+					
+						<?php
+						endforeach; 
+						wp_reset_postdata();
+						?>
+						</ul>						
 				</div>				
 			</div>
 
