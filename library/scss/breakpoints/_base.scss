@@ -365,13 +365,13 @@ POSTS & CONTENT STYLES
 
 #content {margin-top:10px;}
 
-article.post {
+article.post, #spotlight, article.page {
 	border:3px solid $white;
 	margin-bottom:40px;
 	padding:1em;
 }
 	
-article .inner-article {
+article.inner-article, #inner-spotlight, .inner-page {
 	background-color:$white;
 	padding:1.875em;
 }
@@ -379,6 +379,8 @@ article .inner-article {
 .post-content p.header-category, .post-content h1 {text-align:left;}	
 
 #filters {margin-bottom:40px; text-align:center;}
+
+#spotlight {margin-top: 40px;}
  
 
 .hentry {

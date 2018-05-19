@@ -115,38 +115,47 @@
 	<div class="favorite-things">
 		<div id="inner-favorite-things" class="wrap cf">
 			<h3>Some of My Favorite Things</h3>
-<?php if( have_rows('favorite_item') ): ?>
-
-	<ul>
-
-	<?php while( have_rows('favorite_item') ): the_row(); 
-
-		// vars
-		$image = get_sub_field('graphic');
-		$link = get_sub_field('link');
-
-		?>
-
-		<li>
-
-			<?php if( $link ): ?>
-				<a href="<?php echo $link; ?>">
+			<?php if( have_rows('favorite_item') ): ?>
+			
+				<ul>
+			
+				<?php while( have_rows('favorite_item') ): the_row(); 
+			
+					// vars
+					$image = get_sub_field('graphic');
+					$link = get_sub_field('link');
+			
+					?>
+			
+					<li>
+			
+						<?php if( $link ): ?>
+							<a href="<?php echo $link; ?>">
+						<?php endif; ?>
+			
+							<img src="<?php echo $image['url']; ?>" />
+			
+						<?php if( $link ): ?>
+							</a>
+						<?php endif; ?>
+			
+					</li>
+			
+				<?php endwhile; ?>
+			
+				</ul>
+			
 			<?php endif; ?>
-
-				<img src="<?php echo $image['url']; ?>" />
-
-			<?php if( $link ): ?>
-				</a>
-			<?php endif; ?>
-
-		</li>
-
-	<?php endwhile; ?>
-
-	</ul>
-
-<?php endif; ?>
 		</div>	
 	</div>	
+	
+	<div id="spotlight" class="wrap cf">
+		<div id="inner-spotlight" class="m-all t-all d-all cf">
+			<div class="d-1of3 t-1of3 m-all"><a href="<?php echo home_url(); ?>/blog"><img src="<?php echo get_theme_file_uri(); ?>/library/images/spotlight-blog@3x.png" alt="The Lovely Geek Blog" /></a></div>
+			<div class="d-1of3 t-1of3 m-all"><a href="<?php echo home_url(); ?>/studio"><img src="<?php echo get_theme_file_uri(); ?>/library/images/spotlight-studio@3x.png" alt="The Lovely Geek Design Studio" /></a></div>
+			<div class="d-1of3 t-1of3 m-all"><a href="<?php echo home_url(); ?>/shop"><img src="<?php echo get_theme_file_uri(); ?>/library/images/spotlight-shop@3x.png" alt="Shop The Lovely Geek" /></a></div>
+		</div>
+	</div>	
+		
 
 <?php get_footer(); ?>

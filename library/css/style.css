@@ -1334,12 +1334,12 @@ POSTS & CONTENT STYLES
 #content {
   margin-top: 10px; }
 
-article.post {
+article.post, #spotlight, article.page {
   border: 3px solid #fff;
   margin-bottom: 40px;
   padding: 1em; }
 
-article .inner-article {
+article.inner-article, #inner-spotlight, .inner-page {
   background-color: #fff;
   padding: 1.875em; }
 
@@ -1349,6 +1349,9 @@ article .inner-article {
 #filters {
   margin-bottom: 40px;
   text-align: center; }
+
+#spotlight {
+  margin-top: 40px; }
 
 .header-category {
   text-align: center;
@@ -1962,6 +1965,8 @@ be seen on the Desktop.
   .post-content {
     padding-left: 40px; }
   .single .hentry {
+    padding: 3em 13em; }
+  .inner-page {
     padding: 3em 13em; } }
 
 /*********************

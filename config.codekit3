@@ -651,6 +651,39 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/library\/images\/spotlight-blog@3x.png": {
+		"ft": 32768,
+		"iS": 747738,
+		"oA": 0,
+		"oAP": "\/library\/images\/spotlight-blog@3x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/library\/images\/spotlight-shop@3x.png": {
+		"ft": 32768,
+		"iS": 512726,
+		"oA": 0,
+		"oAP": "\/library\/images\/spotlight-shop@3x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/library\/images\/spotlight-studio@3x.png": {
+		"ft": 32768,
+		"iS": 787999,
+		"oA": 0,
+		"oAP": "\/library\/images\/spotlight-studio@3x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/library\/images\/studio.bio_logo.ai": {
 		"cB": 0,
 		"ft": 8192,
