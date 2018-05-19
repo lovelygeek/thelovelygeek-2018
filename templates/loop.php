@@ -3,24 +3,24 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 		<div class="inner-page">
-		<header class="article-header">
-
-			<?php get_template_part( 'templates/header', 'title'); ?>
-
-		</header> <?php // end article header ?>
-
-		<section class="entry-content cf" itemprop="articleBody">
+			<header class="article-header">
+	
+				<?php get_template_part( 'templates/header', 'title'); ?>
+	
+			</header> <?php // end article header ?>
+	
+			<section class="entry-content cf" itemprop="articleBody">
+				
+				<?php the_content(); ?>
 			
-			<?php the_content(); ?>
-		
-		</section> <?php // end article section ?>
-
-		<footer class="article-footer cf">
-
-		</footer>
-
+			</section> <?php // end article section ?>
+	
+			<footer class="article-footer cf">
+	
+			</footer>
 		
 		</div>
+		
 	</article>
 
 <?php endwhile; endif; ?>

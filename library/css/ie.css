@@ -441,7 +441,8 @@ article.post {
   padding: 1em; }
 
 .inner-article {
-  padding: 1.875em; }
+  padding: 1.875em;
+  background: #fff; }
 
 .post-content {
   padding-left: 40px; }

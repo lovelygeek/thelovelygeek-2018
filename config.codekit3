@@ -1611,6 +1611,13 @@
 		"oAP": "\/page-sidebar.php",
 		"oF": 0
 		},
+	"\/page-studio.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/page-studio.php",
+		"oF": 0
+		},
 	"\/page.php": {
 		"cB": 0,
 		"ft": 8192,
