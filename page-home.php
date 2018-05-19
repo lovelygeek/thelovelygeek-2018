@@ -89,11 +89,11 @@
 				</div>	
 				
 				<div class="d-1of3 t-1of3 m-all">
-					<h5>Life</h5>
+					<h5>Web</h5>
 						<ul class="featured-posts">
 						<?php
 						global $post;
-						$args = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'category_name' => 'life' );
+						$args = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'category_name' => 'web' );
 						$postslist = get_posts( $args );
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post ); ?> 
@@ -111,5 +111,42 @@
 		</div>
 
 	</div>
+	
+	<div class="favorite-things">
+		<div id="inner-favorite-things" class="wrap cf">
+			<h3>Some of My Favorite Things</h3>
+<?php if( have_rows('favorite_item') ): ?>
+
+	<ul>
+
+	<?php while( have_rows('favorite_item') ): the_row(); 
+
+		// vars
+		$image = get_sub_field('graphic');
+		$link = get_sub_field('link');
+
+		?>
+
+		<li>
+
+			<?php if( $link ): ?>
+				<a href="<?php echo $link; ?>">
+			<?php endif; ?>
+
+				<img src="<?php echo $image['url']; ?>" />
+
+			<?php if( $link ): ?>
+				</a>
+			<?php endif; ?>
+
+		</li>
+
+	<?php endwhile; ?>
+
+	</ul>
+
+<?php endif; ?>
+		</div>	
+	</div>	
 
 <?php get_footer(); ?>

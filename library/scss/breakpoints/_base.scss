@@ -597,6 +597,7 @@ article .inner-article {
     .size-large,
     .size-medium,
     .size-thumbnail {
+	    max-width: 100%;
 	    height:auto;
 		margin:0 0 30px 0;
     }
@@ -610,6 +611,8 @@ article .inner-article {
 
 .wp-caption {
     /* images inside wp-caption */
+    max-width: 100%;
+    
     img {}
 
     p.wp-caption-text {}
@@ -934,11 +937,43 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
-.subfooter {
+.subfooter, .favorite-things {
 	background:$white;
 	text-align:center;
 	margin-top:50px;
 }
+
+.favorite-things ul {
+	list-style: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    clear: both;
+    
+    li {
+		display: inline-block;
+		padding: 0;
+		margin: 0 0 2.5% 1.5%;
+		
+		a {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+    	}
+    }
+    
+    img {
+		max-width: 100% !important;
+	    height: auto !important;
+	    margin: 0 !important;
+	    border: 0 !important;
+	    vertical-align: top;
+	    width:150px;
+    }	    
+    
+}    
 
 #inner-subfooter {
 	padding:10px 0 40px 0;
@@ -948,7 +983,7 @@ FOOTER STYLES
 	margin: 0 0 2.5% 1.5%;
 }
 
-#inner-footer {
+#inner-footer, #inner-favorite-things {
 	padding: 20px 0;
 }		
 

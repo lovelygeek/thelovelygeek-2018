@@ -1476,12 +1476,14 @@ article .inner-article {
   .entry-content .size-large,
   .entry-content .size-medium,
   .entry-content .size-thumbnail {
+    max-width: 100%;
     height: auto;
     margin: 0 0 30px 0; }
 
 /* end .entry-content */
 .wp-caption {
-  /* images inside wp-caption */ }
+  /* images inside wp-caption */
+  max-width: 100%; }
 
 /* end .wp-caption */
 /* image gallery styles */
@@ -1585,10 +1587,34 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-.subfooter {
+.subfooter, .favorite-things {
   background: #fff;
   text-align: center;
   margin-top: 50px; }
+
+.favorite-things ul {
+  list-style: none;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  clear: both; }
+  .favorite-things ul li {
+    display: inline-block;
+    padding: 0;
+    margin: 0 0 2.5% 1.5%; }
+    .favorite-things ul li a {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline; }
+  .favorite-things ul img {
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    border: 0 !important;
+    vertical-align: top;
+    width: 150px; }
 
 #inner-subfooter {
   padding: 10px 0 40px 0; }
@@ -1596,7 +1622,7 @@ FOOTER STYLES
 .jr-insta-thumb ul.thumbnails li {
   margin: 0 0 2.5% 1.5%; }
 
-#inner-footer {
+#inner-footer, #inner-favorite-things {
   padding: 20px 0; }
 
 .footer {
