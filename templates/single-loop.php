@@ -35,3 +35,14 @@
 	</article> <?php // end article ?>
 
 <?php endwhile; endif; ?>
+
+<div class="post-navigation cf">
+	
+	<div class="previous_post_link"> <?php previous_post_link('%link', '&larr; Previous Post'); ?> </div> <!--FLOAT LEFT usually points to older entries (toward the end of the set)-->
+	<div class="next_post_link"><?php next_post_link('%link','Next Post &rarr;'); ?></div> <!-- FLOAT RIGHT usually points to newer entries (toward the beginning of the set)-->
+
+</div>
+
+<div class="related-posts cf">
+	<?php plate_related_posts(); ?>
+</div>	

@@ -1339,7 +1339,7 @@ article.post, #spotlight, article.page {
   margin-bottom: 40px;
   padding: 1em; }
 
-article.inner-article, #inner-spotlight, .inner-page {
+article .inner-article, #inner-spotlight, .inner-page {
   background-color: #fff;
   padding: 1.875em; }
 
@@ -1500,11 +1500,13 @@ article.inner-article, #inner-spotlight, .inner-page {
   color: #fff; }
 
 .previous_post_link {
-  float: right; }
-
-.next_post_link {
   float: left; }
 
+/*older*/
+.next_post_link {
+  float: right; }
+
+/*newer*/
 /******************************************************************
 SCREEN READER STYLES
 ******************************************************************/

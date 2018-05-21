@@ -11,13 +11,13 @@
 				<div id="inner-footer" class="wrap cf">
 
 					<p>
-						<a href="https://dribbble.com/LovelyGeek"><i class="fab fa-dribbble"></i></a>
-						<a href="https://www.facebook.com/lovelygeek/"><i class="fab fa-facebook-f"></i></a>
-						<a href="https://www.flickr.com/photos/darth_cena/"><i class="fab fa-flickr"></i></a>
-						<a href="https://www.instagram.com/thelovelygeek/"><i class="fab fa-instagram"></i></a>
-						<a href="https://twitter.com/LovelyGeek"><i class="fab fa-twitter"></i></a>
-						<a href="https://www.pinterest.com/lovelygeek/"><i class="fab fa-pinterest"></i></a>
-						<a href="http://feeds.feedburner.com/thelovelygeek"><i class="fas fa-rss"></i></a>
+						<a href="https://dribbble.com/LovelyGeek" title="@LovelyGeek on dribbble"><i class="fab fa-dribbble"></i></a>
+						<a href="https://www.facebook.com/lovelygeek/" title="@LovelyGeek on Facebook"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://www.flickr.com/photos/darth_cena/" title="@darth_cena on Flickr"><i class="fab fa-flickr"></i></a>
+						<a href="https://www.instagram.com/thelovelygeek/" title="@TheLovelyGeek on Instagram"><i class="fab fa-instagram"></i></a>
+						<a href="https://twitter.com/LovelyGeek" title="@LovelyGeek on Twitter"><i class="fab fa-twitter"></i></a>
+						<a href="https://www.pinterest.com/lovelygeek/" title="@LovelyGeek on Pinterest"><i class="fab fa-pinterest"></i></a>
+						<a href="http://feeds.feedburner.com/thelovelygeek" title="@TheLovelyGeek on Feedburner"><i class="fas fa-rss"></i></a>
 					</p>
 						
 

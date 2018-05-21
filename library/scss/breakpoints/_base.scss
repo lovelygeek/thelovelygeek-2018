@@ -371,7 +371,7 @@ article.post, #spotlight, article.page {
 	padding:1em;
 }
 	
-article.inner-article, #inner-spotlight, .inner-page {
+article .inner-article, #inner-spotlight, .inner-page {
 	background-color:$white;
 	padding:1.875em;
 }
@@ -663,8 +663,8 @@ article.inner-article, #inner-spotlight, .inner-page {
 	a {@extend %button;}	
 }
 
-.previous_post_link {float:right;}
-.next_post_link {float:left;}		
+.previous_post_link {float:left;} /*older*/
+.next_post_link {float:right;}		/*newer*/
 
 /******************************************************************
 SCREEN READER STYLES

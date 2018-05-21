@@ -24,32 +24,28 @@
 */
 require_once( 'library/admin.php' );
 
-
 /*
 *-------------------------------------------------
 * PLATE LUNCH
-* Let's get everything up and running.
+*
+* Let's get everything on the plate and eat!
 * 
-* (changed from launch to lunch because why not?)
 *-------------------------------------------------
 */
 
-// let's eat!
+// mmmmmmmmmmmmm dig in!
 add_action( 'after_setup_theme', 'plate_lunch' );
 
 function plate_lunch() {
 
-    // Allow editor style.
+    // editor stylee
     add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
     // let's get language support going, if you need it
-    //load_theme_textdomain( 'platetheme', get_template_directory() . '/library/translation' );
+    load_theme_textdomain( 'platetheme', get_template_directory() . '/library/translation' );
 
-    // launching operation cleanup
+    // cleanup the <head>
     add_action( 'init', 'plate_head_cleanup' );
-
-    // A better title
-    add_filter( 'wp_title', 'rw_title', 10, 3 );
 
     // remove WP version from RSS
     add_filter( 'the_generator', 'plate_rss_version' );
@@ -63,19 +59,19 @@ function plate_lunch() {
     // clean up gallery output in wp
     add_filter( 'gallery_style', 'plate_gallery_style' );
 
-    // enqueue base scripts and styles
+    // enqueue the styles and scripts
     add_action( 'wp_enqueue_scripts', 'plate_scripts_and_styles', 999 );
 
-    // launching this stuff after theme setup
+    // support the theme stuffs
     plate_theme_support();
 
     // adding sidebars to Wordpress
     add_action( 'widgets_init', 'plate_register_sidebars' );
 
-    // cleaning up random code around images
+    // cleaning up <p> tags around images
     add_filter( 'the_content', 'plate_filter_ptags_on_images' );
 
-    // cleaning up excerpt
+    // clean up the default WP excerpt
     add_filter( 'excerpt_more', 'plate_excerpt_more' );
 
 } /* end plate lunch */
@@ -87,9 +83,6 @@ function plate_lunch() {
 add_image_size( 'plate-image-600', 600, 600, true );
 add_image_size( 'plate-image-300', 300, 300, true );
 add_image_size( 'plate-image-300', 150, 150, true );
-
-
-add_image_size( 'single-post-feat-img', 592, 9999 ); //592 pixels wide (and unlimited height)
 
 /*
 to add more sizes, simply copy a line from above
@@ -105,7 +98,7 @@ For example, to call the 300 x 100 sized image,
 we would use the function:
 <?php the_post_thumbnail( 'plate-image-300' ); ?>
 for the 600 x 150 image:
-<?php the_post_thumbnail( 'pplate-image-600' ); ?>
+<?php the_post_thumbnail( 'plate-image-600' ); ?>
 
 You can change the names and dimensions to whatever
 you like. Enjoy!
@@ -125,6 +118,8 @@ function plate_custom_image_sizes( $sizes ) {
     );
 }
 
+add_image_size( 'single-post-feat-img', 592, 9999 ); //592 pixels wide (and unlimited height)
+
 /*
 The function above adds the ability to use the dropdown menu to select
 the new images sizes you have just created from within the media manager
@@ -133,7 +128,6 @@ duplicate one of the lines in the array and name it according to your
 new image size.
 */
 
-
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
@@ -141,15 +135,15 @@ function plate_register_sidebars() {
 
 	register_sidebar( array(
 
-		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'platetheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'platetheme' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
+            'id' => 'sidebar1',
+            'name' => __( 'Sidebar 1', 'platetheme' ),
+            'description' => __( 'The first (primary) sidebar.', 'platetheme' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widgettitle">',
+            'after_title' => '</h4>',
 
-	   )
+        )
     );
 
 	/*
@@ -203,7 +197,6 @@ function new_default_avatar ( $avatar_defaults ) {
     return $avatar_defaults;
 }
 
-
 // Comment Layout
 function plate_comments( $comment, $args, $depth ) {
 
@@ -211,7 +204,7 @@ function plate_comments( $comment, $args, $depth ) {
 
     <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
 
-        <article  class="cf">
+        <article class="cf">
 
             <header class="comment-author vcard">
 
@@ -317,7 +310,7 @@ function html_schema() {
 
 
 /*********************************
-WP_HEAD GOODNESS
+WP_HEAD CLEANUP
 The default wordpress head is a mess. 
 Let's clean it up by removing all 
 the junk we don't need.
@@ -355,7 +348,7 @@ function plate_head_cleanup() {
     // remove WP version from scripts
     add_filter( 'script_loader_src', 'plate_remove_wp_ver_css_js', 9999 );
 
-} /* end template head cleanup */
+} /* end plate head cleanup */
 
 
 // remove WP version from RSS
@@ -407,15 +400,15 @@ function plate_gallery_style($css) {
 SCRIPTS & ENQUEUEING
 *********************/
 
-// loading modernizr and jquery, and reply script
+// loading modernizr and jquery, comment reply and custom scripts
 function plate_scripts_and_styles() {
 
     global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
     if ( !is_admin() ) {
 
-        // modernizr (without media query polyfill)
-        wp_enqueue_script( 'modernizr', get_theme_file_uri() . '/library/js/libs/modernizr-custom.js', array(), '3.5.0', false );
+        // modernizr (3.6.0 2018-04-17)
+        wp_enqueue_script( 'modernizr', get_theme_file_uri() . '/library/js/libs/modernizr-custom-min.js', array(), '3.6.0', false );
 
         // register main stylesheet
         wp_enqueue_style( 'plate-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '', 'all' );
@@ -518,6 +511,8 @@ function disable_emojicons_tinymce( $plugins ) {
 
 
 // Remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
+// This only works for the main content box, not using ACF or other page builders.
+// Added small bit of javascript in scripts.js that will work everywhere. 
 add_filter('the_content', 'plate_filter_ptags_on_images');
 
 function plate_filter_ptags_on_images( $content ) {
@@ -533,11 +528,12 @@ function plate_excerpt_more( $more ) {
     global $post;
 
      // edit here if you like
-    return '...  <p><a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Continue Reading &#8250;', 'platetheme' ) .'</a></p>';
+    return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Continue Reading &#8250;', 'platetheme' ) .'</a>';
 
 }
 
 /**
+ * ADDED BY THE LOVELY GEEK	
  * Filter the except length to 20 words.
  *
  * @param int $length Excerpt length.
@@ -556,7 +552,7 @@ THEME SUPPORT
 // support all of the theme things
 function plate_theme_support() {
 
-    // wp thumbnails (sizes handled in functions.php)
+    // wp thumbnails (see sizes above)
     add_theme_support( 'post-thumbnails' );
 
     // default thumb size
@@ -610,8 +606,11 @@ function plate_theme_support() {
         )
     );
 
-    // Title tag
+    // Title tag. Note: this still isn't working with Yoast SEO
     add_theme_support( 'title-tag' );
+
+    // Add theme support for selective refresh for widgets.
+    add_theme_support( 'customize-selective-refresh-widgets' );
 
     // Enable support for HTML5 markup.
     add_theme_support( 'html5', array(
@@ -657,6 +656,26 @@ function plate_theme_support() {
         )
     );
 
+    // Gutenberg support: https://www.billerickson.net/getting-your-theme-ready-for-gutenberg/
+    // https://wordpress.org/gutenberg/handbook/extensibility/theme-support/
+    // .alignwide styles added to _768up
+    add_theme_support( 'align-wide' );
+
+    add_theme_support( 'editor-color-palette',
+        // Change to your colors
+        '#0056ac',
+        '#99bbde',
+        '#004181',
+        '#001c3a',
+        'f23e2f',
+        'dedede',
+        'aaaaaa',
+        '222222'
+    );
+
+    // To limit the Gutenberg editor to your theme colors, uncomment this
+    // add_theme_support( 'disable-custom-colors' );
+
 } /* end plate theme support */
 
 
@@ -687,6 +706,8 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 /****************************************
 * CUSTOMIZER *
 ****************************************/
+
+// Needs updating as of WP 4.9.X
 
 add_action( 'customize_register', 'plate_register_theme_customizer' );
 
@@ -783,91 +804,143 @@ function plate_style_header() {
 RELATED POSTS FUNCTION
 *********************/
 
-// Related Posts Function (call using plate_related_posts(); )
-function plate_related_posts() {
+/**
+ * Plate Related Posts.
+ * 
+ * Adapted from this gist:
+ * https://gist.github.com/claudiosanches/3167825
+ * 
+ * Replaced old related posts function from Bones.
+ * Added: 2018-05-03
+ *
+ * Usage:
+ * To show related by categories:
+ * Add in single.php <?php plate_related_posts(); ?>.
+ * To show related by tags:
+ * Add in single.php <?php plate_related_posts('tag'); ?>.
+ *
+ * @global array $post
+ *   WP global post.
+ * @param string $display
+ *   Set category or tag.
+ * @param int $qty
+ *   Number of posts to be displayed.
+ * @param bool $images
+ *   Enable or disable displaying images.
+ * @param string $title
+ *   Set the widget title.
+ */
 
-    echo '<ul id="plate-related-posts">';
-
+function plate_related_posts($display = 'category', $qty = 5, $images = true, $title = 'Keep Reading:') {
     global $post;
-
-    $tags = wp_get_post_tags( $post->ID );
-
-    if( $tags ) {
-
-        foreach( $tags as $tag ) {
-            $tag_arr .= $tag->slug . ',';
+    $show = false;
+    $post_qty = (int) $qty;
+    switch ($display) :
+        case 'tag':
+            $tags = wp_get_post_tags($post->ID);
+            if ($tags) {
+                $show = true;
+                $tag_ids = array();
+                foreach ($tags as $individual_tag) {
+                    $tag_ids[] = $individual_tag->term_id;
+                }
+                $args = array(
+                    'tag__in' => $tag_ids,
+                    'post__not_in' => array($post->ID),
+                    'posts_per_page' => $post_qty,
+                    'ignore_sticky_posts' => 1
+                );
+            }
+            break;
+        default :
+            $categories = get_the_category($post->ID);
+            if ($categories) {
+                $show = true;
+                $category_ids = array();
+                foreach ($categories as $individual_category) {
+                    $category_ids[] = $individual_category->term_id;
+                }
+                $args = array(
+                    'category__in' => $category_ids,
+                    'post__not_in' => array($post->ID),
+                    'showposts' => $post_qty,
+                    'ignore_sticky_posts' => 1
+                );
+            }
+    endswitch;
+    if ($show == true) {
+        $related = new wp_query($args);
+        if ($related->have_posts()) {
+            $layout = '<div class="related-posts">';
+            $layout .= '<h3>' . strip_tags($title) . '</h3>';
+            $layout .= '<ul class="nostyle related-posts-list">';
+            while ($related->have_posts()) {
+                $related->the_post();
+                $layout .= '<li class="related-post">';
+                if ($images == true) {
+                    $layout .= '<span class="related-thumb">';
+                    $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_post_thumbnail() . '</a>';
+                    $layout .= '</span>';
+                }
+                $layout .= '<span class="related-title">';
+                $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a>';
+                $layout .= '</span>';
+                $layout .= '</li>';
+            }
+            $layout .= '</ul>';
+            $layout .= '</div>';
+            echo $layout;
         }
+        wp_reset_query();
+    }
+}
 
-        $args = array(
-            'tag' => $tag_arr,
-            'numberposts' => 5, /* you can change this to show more */
-            'post__not_in' => array($post->ID)
-        );
-
-        $related_posts = get_posts( $args );
-
-        if( $related_posts ) {
-
-            foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
-            <li class="related_post">
-
-                <a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-
-            </li>
-
-            <?php endforeach; 
-
-        } else { ?>
-
-            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'platetheme' ) . '</li>'; ?>
-
-        <?php }
-
-    } /* end if ($tags) */
-
-    wp_reset_postdata(); // always reset your loops
-
-    echo '</ul>';
-
-} /* end plate related posts function */
 
 /*********************
 PAGE NAVI
 *********************/
 
-// Numeric Page Navi (built into the theme by default)
-function plate_page_navi() {
+/* 
+* Numeric Page Navi (built into the theme by default).
+* (Updated 2018-05-17)
+* 
+* If you're using this with a custom WP_Query, make sure 
+* to add your query variable as an argument and this 
+* function will play nice. Example:
+* 
+* plate_page_navi( $query );
+•
+• Also make sure your query has pagination set, e.g.:
+* $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+* (or something similar)
+• See the codex: https://codex.wordpress.org/Pagination
 
-    global $wp_query;
+*/
 
-    $bignum = 999999999;
+function plate_page_navi( $query_wp ) {
+    $pages = $query_wp->max_num_pages;
+    $big = 999999999; // need an unlikely integer
 
-    if ( $wp_query->max_num_pages <= 1 ) {
+    if ($pages > 1) {
+        $page_current = max(1, get_query_var('paged'));
 
-        return;
+        echo '<nav class="pagination">';
+
+        echo paginate_links(array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current'       => $page_current,
+            'total'         => $pages,
+            'prev_text'     => '&larr;',
+            'next_text'     => '&rarr;',
+            'type'          => 'list',
+            'end_size'      => 3,
+            'mid_size'      => 3
+        ));
+
+        echo '</nav>';
     }
-
-    echo '<nav class="pagination">';
-
-    echo paginate_links( array(
-
-        'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link( $bignum ) ) ),
-        'format'       => '',
-        'current'      => max( 1, get_query_var( 'paged' ) ),
-        'total'        => $wp_query->max_num_pages,
-        'prev_text'    => '&larr;',
-        'next_text'    => '&rarr;',
-        'type'         => 'list',
-        'end_size'     => 3,
-        'mid_size'     => 3
-
-        )
-
-    );
-
-  echo '</nav>';
-
-} /* end page navi */
+}
 
 
 /*
@@ -878,7 +951,6 @@ function plate_page_navi() {
 
 // Body Class functions
 // Adds more slugs to body class so we can style individual pages + posts.
-// Page Slug Body Class
 add_filter( 'body_class', 'plate_body_class' );
 
 function plate_body_class( $classes ) {
@@ -900,11 +972,11 @@ function plate_body_class( $classes ) {
 
         if ( $post->post_parent ) {
 
-            # Parent post name/slug
+            // Parent post name/slug
             $parent = get_post( $post->post_parent );
             $classes[] = $parent->post_name;
 
-            # Parent template name
+            // Parent template name
             $parent_template = get_post_meta( $parent->ID, '_wp_page_template', true );
             
             if ( !empty($parent_template) )
