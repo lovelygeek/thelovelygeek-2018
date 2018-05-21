@@ -7,6 +7,8 @@
 			<?php get_template_part( 'templates/category-tags'); ?>
 
 			<h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
+			
+			<?php get_template_part( 'templates/byline'); ?>
                   
 		</header> <?php // end article header ?>
 
@@ -32,7 +34,7 @@
 		<footer class="article-footer">
 
 			<?php // Delete or comment out if you don't need this on your page or post. Edit in /templates/byline.php ?>
-			<?php get_template_part( 'templates/byline'); ?>
+			<? /*php get_template_part( 'templates/byline');*/ ?>
 			
 		</footer> <?php // end article footer ?>
 
