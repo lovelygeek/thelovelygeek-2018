@@ -1508,7 +1508,10 @@ article .inner-article, #inner-spotlight, .inner-page {
 
 /*newer*/
 .byline-wrap {
-  text-align: center; }
+  text-align: center;
+  font-family: "brandon-grotesque", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px; }
 
 /******************************************************************
 SCREEN READER STYLES

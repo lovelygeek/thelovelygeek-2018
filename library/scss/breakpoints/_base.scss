@@ -666,7 +666,12 @@ article .inner-article, #inner-spotlight, .inner-page {
 .previous_post_link {float:left;} /*older*/
 .next_post_link {float:right;}		/*newer*/
 
-.byline-wrap {text-align:center;}
+.byline-wrap {
+	text-align:center;
+	font-family:$sans;
+	text-transform: uppercase;
+    margin-bottom: 10px;
+	}
 
 /******************************************************************
 SCREEN READER STYLES
