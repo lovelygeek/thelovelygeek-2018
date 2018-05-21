@@ -529,7 +529,7 @@ function plate_excerpt_more( $more ) {
     global $post;
 
      // edit here if you like
-    return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Continue Reading &#8250;', 'platetheme' ) .'</a>';
+    //return '...  <p><a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Continue Reading &#8250;', 'platetheme' ) .'</a></p>';
 
 }
 
@@ -544,6 +544,18 @@ function wpdocs_custom_excerpt_length( $length ) {
     return 30;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+
+// ADDED BY THE LOVELY GEEK	- adds read more to manual and automatic excerpts
+function custom_excerpt($text) {  // custom 'read more' link
+   if (strpos($text, '[...]')) {
+      $excerpt = strip_tags(str_replace('[...]', '&nbsp;<p><a href="'.get_permalink().'">Continue Reading &#8250;</a></p>', $text), "<a>");
+   } else {
+      $excerpt = '' . strip_tags($text) . '&nbsp;<p><a href="'.get_permalink().'">Continue Reading &#8250;</a></p>';
+   }
+   return $excerpt;
+}
+add_filter('the_excerpt', 'custom_excerpt');
 
 
 /*********************
