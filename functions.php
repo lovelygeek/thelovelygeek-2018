@@ -119,7 +119,8 @@ function plate_custom_image_sizes( $sizes ) {
 }
 
 add_image_size( 'single-post-feat-img', 592, 9999 ); //592 pixels wide (and unlimited height)
-
+add_image_size( 'blog-listing-feat-img', 455, 596, true ); //455 pixels wide, 596 pixels wide, crop mode
+ 
 /*
 The function above adds the ability to use the dropdown menu to select
 the new images sizes you have just created from within the media manager

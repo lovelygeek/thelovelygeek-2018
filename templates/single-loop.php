@@ -11,8 +11,14 @@
 		</header> <?php // end article header ?>
 
         <section class="entry-content cf" itemprop="articleBody">
+
+				<?php if ( has_post_thumbnail() ) {
+				the_post_thumbnail('single-post-feat-img', array('class' => 'aligncenter'));
+				} else { ?>
+				<img src="http://via.placeholder.com/592x776" class="aligncenter">
+				<?php } ?>		        
 	        
-	        <img src="http://via.placeholder.com/592x776" class="aligncenter">
+	        
 
         	<?php if ( has_post_format()) { 
         		get_template_part( 'format', get_post_format() ); 
@@ -44,5 +50,5 @@
 </div>
 
 <div class="related-posts cf">
-	<?php plate_related_posts(); ?>
+	<?php plate_related_posts('tag'); ?>
 </div>	
