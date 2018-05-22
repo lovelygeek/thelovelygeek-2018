@@ -876,7 +876,7 @@ RELATED POSTS FUNCTION
  *   Set the widget title.
  */
 
-function plate_related_posts($display = 'category', $qty = 5, $images = true, $title = 'Keep Reading') {
+function plate_related_posts($display = 'category', $qty = 3, $images = true, $title = 'Keep Reading') {
     global $post;
     $show = false;
     $post_qty = (int) $qty;
