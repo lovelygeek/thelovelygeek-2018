@@ -1082,6 +1082,22 @@ input::placeholder {
 input[type="submit"] {
   border: 0 !important; }
 
+#commentform textarea, #commentform input[type="text"],
+#commentform input[type="email"], #commentform input[type="url"] {
+  background: #E5F5F6;
+  border: none; }
+
+#commentform label {
+  font-family: "brandon-grotesque", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.875em; }
+
+#commentform p.comment-form-cookies-consent label {
+  margin-left: 5px;
+  font-family: "jubilat", sans-serif;
+  font-size: 1em;
+  text-transform: none; }
+
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
