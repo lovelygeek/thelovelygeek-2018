@@ -1257,7 +1257,8 @@ ul.featured-posts li img {
 
 img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {
   vertical-align: middle;
-  border-radius: 50%; }
+  border-radius: 50%;
+  max-width: 50px; }
 
 /*********************
 NAVIGATION STYLES

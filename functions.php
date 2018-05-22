@@ -120,6 +120,7 @@ function plate_custom_image_sizes( $sizes ) {
 
 add_image_size( 'single-post-feat-img', 592, 9999 ); //592 pixels wide (and unlimited height)
 add_image_size( 'blog-listing-feat-img', 455, 596, true ); //455 pixels wide, 596 pixels wide, crop mode
+add_image_size('featured_preview', 55, 55, true); // for showing featured image column in admin
  
 /*
 The function above adds the ability to use the dropdown menu to select
@@ -128,6 +129,37 @@ when you add media to your content blocks. If you add more image sizes,
 duplicate one of the lines in the array and name it according to your
 new image size.
 */
+
+/************* FEAT IMG COLUMN IN ADMIN *********************/
+// GET FEATURED IMAGE
+function ST4_get_featured_image($post_ID) {
+    $post_thumbnail_id = get_post_thumbnail_id($post_ID);
+    if ($post_thumbnail_id) {
+        $post_thumbnail_img = wp_get_attachment_image_src($post_thumbnail_id, 'featured_preview');
+        return $post_thumbnail_img[0];
+    }
+}
+// ADD NEW COLUMN
+function ST4_columns_head($defaults) {
+    $defaults['featured_image'] = 'Featured Image';
+    return $defaults;
+}
+ 
+// SHOW THE FEATURED IMAGE
+function ST4_columns_content($column_name, $post_ID) {
+    if ($column_name == 'featured_image') {
+        $post_featured_image = ST4_get_featured_image($post_ID);
+        if ($post_featured_image) {
+            echo '<img src="' . $post_featured_image . '" />';
+        }
+    }
+}
+// ALL POST TYPES: posts AND custom post types
+add_filter('manage_posts_columns', 'ST4_columns_head');
+add_action('manage_posts_custom_column', 'ST4_columns_content', 10, 2);
+// ONLY WORDPRESS DEFAULT PAGES
+add_filter('manage_page_posts_columns', 'ST4_columns_head', 10);
+add_action('manage_page_posts_custom_column', 'ST4_columns_content', 10, 2);
 
 /************* ACTIVE SIDEBARS ********************/
 
@@ -546,7 +578,7 @@ function wpdocs_custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 
-// ADDED BY THE LOVELY GEEK	- adds read more to manual and automatic excerpts
+// ADDED BY THE LOVELY GEEK	- adds continue reading to manual and automatic excerpts
 function custom_excerpt($text) {  // custom 'read more' link
    if (strpos($text, '[...]')) {
       $excerpt = strip_tags(str_replace('[...]', '&nbsp;<p><a href="'.get_permalink().'">Continue Reading &#8250;</a></p>', $text), "<a>");

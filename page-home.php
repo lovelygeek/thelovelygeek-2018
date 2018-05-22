@@ -75,7 +75,7 @@
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post ); ?> 
 							
-								<li><span class="thumb"><img src="http://via.placeholder.com/50x50"></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></span></li>   
+								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></span></li>   
 					
 						<?php
 						endforeach; 
@@ -102,7 +102,7 @@
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post ); ?> 
 							
-								<li><span class="thumb"><img src="http://via.placeholder.com/50x50"></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></span></li>   
+								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></span></li>   
 					
 						<?php
 						endforeach; 
