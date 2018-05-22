@@ -876,7 +876,7 @@ RELATED POSTS FUNCTION
  *   Set the widget title.
  */
 
-function plate_related_posts($display = 'category', $qty = 5, $images = true, $title = 'Keep Reading:') {
+function plate_related_posts($display = 'category', $qty = 5, $images = true, $title = 'Keep Reading') {
     global $post;
     $show = false;
     $post_qty = (int) $qty;
@@ -916,23 +916,23 @@ function plate_related_posts($display = 'category', $qty = 5, $images = true, $t
     if ($show == true) {
         $related = new wp_query($args);
         if ($related->have_posts()) {
-            $layout = '<div class="related-posts">';
+            $layout = '<div class="related-posts cf">';
             $layout .= '<h3>' . strip_tags($title) . '</h3>';
-            $layout .= '<ul class="nostyle related-posts-list">';
+            $layout .= '<div class="m-all t-all d-all cf">';
             while ($related->have_posts()) {
                 $related->the_post();
-                $layout .= '<li class="related-post">';
+                $layout .= '<div class="related-post d-1of3 t-1of3 m-all">';
                 if ($images == true) {
                     $layout .= '<span class="related-thumb">';
-                    $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_post_thumbnail() . '</a>';
+                    $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_post_thumbnail('','plate-image-600') . '</a>';
                     $layout .= '</span>';
                 }
                 $layout .= '<span class="related-title">';
-                $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a>';
+                $layout .= '<p><a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a></p>';
                 $layout .= '</span>';
-                $layout .= '</li>';
+                $layout .= '</div>';
             }
-            $layout .= '</ul>';
+            $layout .= '</div>';
             $layout .= '</div>';
             echo $layout;
         }

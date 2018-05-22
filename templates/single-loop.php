@@ -51,6 +51,5 @@
 
 </div>
 
-<div class="related-posts cf">
 	<?php plate_related_posts('tag'); ?>
-</div>	
+

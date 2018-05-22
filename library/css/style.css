@@ -1260,6 +1260,23 @@ img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {
   border-radius: 50%;
   max-width: 50px; }
 
+.related-posts {
+  background: #fff;
+  padding: 0px 40px 30px 50px;
+  margin-top: 40px; }
+  .related-posts h3 {
+    text-align: center;
+    padding-bottom: 15px; }
+  .related-posts .related-post img {
+    margin-bottom: -26px; }
+  .related-posts .related-post p {
+    background: #80CDD4;
+    padding: 30px; }
+  .related-posts .related-post p a {
+    color: #fff;
+    font-family: "brandon-grotesque", sans-serif;
+    text-transform: uppercase; }
+
 /*********************
 NAVIGATION STYLES
 *********************/

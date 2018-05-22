@@ -214,7 +214,19 @@ ul.featured-posts li img {
     border: none;
     }
     
-img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {vertical-align: middle; border-radius: 50%; max-width: 50px;}    	
+img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {vertical-align: middle; border-radius: 50%; max-width: 50px;} 
+
+.related-posts {
+	background:$white;
+	padding:0px 40px 30px 50px;
+	margin-top:40px;
+	
+	h3 {text-align:center; padding-bottom:15px;}
+	.related-post img {margin-bottom: -26px;}
+	.related-post p {background:$tlg-main-aqua; padding:30px}
+	.related-post p a {color:$white; font-family:$sans; text-transform:uppercase;}
+}	
+	
 
 /*********************
 NAVIGATION STYLES
