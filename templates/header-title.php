@@ -6,7 +6,7 @@ if ( function_exists('is_tag') && is_tag() || is_category() || is_tax() ) { ?>
 
 <?php } elseif ( is_archive() ) { ?>
 
-	<h3 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+	<h2 class="archive-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 
 <?php } elseif ( is_search() ) { ?>
 
