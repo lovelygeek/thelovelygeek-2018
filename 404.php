@@ -25,7 +25,7 @@
 							<ul>
 								<li>You can search using the search bar below</li>
 								<li>Visit the <a href="<?php echo home_url(); ?>">homepage</a></li>
-								<li>And if you're feeling so kind, please <a href="https://twitter.com/LovelyGeek">tell me about this error</a>, so that I can fix it. Thank you!</li>
+								<li>And if you're feeling extra nice, please <a href="https://twitter.com/LovelyGeek">tell me about this error</a>, so I can fix it. 😬</li>
 							</ul>
 
 						</div>

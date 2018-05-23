@@ -1421,6 +1421,16 @@ article#post-not-found h1 {
   text-align: center;
   font-style: normal; }
 
+.search-title {
+  text-align: left; }
+
+.archive-title {
+  font-style: normal; }
+
+.taxonomy-description {
+  text-align: center;
+  padding: 0 50px; }
+
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
 /* general post style */

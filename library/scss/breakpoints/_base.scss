@@ -431,13 +431,17 @@ article#post-not-found h1 {
 	font-style:normal;
 	}
 
+.search-title {text-align:left;}
+
 .single-title {}
 
 .page-title {}
 
 .entry-title {}
 
-.archive-title {}
+.archive-title {font-style:normal;}
+
+.taxonomy-description {text-align:center; padding: 0 50px;}
 
 /* want to style individual post classes? Booya! */
 .post-id {}

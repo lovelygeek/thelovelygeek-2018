@@ -2,7 +2,7 @@
 
 if ( function_exists('is_tag') && is_tag() || is_category() || is_tax() ) { ?>
 
-	<h1 class="archive-title h2"><span><?php _e( 'Posts Categorized:', 'platetheme' ); ?></span> <?php single_cat_title(); ?></h1>
+	<h2 class="archive-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 
 <?php } elseif ( is_archive() ) { ?>
 
@@ -10,11 +10,11 @@ if ( function_exists('is_tag') && is_tag() || is_category() || is_tax() ) { ?>
 
 <?php } elseif ( is_search() ) { ?>
 
-	<h3 class="search-title entry-title">
+	<h2 class="search-title entry-title">
 
 		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 									
-	</h3>
+	</h2>
 
 <?php } elseif ( !(is_404() ) && ( is_single() ) || ( is_page() )) { ?>
 
