@@ -7,6 +7,8 @@
 			<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 				<article id="post-not-found" class="hentry cf">
+					
+					<div class="inner-page">
 
 					<header class="article-header">
 
@@ -18,8 +20,13 @@
 
 						<div class="404-txt">
 
-							<h3><?php _e( 'I\'m sorry Dave, I\'m afraid I can\'t do that.', 'platetheme' ); ?></h3>
-							<p>We couldn't find what you are looking for, please try searching.</p>
+							<!-- <h3>¯\_(ツ)_/¯</h3> -->
+							<p>The page you requested cannot be found. Here are some options:</p>
+							<ul>
+								<li>You can search using the search bar below</li>
+								<li>Visit the <a href="<?php echo home_url(); ?>">homepage</a></li>
+								<li>And if you're feeling so kind, please <a href="https://twitter.com/LovelyGeek">tell me about this error</a>, so that I can fix it. Thank you!</li>
+							</ul>
 
 						</div>
 
@@ -34,6 +41,8 @@
 					<footer class="article-footer">
 
 					</footer>
+					
+					</div>
 
 				</article>
 

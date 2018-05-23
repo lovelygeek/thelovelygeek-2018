@@ -1083,7 +1083,8 @@ input[type="submit"] {
   border: 0 !important; }
 
 #commentform textarea, #commentform input[type="text"],
-#commentform input[type="email"], #commentform input[type="url"] {
+#commentform input[type="email"], #commentform input[type="url"],
+.search-form-outer input[type="search"] {
   background: #E5F5F6;
   border: none; }
 
@@ -1097,6 +1098,9 @@ input[type="submit"] {
   font-family: "jubilat", sans-serif;
   font-size: 1em;
   text-transform: none; }
+
+.search-form-outer {
+  padding-bottom: 40px; }
 
 /*********************
 BASE (MOBILE) SIZE
@@ -1335,6 +1339,9 @@ style a page via class
 /* search result page */
 /* no results search page */
 /* individual paged search (i.e. body.search-paged-3) */
+.error404 {
+  background: #E5F5F6; }
+
 /* 404 page */
 .single .hentry {
   padding: 50px;
@@ -1376,7 +1383,7 @@ POSTS & CONTENT STYLES
 #content {
   margin-top: 10px; }
 
-article.post, #spotlight, article.page {
+article.post, #spotlight, article.page, article#post-not-found {
   border: 3px solid #fff;
   margin-bottom: 40px;
   padding: 1em; }
@@ -1409,7 +1416,8 @@ article .inner-article, #inner-spotlight, .inner-page {
 /* end .hentry */
 .single-title,
 .page-title,
-.entry-title {
+.entry-title,
+article#post-not-found h1 {
   text-align: center;
   font-style: normal; }
 
