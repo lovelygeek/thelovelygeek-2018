@@ -271,7 +271,7 @@ GLOBAL STYLES
   margin-top: 40px; }
 
 .post-content {
-  padding-left: 40px; }
+  padding: 40px 0 0 40px; }
 
 /*********************
 LAYOUT & GRID STYLES

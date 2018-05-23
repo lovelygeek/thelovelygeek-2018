@@ -43,6 +43,13 @@ img {
     height: auto;
 }
 
+hr {
+	border: 0;
+    height: 1px;
+    background: $tlg-main-aqua;
+    background-image: linear-gradient(to right, $tlg-light-aqua, $tlg-main-aqua, $tlg-light-aqua);
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -223,8 +230,8 @@ img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {
 	
 	h3 {text-align:center; padding-bottom:15px;}
 	.related-post img {margin-bottom: -26px;}
-	.related-post p {background:$tlg-main-aqua; padding:30px}
-	.related-post p a {color:$white; font-family:$sans; text-transform:uppercase;}
+	.related-post p {background:$tlg-main-aqua; padding:30px; min-height: 120px;}
+	.related-post p a {color:$white; font-family:$sans; text-transform:uppercase; font-weight:600;}
 }	
 	
 
@@ -552,7 +559,7 @@ article .inner-article, #inner-spotlight, .inner-page {
         }
     }
 
-    blockquote p {
+    blockquote {
 		margin: 0 0 1.5em 1.75em;
 		padding: 0 0 0 0.75em;
 		font-style: italic;
@@ -566,7 +573,7 @@ article .inner-article, #inner-spotlight, .inner-page {
 			font-size: 4.5em;
 			position: absolute;
 			left: -30px;
-			top: -34px;
+			top: -45px;
 			color: $tlg-main-aqua;
         }
     }
@@ -781,11 +788,19 @@ COMMENT STYLES
 }
 
 .comment {
+	margin:30px 0;
     .comment-author {}
 
     /* vcard */
     .vcard {
+	    img {
+			vertical-align: middle;
+			border-radius: 50%;
+			max-width: 50px;
+		}
+	    
         cite.fn {
+	        padding-left: 5px;
             a.url {}
         }
 
@@ -851,7 +866,7 @@ COMMENT STYLES
 
     &.parent {}
 
-    &.comment {}
+    &.comment {background:$white; padding:20px;}
 
     &.children {}
 
@@ -861,7 +876,7 @@ COMMENT STYLES
 
     &.comment-author {}
 
-    &.comment-author-admin {}
+    &.comment-author-admin {background:$tlg-lightest-aqua;}
 
     &.thread-alt {}
 
