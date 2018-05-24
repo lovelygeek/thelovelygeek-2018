@@ -1643,6 +1643,8 @@ COMMENT STYLES
   .comment .children {
     /* variations */
     /* change number for different depth */ }
+    .comment .children .bypostauthor {
+      background: #f2fafb; }
   .comment.comment {
     background: #fff;
     padding: 20px; }
