@@ -1644,7 +1644,7 @@ COMMENT STYLES
     /* variations */
     /* change number for different depth */ }
     .comment .children .bypostauthor {
-      background: #f2fafb; }
+      background: #f2fafb !important; }
   .comment.comment {
     background: #fff;
     padding: 20px; }

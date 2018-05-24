@@ -841,7 +841,7 @@ COMMENT STYLES
         /* change number for different depth */
         .byuser {}
 
-        .bypostauthor {background:$tlg-lightest-aqua;}
+        .bypostauthor {background:$tlg-lightest-aqua!important;}
 
         .comment-author-admin {}
     }
