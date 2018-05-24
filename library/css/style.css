@@ -1724,7 +1724,8 @@ FOOTER STYLES
     display: inline-block; }
 
 .footer-tags {
-  color: #999999; }
+  color: #999999;
+  text-transform: lowercase; }
 
 .fab, .fas, .far {
   padding: 0 10px; }
