@@ -70,7 +70,7 @@
 						<ul class="featured-posts">
 						<?php
 						global $post;
-						$args = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'category_name' => 'life' );
+						$args = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'category_name' => 'home' );
 						$postslist = get_posts( $args );
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post ); ?> 
