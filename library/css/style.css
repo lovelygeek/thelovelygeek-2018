@@ -1644,11 +1644,11 @@ COMMENT STYLES
     /* variations */
     /* change number for different depth */ }
     .comment .children .bypostauthor {
-      background: #f2fafb !important; }
+      background: #f2fafb; }
   .comment.comment {
     background: #fff;
     padding: 20px; }
-  .comment.comment-author-admin {
+  .comment.bypostauthor {
     background: #f2fafb; }
 
 /* comment meta */

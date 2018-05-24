@@ -841,7 +841,7 @@ COMMENT STYLES
         /* change number for different depth */
         .byuser {}
 
-        .bypostauthor {background:$tlg-lightest-aqua!important;}
+        .bypostauthor {background:$tlg-lightest-aqua;}
 
         .comment-author-admin {}
     }
@@ -877,11 +877,11 @@ COMMENT STYLES
 
     &.pingback {}
 
-    &.bypostauthor {}
+    &.bypostauthor {background:$tlg-lightest-aqua;}
 
     &.comment-author {}
 
-    &.comment-author-admin {background:$tlg-lightest-aqua;}
+    &.comment-author-admin {}
 
     &.thread-alt {}
 
