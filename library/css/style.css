@@ -1092,7 +1092,7 @@ body .gform_wrapper .gform_body .gform_fields .gfield input, body .gform_wrapper
 .search-form-outer input[type="search"] {
   background-color: #E5F5F6;
   border: none;
-  height: 40px; }
+  min-height: 40px; }
 
 #commentform label, .gform_wrapper .top_label .gfield_label {
   font-family: "brandon-grotesque", sans-serif;

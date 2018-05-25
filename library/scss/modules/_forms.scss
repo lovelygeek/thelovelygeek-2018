@@ -176,7 +176,7 @@ body .gform_wrapper .gform_body .gform_fields .gfield  input, body .gform_wrappe
 .search-form-outer input[type="search"] {
 	background-color:$tlg-light-aqua;
 	border:none;
-	height:40px;
+	min-height:40px;
 }
 
 #commentform label, .gform_wrapper .top_label .gfield_label {font-family:$sans; text-transform:uppercase; font-size:0.875em;}
