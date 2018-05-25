@@ -69,6 +69,24 @@
 		"oAP": "\/comments.php",
 		"oF": 0
 		},
+	"\/favicon.ico": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/favicon.ico",
+		"oF": 0
+		},
+	"\/favicon.png": {
+		"ft": 32768,
+		"iS": 35525,
+		"oA": 0,
+		"oAP": "\/favicon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/footer.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -650,8 +668,8 @@
 		"oA": 0,
 		"oAP": "\/library\/images\/spotlight-shop@3x.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -661,8 +679,8 @@
 		"oA": 0,
 		"oAP": "\/library\/images\/spotlight-studio@3x.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
