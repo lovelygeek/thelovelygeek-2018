@@ -170,11 +170,11 @@ input[type="submit"] {
 
 body .gform_wrapper .gform_body ul li {background:none; padding:0;}
 
-body .gform_wrapper .gform_body .gform_fields .gfield  input, 
+body .gform_wrapper .gform_body .gform_fields .gfield  input, body .gform_wrapper .gform_body .gform_fields .gfield  textarea, body .gform_wrapper .gform_body .gform_fields .gfield  select, 
 #commentform textarea, #commentform input[type="text"],
 #commentform input[type="email"], #commentform input[type="url"],
 .search-form-outer input[type="search"] {
-	background:$tlg-light-aqua;
+	background-color:$tlg-light-aqua;
 	border:none;
 	height:40px;
 }
