@@ -168,15 +168,21 @@ input[type="submit"] {
 	border:0!important;
 }
 
+body .gform_wrapper .gform_body ul li {background:none; padding:0;}
+
+body .gform_wrapper .gform_body .gform_fields .gfield  input, 
 #commentform textarea, #commentform input[type="text"],
 #commentform input[type="email"], #commentform input[type="url"],
 .search-form-outer input[type="search"] {
 	background:$tlg-light-aqua;
 	border:none;
+	height:40px;
 }
 
-#commentform label {font-family:$sans; text-transform:uppercase; font-size:0.875em;}
+#commentform label, .gform_wrapper .top_label .gfield_label {font-family:$sans; text-transform:uppercase; font-size:0.875em;}
 
 #commentform p.comment-form-cookies-consent label {margin-left:5px; font-family:$serif; font-size:1em; text-transform:none;}
 
-.search-form-outer {padding-bottom:40px;}	
+.search-form-outer {padding-bottom:40px;}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_email input[type="text"] {width:100%;}	
