@@ -75,7 +75,7 @@
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post ); ?> 
 							
-								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></span></li>   
+								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo wp_html_excerpt( get_the_title(), 40, '...'  ); ?></a></span></li>   
 					
 						<?php
 						endforeach; 
@@ -87,8 +87,25 @@
 				<div class="d-1of3 t-1of3 m-all">
 					<h5>Popular Posts</h5>
 					<?php
-						if (function_exists('wpp_get_mostpopular'))
-						wpp_get_mostpopular('limit=3&range=all&order_by=views&post_type=post&thumbnail_width=50&thumbnail_height=50&stats_views=0&post_html="<li><span class=thumb>{thumb}</span> <span class=title><a href=\'{url}\'>{text_title}</a></span></li>"');
+					
+					if ( function_exists('wpp_get_mostpopular') ) {
+					
+					    $args = array(
+					        'range' => 'all',
+					        'order_by' => 'views',
+					        'limit' => 3,
+					        'post_type' => 'post',
+					        'title_length' => 40,
+					        'thumbnail_width' => 50,
+					        'thumbnail_height' => 50,
+					        'stats_views' => 0,
+					        'post_html' => '<li><span class=thumb>{thumb}</span> <span class=title><a href=\'{url}\'>{title}</a></span></li>'
+					    );
+					
+					    wpp_get_mostpopular( $args );
+					
+					}
+					
 					?>					
 				</div>	
 				
@@ -102,7 +119,7 @@
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post ); ?> 
 							
-								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></span></li>   
+								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo wp_html_excerpt( get_the_title(), 40, '...'  ); ?></a></span></li>   
 					
 						<?php
 						endforeach; 
