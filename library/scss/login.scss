@@ -29,7 +29,7 @@ Just create image at 320x84px and replace images/login-logo.png (add a @2x image
 	padding-bottom: 15px;
 	width: 320px;
 	height: 84px;
-	background: url(../images/login-logo.png) no-repeat top center; /* make sure to replace this! */
+	background: url(../images/the-lovely-geek-logo.svg) no-repeat top center; /* make sure to replace this! */
 	background-size: 320px 84px;
 	text-indent: -9999px;
 }
@@ -77,7 +77,7 @@ retina login logo
   .login h1 a {
 		width: 320px;
 		height: 84px;
-		background: url(../images/login-logo@2x.png) no-repeat top center; /* make sure to replace this! */
+		background: url(../images/the-lovely-geek-logo.svg) no-repeat top center; /* make sure to replace this! */
 		background-size: 320px 84px;
 	}
 
