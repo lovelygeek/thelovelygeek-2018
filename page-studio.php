@@ -38,8 +38,8 @@
 						<?php while( have_rows('studio_shop_grid') ): the_row(); 
 					
 							// vars
-							$image = get_sub_field('graphic');
-							$link = get_sub_field('link');
+							$image = get_sub_field('item_graphic');
+							$link = get_sub_field('item_link');
 					
 							?>
 					
