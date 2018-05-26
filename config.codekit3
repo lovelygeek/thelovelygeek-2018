@@ -1569,6 +1569,13 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/page-about.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/page-about.php",
+		"oF": 0
+		},
 	"\/page-custom-loop.php": {
 		"cB": 0,
 		"ft": 8192,
