@@ -46,7 +46,7 @@
 							?>
 					
 							<div class="grid-item d-1of2 t-1of2 m-all">
-								<p><?php echo $publication; ?><br />
+								<p><h5><?php echo $publication; ?></h5>
 					
 								<?php if( $link ): ?>
 									<a href="<?php echo $link; ?>">
