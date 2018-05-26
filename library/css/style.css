@@ -1739,7 +1739,7 @@ FOOTER STYLES
   color: #999999;
   text-transform: lowercase; }
 
-.fab, .fas, .far {
+#inner-footer .fab, #inner-footer .fas, #inner-footer .far {
   padding: 0 10px; }
 
 /* end .footer-links */
