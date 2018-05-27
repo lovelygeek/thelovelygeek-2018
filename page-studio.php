@@ -46,7 +46,7 @@
 							<div class="grid-item d-1of3 t-1of3 m-all">
 					
 								<?php if( $link ): ?>
-									<a href="<?php echo $link; ?>">
+									<a href="<?php echo $link; ?>" title="<?php echo $image['title'] ?>">
 								<?php endif; ?>
 					
 									<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />

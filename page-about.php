@@ -45,7 +45,7 @@
 							$publication = get_sub_field('publication');
 							?>
 					
-							<div class="grid-item d-1of2 t-1of2 m-all">
+							<div class="press-item d-1of2 t-1of2 m-all">
 								<p><h5><?php echo $publication; ?></h5>
 					
 								<?php if( $link ): ?>
