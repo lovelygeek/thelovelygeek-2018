@@ -40,15 +40,11 @@
 							// vars
 							$image = get_sub_field('product_image');
 							$link = get_sub_field('link');
-							$name = get_sub_field('product_name');
-							$price = get_sub_field('price');
 							?>
 					
 							<div class="grid-item d-1of4 t-1of4 m-all">
 								
 								<a href="<?php echo $link; ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" /></a>
-								<h5><?php echo $price; ?></h5>
-								<a href="<?php echo $link; ?>"><?php echo $name; ?></a>
 					
 							</div>
 					
