@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Studio Page
+ Template Name: Shop Page
  *
  * This is the base custom page template. 
  * 
@@ -31,29 +31,24 @@
 					<?php // Edit the loop in /templates/loop. Or roll your own. ?>
 					<?php get_template_part( 'templates/loop'); ?>
 					
-					<?php if( have_rows('studio_grid') ): ?>
+					<?php if( have_rows('shop_grid') ): ?>
 					
-						<div id="inner-spotlight" class="m-all t-all d-all cf">
+						<div id="shop-grid" class="m-all t-all d-all cf">
 					
-						<?php while( have_rows('studio_grid') ): the_row(); 
+						<?php while( have_rows('shop_grid') ): the_row(); 
 					
 							// vars
-							$image = get_sub_field('item_graphic');
-							$link = get_sub_field('item_link');
-					
+							$image = get_sub_field('product_image');
+							$link = get_sub_field('link');
+							$name = get_sub_field('product_name');
+							$price = get_sub_field('price');
 							?>
 					
-							<div class="grid-item d-1of3 t-1of3 m-all">
-					
-								<?php if( $link ): ?>
-									<a href="<?php echo $link; ?>">
-								<?php endif; ?>
-					
-									<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
-					
-								<?php if( $link ): ?>
-									</a>
-								<?php endif; ?>
+							<div class="grid-item d-1of4 t-1of4 m-all">
+								
+								<a href="<?php echo $link; ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" /></a>
+								<h5><?php echo $price; ?></h5>
+								<a href="<?php echo $link; ?>"><?php echo $name; ?></a>
 					
 							</div>
 					
@@ -68,7 +63,6 @@
 		</div>
 
 	</div>
-	
 
 
 

@@ -1397,9 +1397,15 @@ article.post, #spotlight, article.page, article#post-not-found {
   margin-bottom: 40px;
   padding: 1em; }
 
-article .inner-article, #inner-spotlight, .inner-page {
+article .inner-article, #inner-spotlight, .inner-page, #shop-grid {
   background-color: #fff;
   padding: 1.875em; }
+
+#shop-grid {
+  text-align: center; }
+
+#shop-grid .grid-item {
+  padding: 10px; }
 
 .post-content p.header-category, .post-content h1 {
   text-align: left; }
@@ -1416,6 +1422,9 @@ article .inner-article, #inner-spotlight, .inner-page {
 
 .grid-item img {
   padding: 15px; }
+
+#shop-grid .grid-item img {
+  margin-bottom: -30px; }
 
 .header-category {
   text-align: center;
