@@ -44,7 +44,7 @@
 					
 							<div class="grid-item d-1of4 t-1of4 m-all">
 								
-								<a href="<?php echo $link; ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" /></a>
+								<a href="<?php echo $link; ?>" title="<?php echo $image['title'] ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" /></a>
 					
 							</div>
 					
