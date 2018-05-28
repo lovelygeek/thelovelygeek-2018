@@ -130,6 +130,22 @@ duplicate one of the lines in the array and name it according to your
 new image size.
 */
 
+
+/************* ADD FEATURED IMG TO RSS FEED *********************/
+
+function featuredtoRSS($content) {
+global $post;
+if ( has_post_thumbnail( $post->ID ) ){
+$content = '<div>' . get_the_post_thumbnail( $post->ID, 'medium', array( 'style' => 'margin-bottom: 15px;' ) ) . '</div>' . $content; // Medium resolution (default 300px x 300px max)
+}
+return $content;
+}
+ 
+add_filter('the_excerpt_rss', 'featuredtoRSS');
+add_filter('the_content_feed', 'featuredtoRSS');
+
+
+
 /************* FEAT IMG COLUMN IN ADMIN *********************/
 // GET FEATURED IMAGE
 function ST4_get_featured_image($post_ID) {
