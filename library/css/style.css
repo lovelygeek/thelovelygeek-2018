@@ -1570,6 +1570,12 @@ article#post-not-found h1 {
     height: auto;
     margin: 0 0 30px 0; }
 
+#iubenda_policy ul li {
+  background: none; }
+
+#iubenda_policy .wrap {
+  width: auto; }
+
 /* end .entry-content */
 .wp-caption {
   /* images inside wp-caption */
