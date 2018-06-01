@@ -37,6 +37,8 @@
         <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
             <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php endif; ?>
+        
+        <link type="text/plain" rel="author" href="https://thelovelygeek.com/humans.txt" />
 
 		<?php // put font scripts like Typekit here ?>
 			<script>
