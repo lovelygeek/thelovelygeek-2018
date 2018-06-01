@@ -91,7 +91,7 @@
 					if ( function_exists('wpp_get_mostpopular') ) {
 					
 					    $args = array(
-					        'range' => 'all',
+					        'range' => 'last30days',
 					        'order_by' => 'views',
 					        'limit' => 3,
 					        'post_type' => 'post',
