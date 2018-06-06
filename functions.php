@@ -136,7 +136,7 @@ new image size.
 function featuredtoRSS($content) {
 global $post;
 if ( has_post_thumbnail( $post->ID ) ){
-$content = '<div>' . get_the_post_thumbnail( $post->ID, 'medium', array( 'style' => 'margin-bottom: 15px;' ) ) . '</div>' . $content; // Medium resolution (default 300px x 300px max)
+$content = '<div>' . get_the_post_thumbnail( $post->ID, 'plate-image-600', array( 'style' => 'margin-bottom: 15px;' ) ) . '</div>' . $content; // plate-image-600 is 600x600px
 }
 return $content;
 }
