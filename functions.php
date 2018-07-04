@@ -351,7 +351,7 @@ new GW_Email_Domain_Validator( array(
     'form_id' => 1,
     'field_id' => 2,
     'domains' => array( 'beardoholic.com' ),
-    'validation_message' => __( 'Oh no! <strong>%s</strong> email accounts are not eligible for this form. Perhaps you should stop being so spammy!' ),
+    'validation_message' => __( 'Oh no! Your email is not eligible for this form. Perhaps you should stop being so spammy! 🐷' ),
     'mode' => 'ban'
 ) );
 
