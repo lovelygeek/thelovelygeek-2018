@@ -130,6 +130,18 @@ duplicate one of the lines in the array and name it according to your
 new image size.
 */
 
+/************* change default oEmbed Width Size *********************/
+
+if ( ! isset( $content_width ) ) $content_width = 1024;
+
+
+// Customize oEmbed markup
+function shapeSpace_oembed_html($html, $url, $attr, $post_id) {
+	return '<div class="oembed">'. $html .'</div>';
+}
+add_filter('embed_oembed_html', 'shapeSpace_oembed_html', 99, 4);
+
+
 
 /************* ADD FEATURED IMG TO RSS FEED *********************/
 
