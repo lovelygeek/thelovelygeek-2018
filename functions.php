@@ -132,7 +132,13 @@ new image size.
 
 /************* change default oEmbed Width Size *********************/
 
-if ( ! isset( $content_width ) ) $content_width = 1024;
+add_filter( 'embed_defaults', 'wpse_76102_new_embed_size' );
+
+function wpse_76102_new_embed_size()
+{
+    // adjust these pixel values to your needs
+    return array( 'width' => 1600, 'height' => 3229 );
+}
 
 
 // Customize oEmbed markup
