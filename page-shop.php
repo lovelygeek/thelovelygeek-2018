@@ -31,35 +31,28 @@
 					<?php // Edit the loop in /templates/loop. Or roll your own. ?>
 					<?php get_template_part( 'templates/loop'); ?>
 					
-					<?php if( have_rows('shop_grid') ): ?>
+					<?php if( have_rows('shop_layout') ):
 					
-						<div id="shop-grid" class="m-all t-all d-all cf">
+						while ( have_rows('shop_layout') ): the_row();
+							
+							if( get_row_layout() == 'shop_category_heading' ):
 					
-						<?php while( have_rows('shop_grid') ): the_row(); 
+								include 'templates/shop-heading.php';
 					
-							// vars
-							$image = get_sub_field('product_image');
-							$link = get_sub_field('link');
-							?>
+							elseif( get_row_layout() == 'shop_products' ):
 					
-							<div class="grid-item d-1of4 t-1of4 m-all">
-								
-								<a href="<?php echo $link; ?>" title="<?php echo $image['title'] ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" /></a>
+								include 'templates/shop-products.php';
 					
-							</div>
+							endif;
 					
-						<?php endwhile; ?>
+						endwhile;
 					
-						</div>
-					
-					<?php endif; ?>
+					endif;?>	
 
 				</main>
 
 		</div>
 
 	</div>
-
-
 
 <?php get_footer(); ?>
