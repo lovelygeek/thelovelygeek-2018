@@ -11,7 +11,7 @@
 	
 			<section class="entry-content cf" itemprop="articleBody">
 				
-				<?php the_post_thumbnail('single-post-feat-img', array('class' => 'aligncenter')); ?>				
+				<?php the_post_thumbnail('', array('class' => 'aligncenter')); ?>				
 				
 				<?php the_content(); ?>
 			

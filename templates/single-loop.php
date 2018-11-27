@@ -15,7 +15,7 @@
         <section class="entry-content cf" itemprop="articleBody">
 
 				<?php if ( has_post_thumbnail() ) {
-				the_post_thumbnail('single-post-feat-img', array('class' => 'aligncenter'));
+				the_post_thumbnail('', array('class' => 'aligncenter'));
 				} else { ?>
 				<img src="http://via.placeholder.com/592x776" class="aligncenter">
 				<?php } ?>		        

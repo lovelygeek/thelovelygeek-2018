@@ -5,7 +5,7 @@
 			
 			<div id="feat-img" class="d-1of2 t-1of2 m-all">
 				<?php if ( has_post_thumbnail() ) {
-				the_post_thumbnail('blog-listing-feat-img');
+				the_post_thumbnail('');
 				} else { ?>
 				<img src="http://via.placeholder.com/455x596">
 				<?php } ?>								
