@@ -273,6 +273,9 @@ GLOBAL STYLES
 .post-content {
   padding: 40px 0 0 40px; }
 
+#shop-grid .grid-item {
+  min-height: 250px; }
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -452,6 +455,9 @@ article.post {
 
 .inner-page {
   padding: 3em 13em; }
+
+#shop-grid .grid-item {
+  min-height: 300px; }
 
 /*
 you can call the larger styles if you want, but there's really no need
