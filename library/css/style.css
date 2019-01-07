@@ -1428,7 +1428,8 @@ article .inner-article, #inner-spotlight, .inner-page, #shop-grid {
   margin-bottom: -30px; }
 
 .press-item {
-  padding: 0 30px 0 20px; }
+  padding: 0 30px 0 20px;
+  min-height: 130px; }
 
 .header-category {
   text-align: center;
