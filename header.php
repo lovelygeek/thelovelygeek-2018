@@ -18,10 +18,10 @@
 		<meta name=viewport content="width=device-width, initial-scale=1">
 
 		<?php // https://sympli.io/blog/2017/02/15/heres-everything-you-need-to-know-about-favicons-in-2017/ ?>
-		<link rel="apple-touch-icon" href="older-iPhone.png"> <?php // 120px ?>  
-		<link rel="apple-touch-icon" sizes="180x180" href="iPhone-6-Plus.png">  
-		<link rel="apple-touch-icon" sizes="152x152" href="iPad-Retina.png">  
-		<link rel="apple-touch-icon" sizes="167x167" href="iPad-Pro.png">
+		<link rel="apple-touch-icon" href="<?php echo get_theme_file_uri(); ?>/library/images/older-iPhone.png"> <?php // 120px ?>  
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_theme_file_uri(); ?>/library/images/iPhone-6-Plus.png">  
+		<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_theme_file_uri(); ?>/library/images/iPad-Retina.png">  
+		<link rel="apple-touch-icon" sizes="167x167" href="<?php echo get_theme_file_uri(); ?>/library/images/iPad-Pro.png">
 
 		<?php // favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
 		<link rel="icon" href="<?php echo get_theme_file_uri(); ?>/favicon.png">
