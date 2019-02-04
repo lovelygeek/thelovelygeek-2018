@@ -420,7 +420,7 @@ function plate_comments( $comment, $args, $depth ) {
                   $bgauthemail = get_comment_author_email();
                 ?>
 
-                <img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_theme_file_uri(); ?>/library/images/nothing.gif" />
+                <img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_theme_file_uri(); ?>/library/images/custom-gravatar.jpg" />
 
                 <?php // end custom gravatar call ?>
 
