@@ -47,10 +47,11 @@ $sb-red:           #f23e2f;
 $sb-black:         #111111;
 $sb-grey:          #808080;
 
-$tlg-gold:         #BB8A40;
-$tlg-light-aqua:   #E5F5F6;
-$tlg-main-aqua:	   #80CDD4;
+$tlg-gold:         #C6893F; /* PMS 7510 c */
+$tlg-main-aqua:	   #88DBDF; /* PMS 318 c */
+$tlg-light-aqua:   rgba($tlg-main-aqua, 0.20);
 $tlg-lightest-aqua: #f2fafb;
+$tlg-dark-aqua:		#009CA6; /* PMS 320 c */
 
 $link-color:        $tlg-gold;
 $link-hover:        darken($link-color, 9%);

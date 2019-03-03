@@ -30,7 +30,7 @@ body {
     font-size: 106.3%;
     font-family: $serif;
     line-height: 1.75;
-    background-color:#E5F5F6;
+    background-color: $tlg-light-aqua;
 
     // Adjust for your type
     -webkit-font-smoothing: antialiased;
@@ -532,7 +532,7 @@ article#post-not-found h1 {
 				font-weight: 500;
 				text-align: center;
 				color:$white;
-				background-color:$tlg-main-aqua;
+				background-color:$tlg-dark-aqua;
 				border-radius:50%;
 				padding:5px;	 
 				content: counter(li-counter);

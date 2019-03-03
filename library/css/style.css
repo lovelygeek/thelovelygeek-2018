@@ -464,6 +464,9 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
+/* PMS 7510 c */
+/* PMS 318 c */
+/* PMS 320 c */
 /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -925,15 +928,15 @@ http://thesassway.com/intermediate/understanding-placeholder-selectors
   font-family: "brandon-grotesque", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
-  background: #BB8A40;
+  background: #C6893F;
   color: #fff !important; }
   .button:hover, .blue-button:hover, input:hover[type="submit"], .previous_post_link a:hover, .next_post_link a:hover, .button:focus, .blue-button:focus, input:focus[type="submit"], .previous_post_link a:focus, .next_post_link a:focus {
-    background-color: #997134; }
+    background-color: #a67131; }
   .button:active, .blue-button:active, input:active[type="submit"], .previous_post_link a:active, .next_post_link a:active {
     top: 1px; }
 
 .button {
-  background: #BB8A40; }
+  background: #C6893F; }
   .button a {
     color: #fff !important;
     font-family: "brandon-grotesque", sans-serif;
@@ -1063,7 +1066,7 @@ button.search-submit {
   top: -5px;
   left: 0px;
   height: 40px;
-  color: #BB8A40; }
+  color: #C6893F; }
 
 input[type="search"] {
   width: 100%;
@@ -1090,7 +1093,7 @@ body .gform_wrapper .gform_body .gform_fields .gfield input, body .gform_wrapper
 #commentform textarea, #commentform input[type="text"],
 #commentform input[type="email"], #commentform input[type="url"],
 .search-form-outer input[type="search"] {
-  background-color: #E5F5F6;
+  background-color: rgba(136, 219, 223, 0.2);
   border: none;
   min-height: 40px; }
 
@@ -1144,7 +1147,7 @@ body {
   font-size: 106.3%;
   font-family: "jubilat", sans-serif;
   line-height: 1.75;
-  background-color: #E5F5F6;
+  background-color: rgba(136, 219, 223, 0.2);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -1155,8 +1158,8 @@ img {
 hr {
   border: 0;
   height: 1px;
-  background: #80CDD4;
-  background-image: linear-gradient(to right, #E5F5F6, #80CDD4, #E5F5F6); }
+  background: #88DBDF;
+  background-image: linear-gradient(to right, rgba(136, 219, 223, 0.2), #88DBDF, rgba(136, 219, 223, 0.2)); }
 
 /*********************
 LAYOUT & GRID STYLES
@@ -1169,13 +1172,13 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #BB8A40;
+  color: #C6893F;
   text-decoration: none;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #997134; }
+    color: #a67131; }
   a:link, a:visited:link {
     /*
         this highlights links on iPhones/iPads.
@@ -1275,7 +1278,7 @@ ul, ol {
   list-style-type: none; }
 
 ul.wpp-list li, ul.featured-posts li {
-  border-bottom: 1px solid #E5F5F6;
+  border-bottom: 1px solid rgba(136, 219, 223, 0.2);
   padding: 20px;
   list-style: none; }
 
@@ -1306,7 +1309,7 @@ img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {
   .related-posts .related-post img {
     margin-bottom: -26px; }
   .related-posts .related-post p {
-    background: #80CDD4;
+    background: #88DBDF;
     padding: 30px;
     min-height: 120px; }
   .related-posts .related-post p a {
@@ -1350,7 +1353,7 @@ style a page via class
 /* no results search page */
 /* individual paged search (i.e. body.search-paged-3) */
 .error404 {
-  background: #E5F5F6; }
+  background: rgba(136, 219, 223, 0.2); }
 
 /* 404 page */
 .single .hentry {
@@ -1507,7 +1510,7 @@ article#post-not-found h1 {
         font-weight: 500;
         text-align: center;
         color: #fff;
-        background-color: #80CDD4;
+        background-color: #009CA6;
         border-radius: 50%;
         padding: 5px;
         content: counter(li-counter);
@@ -1545,7 +1548,7 @@ article#post-not-found h1 {
       position: absolute;
       left: -30px;
       top: -45px;
-      color: #80CDD4; }
+      color: #88DBDF; }
   .entry-content dd {
     margin-left: 0;
     font-size: 0.9em;
@@ -1592,7 +1595,7 @@ article#post-not-found h1 {
 /* end .gallery */
 /* gallery caption styles */
 .post-navigation p {
-  background-color: #BB8A40;
+  background-color: #C6893F;
   color: #fff; }
 
 .previous_post_link {
