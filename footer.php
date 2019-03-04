@@ -2,7 +2,7 @@
 				<div id="inner-subfooter" class="wrap cf">
 					<h3>Follow Me on Instagram</h3>
 					<p><a href="https://www.instagram.com/thelovelygeek/">@TheLovelyGeek</a></p>
-					<?php echo do_shortcode('[jr_instagram id="2"]'); ?>
+					<?php echo do_shortcode('[instagram-feed]'); ?>
 				</div>	
 			</footer>
 			
