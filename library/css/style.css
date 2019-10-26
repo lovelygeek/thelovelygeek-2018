@@ -930,9 +930,9 @@ http://thesassway.com/intermediate/understanding-placeholder-selectors
   font-weight: 600;
   background: #C6893F;
   color: #fff !important; }
-  .button:hover, .blue-button:hover, input:hover[type="submit"], .previous_post_link a:hover, .next_post_link a:hover, .button:focus, .blue-button:focus, input:focus[type="submit"], .previous_post_link a:focus, .next_post_link a:focus {
+  .button:hover, .blue-button:hover, input[type="submit"]:hover, .previous_post_link a:hover, .next_post_link a:hover, .button:focus, .blue-button:focus, input[type="submit"]:focus, .previous_post_link a:focus, .next_post_link a:focus {
     background-color: #a67131; }
-  .button:active, .blue-button:active, input:active[type="submit"], .previous_post_link a:active, .next_post_link a:active {
+  .button:active, .blue-button:active, input[type="submit"]:active, .previous_post_link a:active, .next_post_link a:active {
     top: 1px; }
 
 .button {
@@ -1298,6 +1298,9 @@ img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {
   border-radius: 50%;
   max-width: 50px;
   max-height: 50px; }
+
+.wpp-post-title {
+  font-weight: normal; }
 
 .related-posts {
   background: #fff;

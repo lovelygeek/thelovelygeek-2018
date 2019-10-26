@@ -223,6 +223,10 @@ ul.featured-posts li img {
     
 img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {vertical-align: middle; border-radius: 50%; max-width: 50px; max-height:50px;} 
 
+.wpp-post-title {
+    font-weight: normal;
+}
+
 .related-posts {
 	background:$white;
 	padding:0px 40px 30px 50px;
