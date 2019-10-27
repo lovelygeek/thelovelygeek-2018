@@ -1302,6 +1302,9 @@ img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {
 .wpp-post-title {
   font-weight: normal; }
 
+.wpp-list li {
+  margin-bottom: auto; }
+
 .related-posts {
   background: #fff;
   padding: 0px 40px 30px 50px;
