@@ -379,16 +379,30 @@ COMMENTS
 Blah blah blah.
 *********************/
 
+// Adding a custom gravatar. Customize this to add your own. Or delete it. It's totally up to you.
+add_filter( 'avatar_defaults', 'new_default_avatar' );
 
+function new_default_avatar ( $avatar_defaults ) {
+
+    //Set the URL where the image file for your avatar is located
+    $new_avatar_url = get_stylesheet_directory_uri() . '/library/images/custom-gravatar.png';
+
+    // var_dump($new_avatar_url);
+
+    //Set the text that will appear to the right of your avatar in Settings>>Discussion
+    $avatar_defaults[$new_avatar_url] = 'Custom Avatar';
+
+    return $avatar_defaults;
+}
 
 // Comment Layout
 function plate_comments( $comment, $args, $depth ) {
 
    $GLOBALS['comment'] = $comment; ?>
 
-    <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
+    <div id="comment-<?php comment_ID(); ?>" <?php comment_class('comment-wrap'); ?>>
 
-        <article class="cf">
+        <article class="article-comment">
 
             <header class="comment-author vcard">
 
@@ -406,21 +420,25 @@ function plate_comments( $comment, $args, $depth ) {
                   $bgauthemail = get_comment_author_email();
                 ?>
 
-                <img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_theme_file_uri(); ?>/library/images/custom-gravatar.jpg" />
+                <img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=256" class="load-gravatar avatar avatar-48 photo" height="64" width="64" src="<?php echo get_theme_file_uri(); ?>/library/images/custom-gravatar.png" />
 
                 <?php // end custom gravatar call ?>
 
-                <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'platetheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'platetheme' ),'  ','') ) ?>
+                <div class="comment-meta">
 
-                <time datetime="<?php echo comment_time('Y-m-j'); ?>">
+                    <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'platetheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'platetheme' ),'  ','') ) ?>
 
-                    <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'platetheme' )); ?> </a>
+                    <time datetime="<?php echo comment_time('Y-m-j'); ?>">
 
-                </time>
+                        <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'platetheme' )); ?> </a>
+
+                    </time>
+                
+                </div>
 
             </header>
 
-            <?php if ($comment->comment_approved == '0') : ?>
+            <?php if ( $comment->comment_approved == '0' ) : ?>
 
                 <div class="alert alert-info">
 
@@ -430,20 +448,23 @@ function plate_comments( $comment, $args, $depth ) {
 
             <?php endif; ?>
 
-            <section class="comment_content cf">
+            <section class="comment-content">
 
                 <?php comment_text() ?>
 
             </section>
 
-            <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+            <div class="comment-reply">
 
+                <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                
+            </div>
+            
         </article>
 
     <?php // </li> is added by WordPress automatically ?>
 
-<?php
-} // don't remove this bracket!
+<?php } // don't remove this bracket!
 
 
 /*
@@ -457,7 +478,6 @@ Use this to add Google or other web fonts.
 //     wp_enqueue_style( 'plate-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,' );
 
 // }
-
 
 /****************************************
 * SCHEMA *
