@@ -38,8 +38,12 @@
 								<header class="article-header">
 									
 									<?php get_template_part( 'templates/category-tags'); ?>
-						
-									<?php get_template_part( 'templates/header', 'title'); ?>
+														
+									<h1 class="page-title" itemprop="headline">
+								
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+								
+									</h1>
 						
 								</header>
 						
