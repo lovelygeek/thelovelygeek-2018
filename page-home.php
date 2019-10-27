@@ -99,7 +99,7 @@
 					        'order_by' => 'views',
 					        'limit' => 3,
 					        'post_type' => 'post',
-					        'title_length' => 40,
+					        'title_length' => 35,
 					        'thumbnail_width' => 50,
 					        'thumbnail_height' => 50,
 					        'stats_views' => 0,
