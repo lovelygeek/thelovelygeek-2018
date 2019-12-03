@@ -52,7 +52,10 @@
 			  })(document);
 			</script>
 			
-			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">		
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+			
+			<link rel="stylesheet" href="https://use.typekit.net/adq4pkf.css">
+			<link href="https://fonts.googleapis.com/css?family=Prata|Rozha+One&display=swap" rel="stylesheet">		
 		<?php // end fonts ?>
 
 		<?php // wordpress head functions ?>

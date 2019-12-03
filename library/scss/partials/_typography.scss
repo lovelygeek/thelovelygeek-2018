@@ -72,9 +72,11 @@ FONT STACKS
 // Let's use OS system fonts and let the system do the work. We've included all the major desktop and mobile OS's.
 // See here: https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/. 
 
-$sans: "brandon-grotesque",sans-serif;
+$sans: "classico-urw", sans-serif;
 
-$serif: "jubilat",sans-serif;
+$serif: 'Prata', serif;
+
+$numerals: 'Rozha One', serif;
 
 /*
  Commented out since WP uses system fonts now but if you can't let go I won't be upset. 

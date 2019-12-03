@@ -28,7 +28,7 @@ html {
 body {
     color: $text-color;
     font-size: 106.3%;
-    font-family: $serif;
+    font-family: $sans;
     line-height: 1.75;
     background-color: $tlg-light-aqua;
 
@@ -118,7 +118,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 h1, .h1 {
     margin-top: 0;
     margin-bottom: 0.319em;
-    font-size: 3.157em;
+    font-size: 2.75em;
     font-family: $serif;
     font-weight:300;
 }
@@ -131,7 +131,8 @@ h2, .h2 {
 }
 
 h3, .h3 {
-    font-size: 1.777em;
+	font-family: $serif;
+    font-size: 2.125em;
     font-weight:300;
 }
 
@@ -432,7 +433,7 @@ article .inner-article, #inner-spotlight, .inner-page, #shop-grid {
 
 .header-category {
 	text-align:center;
-    font-weight:600;
+    font-weight:500;
     font-family:$sans;
     text-transform:uppercase;
     
@@ -529,19 +530,21 @@ article#post-not-found h1 {
 			
 			&:before {
 				position: absolute;
-				top: 0.2em;
-				left: -2em;
-				width: 1em;
+				top: 0.7em;
+				left: -3em;
+				width: 5em;
 				height: 1em;	     
 				font-size: 1em;
 				line-height: 1;
-				font-weight: 500;
+				font-family: $numerals;
+/*
 				text-align: center;
 				color:$white;
 				background-color:$tlg-dark-aqua;
 				border-radius:50%;
 				padding:5px;	 
-				content: counter(li-counter);
+*/
+				content: "NO. " counter(li-counter);
 				counter-increment: li-counter;						
 			}
         }
