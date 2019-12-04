@@ -458,7 +458,7 @@ article#post-not-found h1 {
 
 .entry-title {}
 
-.archive-title {font-style:normal;}
+.archive-title {font-family: $serif; font-style:normal;}
 
 .taxonomy-description {text-align:center; padding: 0 50px;}
 
@@ -500,7 +500,7 @@ article#post-not-found h1 {
     ul, ol, table, dl {}
 
     ul, ol {
-	    margin: 0 0 1.5em 1.75em;
+	    margin: 0 0 1.5em 0.5em;
 	    list-style-type: none;
 	    
         li {padding:0.25em 0;}
@@ -518,23 +518,23 @@ article#post-not-found h1 {
     ol {
 		list-style-type: none;
 		margin: 0 0 2em 0;
-		margin-left: 3em;
+		margin-left: 4.5em;
 		padding: 0;
 		counter-reset: li-counter;	    
         
         li {
 	        position: relative;
 			margin-bottom: 5px;
-			padding-left: 0.5em;
+			padding-left: 0em;
 			min-height: 0.5em;
 			
 			&:before {
 				position: absolute;
-				top: 0.7em;
+				top: 0.5em;
 				left: -3em;
 				width: 5em;
 				height: 1em;	     
-				font-size: 1em;
+				font-size: 1.2em;
 				line-height: 1;
 				font-family: $numerals;
 /*
@@ -586,11 +586,10 @@ article#post-not-found h1 {
     }
 
     blockquote {
+	    font-family: $serif;
 		margin: 0 0 1.5em 1.75em;
 		padding: 0 0 0 0.75em;
-		font-style: italic;
 		color: $meta-gray;
-		font-size:112.5%;
 		position: relative;	    
         
         &:before {

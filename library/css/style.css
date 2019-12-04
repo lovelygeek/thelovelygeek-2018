@@ -1461,6 +1461,7 @@ article#post-not-found h1 {
   text-align: left; }
 
 .archive-title {
+  font-family: "Prata", serif;
   font-style: normal; }
 
 .taxonomy-description {
@@ -1486,7 +1487,7 @@ article#post-not-found h1 {
     but it's up to you. Feel free to change it up.
     */ }
   .entry-content ul, .entry-content ol {
-    margin: 0 0 1.5em 1.75em;
+    margin: 0 0 1.5em 0.5em;
     list-style-type: none; }
     .entry-content ul li, .entry-content ol li {
       padding: 0.25em 0; }
@@ -1498,21 +1499,21 @@ article#post-not-found h1 {
   .entry-content ol {
     list-style-type: none;
     margin: 0 0 2em 0;
-    margin-left: 3em;
+    margin-left: 4.5em;
     padding: 0;
     counter-reset: li-counter; }
     .entry-content ol li {
       position: relative;
       margin-bottom: 5px;
-      padding-left: 0.5em;
+      padding-left: 0em;
       min-height: 0.5em; }
       .entry-content ol li:before {
         position: absolute;
-        top: 0.7em;
+        top: 0.5em;
         left: -3em;
         width: 5em;
         height: 1em;
-        font-size: 1em;
+        font-size: 1.2em;
         line-height: 1;
         font-family: "Rozha One", serif;
         /*
@@ -1544,11 +1545,10 @@ article#post-not-found h1 {
     .entry-content th:last-child {
       border-right: 0; }
   .entry-content blockquote {
+    font-family: "Prata", serif;
     margin: 0 0 1.5em 1.75em;
     padding: 0 0 0 0.75em;
-    font-style: italic;
     color: #999999;
-    font-size: 112.5%;
     position: relative; }
     .entry-content blockquote:before {
       display: block;
@@ -2106,7 +2106,9 @@ be seen on the Desktop.
   .inner-page {
     padding: 3em 13em; }
   #shop-grid .grid-item {
-    min-height: 300px; } }
+    min-height: 300px; }
+  ul.wpp-list li, ul.featured-posts li {
+    height: 90px; } }
 
 /*********************
 LARGE VIEWING SIZE

@@ -79,7 +79,7 @@
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post ); ?> 
 							
-								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo wp_html_excerpt( get_the_title(), 40, '...'  ); ?></a></span></li>   
+								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo wp_html_excerpt( get_the_title(), 50, '...'  ); ?></a></span></li>   
 					
 						<?php
 						endforeach; 
@@ -99,7 +99,7 @@
 					        'order_by' => 'views',
 					        'limit' => 3,
 					        'post_type' => 'post',
-					        'title_length' => 30,
+					        'title_length' => 40,
 					        'thumbnail_width' => 50,
 					        'thumbnail_height' => 50,
 					        'stats_views' => 0,
@@ -123,7 +123,7 @@
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post ); ?> 
 							
-								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo wp_html_excerpt( get_the_title(), 40, '...'  ); ?></a></span></li>   
+								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo wp_html_excerpt( get_the_title(), 45, '...'  ); ?></a></span></li>   
 					
 						<?php
 						endforeach; 

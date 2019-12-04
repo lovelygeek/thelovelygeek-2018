@@ -462,6 +462,9 @@ article.post {
 #shop-grid .grid-item {
   min-height: 300px; }
 
+ul.wpp-list li, ul.featured-posts li {
+  height: 90px; }
+
 /*
 you can call the larger styles if you want, but there's really no need
 */
