@@ -1283,6 +1283,9 @@ ul.wpp-list li, ul.featured-posts li {
   padding: 20px;
   list-style: none; }
 
+.jetpack-recipe .jetpack-recipe-meta li {
+  background-image: none; }
+
 ul.featured-posts li {
   overflow: hidden;
   float: none;
