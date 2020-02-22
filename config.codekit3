@@ -540,6 +540,22 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"/library/fonts/smoothstone-regular-webfont.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/library/fonts/smoothstone-regular-webfont.woff",
+		"oF": 0
+		},
+	"/library/fonts/smoothstone-regular-webfont.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/library/fonts/smoothstone-regular-webfont.woff2",
+		"oF": 0
+		},
 	"/library/images/angle-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1747,6 +1763,14 @@
 		"oAP": "/page-custom.php",
 		"oF": 0
 		},
+	"/page-favorites.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/page-favorites.php",
+		"oF": 0
+		},
 	"/page-full.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2032,7 +2056,7 @@
 "projectAttributes": {
 	"creationDate": 541543863,
 	"displayValue": "thelovelygeek-2018",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_green",
 	"iconImageWasSetByUser": 0,
 	"lastBuiltDate": 593789305.63316

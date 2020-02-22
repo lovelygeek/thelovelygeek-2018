@@ -104,6 +104,12 @@ FONT FACE (IN YOUR FACE)
       font-style: normal;
   }
 */
+@font-face {
+  font-family: 'smooth_stoneregular';
+  src: url("../fonts/smoothstone-regular-webfont.woff2") format("woff2"), url("../fonts/smoothstone-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 /*********************
 FONT STACKS
 *********************/

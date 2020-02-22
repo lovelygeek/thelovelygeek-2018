@@ -64,6 +64,15 @@ FONT FACE (IN YOUR FACE)
   }
 */
 
+@font-face {
+    font-family: 'smooth_stoneregular';
+    src: url('../fonts/smoothstone-regular-webfont.woff2') format('woff2'),
+         url('../fonts/smoothstone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 /*********************
 FONT STACKS
@@ -77,6 +86,8 @@ $sans: "classico-urw", sans-serif;
 $serif: 'Prata', serif;
 
 $numerals: 'Rozha One', serif;
+
+$script: 'smooth_stoneregular', serif;
 
 /*
  Commented out since WP uses system fonts now but if you can't let go I won't be upset. 

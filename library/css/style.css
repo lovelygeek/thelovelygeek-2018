@@ -533,6 +533,12 @@ FONT FACE (IN YOUR FACE)
       font-style: normal;
   }
 */
+@font-face {
+  font-family: 'smooth_stoneregular';
+  src: url("../fonts/smoothstone-regular-webfont.woff2") format("woff2"), url("../fonts/smoothstone-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 /*********************
 FONT STACKS
 *********************/
@@ -1238,10 +1244,10 @@ h4, .h4 {
   text-transform: uppercase; }
 
 h5, .h5 {
-  font-size: 1em;
-  font-family: "classico-urw", sans-serif;
-  text-transform: uppercase;
-  font-weight: 600; }
+  font-size: 3.125em;
+  font-family: "smooth_stoneregular", serif;
+  text-transform: lowercase;
+  line-height: 28px; }
 
 h6, .h6 {
   font-weight: 600;
@@ -1399,7 +1405,7 @@ POSTS & CONTENT STYLES
 *********************/
 #select-categories {
   background: #fff;
-  padding: 40px; }
+  padding: 0 40px 40px 40px; }
   #select-categories h5 {
     text-align: center; }
 
@@ -1451,6 +1457,14 @@ article .inner-article, #inner-spotlight, .inner-page, #shop-grid {
   text-transform: uppercase; }
   .header-category a {
     text-decoration: none; }
+
+.inner-article .article-header p.header-category {
+  background-color: #C6893F;
+  width: fit-content;
+  padding: 5px 8px; }
+  .inner-article .article-header p.header-category a {
+    text-decoration: none;
+    color: #fff; }
 
 /* end .hentry */
 .single-title,
@@ -1763,6 +1777,8 @@ FOOTER STYLES
 
 #inner-footer, #inner-favorite-things {
   padding: 20px 0; }
+  #inner-footer .woocommerce ul.products li.product, #inner-favorite-things .woocommerce ul.products li.product {
+    margin-bottom: 1em; }
 
 .footer {
   clear: both;

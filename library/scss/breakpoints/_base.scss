@@ -144,10 +144,10 @@ h4, .h4 {
 }
 
 h5, .h5 {
-    font-size: 1em;
-    font-family:$sans;
-    text-transform:uppercase;
-    font-weight:600;
+    font-size: 3.125em;
+    font-family:$script;
+    text-transform:lowercase;
+    line-height:28px;
 }
 
 h6, .h6 {
@@ -386,9 +386,10 @@ POSTS & CONTENT STYLES
 
 #select-categories {
 	background:$white; 
-	padding:40px;
+	padding: 0 40px 40px 40px;
 	
-	h5 {text-align:center;}
+	h5 {
+		text-align:center;}
 }
 
 #content {margin-top:10px;}
@@ -439,8 +440,16 @@ article .inner-article, #inner-spotlight, .inner-page, #shop-grid {
     font-family:$sans;
     text-transform:uppercase;
     
-    a {text-decoration:none;}	
-	}
+    	a {text-decoration:none;}	
+}
+
+.inner-article .article-header p.header-category {
+	background-color: $tlg-gold;
+    width: fit-content;
+    padding: 5px 8px;
+    
+    a {text-decoration:none; color:$white;}	
+}
 
 /* end .hentry */
 
@@ -1060,6 +1069,8 @@ FOOTER STYLES
 
 #inner-footer, #inner-favorite-things {
 	padding: 20px 0;
+	
+	.woocommerce ul.products li.product {margin-bottom:1em;}
 }		
 
 .footer {

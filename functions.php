@@ -195,6 +195,27 @@ add_action('manage_posts_custom_column', 'ST4_columns_content', 10, 2);
 add_filter('manage_page_posts_columns', 'ST4_columns_head', 10);
 add_action('manage_page_posts_custom_column', 'ST4_columns_content', 10, 2);
 
+/************* WOOCOMMERCE OVERRIDES *********************/
+
+// Remove default link around product entries
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+
+// Re-add links and check for affiliate link
+function myprefix_woocommerce_template_loop_product_link_open() {
+	$affiliate_link = get_post_meta( get_the_ID(), '_product_url', true );
+	if ( $affiliate_link ) {
+		echo '<a href="'. esc_url( $affiliate_link ) .'" class="woocommerce-LoopProduct-link" target="_blank">';
+	} else {
+		echo '<a href="'. get_the_permalink() .'" class="woocommerce-LoopProduct-link">';
+	}
+}
+add_action( 'woocommerce_before_shop_loop_item', 'myprefix_woocommerce_template_loop_product_link_open', 10 );
+
+// Removes add to cart button
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
+
+
+
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
@@ -372,6 +393,8 @@ new GW_Email_Domain_Validator( array(
     'validation_message' => __( 'Oh no! Your email is not eligible for this form. Perhaps you should stop being so spammy! 🐷' ),
     'mode' => 'ban'
 ) );
+
+
 
 
 /*********************

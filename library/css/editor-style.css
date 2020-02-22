@@ -593,6 +593,13 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap; }
+
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: 'smooth_stoneregular';
+    src: url("../fonts/smoothstone-regular-webfont.woff2") format("woff2"), url("../fonts/smoothstone-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal; } }
   body#tinymce.wp-editor p {
     -ms-word-wrap: break-word;
     word-wrap: break-word;

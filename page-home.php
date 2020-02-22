@@ -70,11 +70,11 @@
 			
 			<div id="select-categories" class="m-all t-all d-all cf">
 				<div class="d-1of3 t-1of3 m-all">
-					<h5>Home</h5>
+					<h5>web</h5>
 						<ul class="featured-posts">
 						<?php
 						global $post;
-						$args = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'category_name' => 'home' );
+						$args = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'category_name' => 'web' );
 						$postslist = get_posts( $args );
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post ); ?> 
@@ -114,11 +114,11 @@
 				</div>	
 				
 				<div class="d-1of3 t-1of3 m-all">
-					<h5>Web</h5>
+					<h5>life</h5>
 						<ul class="featured-posts">
 						<?php
 						global $post;
-						$args = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'category_name' => 'web' );
+						$args = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'category_name' => 'life' );
 						$postslist = get_posts( $args );
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post ); ?> 
@@ -140,37 +140,9 @@
 	<div class="favorite-things">
 		<div id="inner-favorite-things" class="wrap cf">
 			<h3>Some of My Favorite Things</h3>
-			<?php if( have_rows('favorite_item') ): ?>
-			
-				<ul>
-			
-				<?php while( have_rows('favorite_item') ): the_row(); 
-			
-					// vars
-					$image = get_sub_field('graphic');
-					$link = get_sub_field('link');
-			
-					?>
-			
-					<li>
-			
-						<?php if( $link ): ?>
-							<a href="<?php echo $link; ?>">
-						<?php endif; ?>
-			
-							<img src="<?php echo $image['url']; ?>" />
-			
-						<?php if( $link ): ?>
-							</a>
-						<?php endif; ?>
-			
-					</li>
-			
-				<?php endwhile; ?>
-			
-				</ul>
-			
-			<?php endif; ?>
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<?php the_content(); ?>
+				<?php endwhile; endif; ?>
 		</div>	
 	</div>	
 	
