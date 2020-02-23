@@ -30,12 +30,6 @@
 
 					<?php // Edit the loop in /templates/loop. Or roll your own. ?>
 					<?php get_template_part( 'templates/loop'); ?>
-					
-					<h3>Product Category</h3>
-					<?php echo do_shortcode('[products category="books"]'); ?>
-					
-					<h3>Product Category</h3>
-					<?php echo do_shortcode('[products category="business-tools"]'); ?>
 
 				</main>
 

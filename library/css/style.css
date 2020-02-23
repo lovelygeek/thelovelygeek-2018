@@ -1769,6 +1769,14 @@ FOOTER STYLES
     vertical-align: top;
     width: 150px; }
 
+#inner-favorite-things h3 {
+  padding-bottom: 10px; }
+
+#inner-favorite-things h3 span.script {
+  font-family: "smooth_stoneregular", serif !important;
+  font-size: 1.5em;
+  text-transform: lowercase; }
+
 #inner-subfooter {
   padding: 10px 0 40px 0; }
 

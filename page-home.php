@@ -139,7 +139,7 @@
 	
 	<div class="favorite-things">
 		<div id="inner-favorite-things" class="wrap cf">
-			<h3>Some of My Favorite Things</h3>
+			<h3>A few of my <span class="script">Favorite</span> things</h3>
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<?php the_content(); ?>
 				<?php endwhile; endif; ?>
