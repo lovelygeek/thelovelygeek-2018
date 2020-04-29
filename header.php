@@ -41,19 +41,7 @@
         <link type="text/plain" rel="author" href="https://thelovelygeek.com/humans.txt" />
 
 		<?php // put font scripts like Typekit here ?>
-			<script>
-			  (function(d) {
-			    var config = {
-			      kitId: 'adq4pkf',
-			      scriptTimeout: 3000,
-			      async: true
-			    },
-			    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-			  })(document);
-			</script>
-			
-			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-			
+			<script src="https://kit.fontawesome.com/6444b6c603.js" crossorigin="anonymous"></script>
 			<link rel="stylesheet" href="https://use.typekit.net/adq4pkf.css">
 			<link href="https://fonts.googleapis.com/css?family=Prata|Rozha+One&display=swap" rel="stylesheet">		
 		<?php // end fonts ?>

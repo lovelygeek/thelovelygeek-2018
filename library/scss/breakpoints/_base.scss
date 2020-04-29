@@ -124,10 +124,9 @@ h1, .h1 {
 }
 
 h2, .h2 {
+    font-family:$script;	
     margin-top: 0.88em;
-    font-size: 2.369em;
-    font-weight:300;
-    font-style:italic;
+    font-size: 4.750em;
 }
 
 h3, .h3 {
@@ -141,6 +140,7 @@ h4, .h4 {
     font-weight:400;
     font-family:$sans;
     text-transform:uppercase;
+    letter-spacing:2.75px;
 }
 
 h5, .h5 {
@@ -151,8 +151,11 @@ h5, .h5 {
 }
 
 h6, .h6 {
-    font-weight:600;
+    font-weight:400;
     font-size:1em;
+    letter-spacing:2px;
+    color:$tlg-dark-aqua;
+    text-transform:uppercase;
 }
 
 /*********************
@@ -384,12 +387,75 @@ style a page via class
 POSTS & CONTENT STYLES
 *********************/
 
+#hero-image {
+	background-image: url(../images/feat-img-hero@2x.png);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 15% 0;	 
+	color:$white;
+}	
+
+#intro-block, #featured-projects {background:$white;}
+
+#intro-block {padding: 2% 0;}
+
+#good-fit {
+	background-image: url(../images/stormtrooper-art-board.png);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 100px 0;	 
+	color:$white;
+	
+	h5 {color:$white; text-align:center;}
+}
+
+#featured-projects {
+	text-align:center;
+	h2 {display:none;}
+	h3 {padding-bottom: 25px;}
+	}
+
+#services-offered {
+	padding:30px 0 90px 0;
+	h3 {text-align:center; margin-bottom:40px;}
+	h5 {color:$tlg-dark-aqua; text-align:center; margin-top:10px;}
+}
+#inner-service-right, #inner-service-left {padding:20px 50px;}
+#inner-service-right {border-left:1px solid #80CDD4;}
+
+#book-cta {
+	background-color:$white;
+	text-align:center;
+	padding:50px 0;
+	h4 {margin-bottom: -60px;}
+	h2 {
+		color:$tlg-dark-aqua;
+	}
+}
+
 #select-categories {
 	background:$white; 
 	padding: 0 40px 40px 40px;
 	
 	h5 {
 		text-align:center;}
+}
+
+#from-blog {
+	text-align:center;
+	h3.related-title {font-size:20px;}
+	.card-bottom {
+		background-color:$white;
+		min-height: 150px;
+		padding: 10px 30px;
+		margin-top: -8px;
+	}	
 }
 
 #content {margin-top:10px;}

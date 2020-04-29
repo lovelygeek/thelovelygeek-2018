@@ -1227,10 +1227,9 @@ h1, .h1 {
   font-weight: 300; }
 
 h2, .h2 {
+  font-family: "smooth_stoneregular", serif;
   margin-top: 0.88em;
-  font-size: 2.369em;
-  font-weight: 300;
-  font-style: italic; }
+  font-size: 4.750em; }
 
 h3, .h3 {
   font-family: "Prata", serif;
@@ -1241,7 +1240,8 @@ h4, .h4 {
   font-size: 1.333em;
   font-weight: 400;
   font-family: "classico-urw", sans-serif;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  letter-spacing: 2.75px; }
 
 h5, .h5 {
   font-size: 3.125em;
@@ -1250,8 +1250,11 @@ h5, .h5 {
   line-height: 28px; }
 
 h6, .h6 {
-  font-weight: 600;
-  font-size: 1em; }
+  font-weight: 400;
+  font-size: 1em;
+  letter-spacing: 2px;
+  color: #009CA6;
+  text-transform: uppercase; }
 
 /*********************
 HEADER STYLES
@@ -1403,11 +1406,82 @@ style a page via class
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+#hero-image {
+  background-image: url(../images/feat-img-hero@2x.png);
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 15% 0;
+  color: #fff; }
+
+#intro-block, #featured-projects {
+  background: #fff; }
+
+#intro-block {
+  padding: 2% 0; }
+
+#good-fit {
+  background-image: url(../images/stormtrooper-art-board.png);
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 100px 0;
+  color: #fff; }
+  #good-fit h5 {
+    color: #fff;
+    text-align: center; }
+
+#featured-projects {
+  text-align: center; }
+  #featured-projects h2 {
+    display: none; }
+  #featured-projects h3 {
+    padding-bottom: 25px; }
+
+#services-offered {
+  padding: 30px 0 90px 0; }
+  #services-offered h3 {
+    text-align: center;
+    margin-bottom: 40px; }
+  #services-offered h5 {
+    color: #009CA6;
+    text-align: center;
+    margin-top: 10px; }
+
+#inner-service-right, #inner-service-left {
+  padding: 20px 50px; }
+
+#inner-service-right {
+  border-left: 1px solid #80CDD4; }
+
+#book-cta {
+  background-color: #fff;
+  text-align: center;
+  padding: 50px 0; }
+  #book-cta h4 {
+    margin-bottom: -60px; }
+  #book-cta h2 {
+    color: #009CA6; }
+
 #select-categories {
   background: #fff;
   padding: 0 40px 40px 40px; }
   #select-categories h5 {
     text-align: center; }
+
+#from-blog {
+  text-align: center; }
+  #from-blog h3.related-title {
+    font-size: 20px; }
+  #from-blog .card-bottom {
+    background-color: #fff;
+    min-height: 150px;
+    padding: 10px 30px;
+    margin-top: -8px; }
 
 #content {
   margin-top: 10px; }

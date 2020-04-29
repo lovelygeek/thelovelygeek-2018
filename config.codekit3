@@ -103,6 +103,14 @@
 		"oAP": "/footer.php",
 		"oF": 0
 		},
+	"/functions-old.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/functions-old.php",
+		"oF": 0
+		},
 	"/functions.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -373,6 +381,14 @@
 		"oAP": "/library/css/style.css.map",
 		"oF": 0
 		},
+	"/library/customizer.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/library/customizer.php",
+		"oF": 0
+		},
 	"/library/extras/extras.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -614,6 +630,28 @@
 		"opt": 1,
 		"q": 100
 		},
+	"/library/images/feat-img-hero.png": {
+		"ft": 32768,
+		"iS": 3115769,
+		"oA": 0,
+		"oAP": "/library/images/feat-img-hero.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/library/images/feat-img-hero@2x.png": {
+		"ft": 32768,
+		"iS": 11491898,
+		"oA": 0,
+		"oAP": "/library/images/feat-img-hero@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/library/images/iPad-Pro.png": {
 		"ft": 32768,
 		"iS": 2296,
@@ -688,6 +726,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/library/images/meet-the-designer.jpg": {
+		"ft": 16384,
+		"iS": 183739,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/library/images/meet-the-designer.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/library/images/older-iPhone.png": {
 		"ft": 32768,
 		"iS": 1631,
@@ -726,6 +775,17 @@
 		"iS": 787999,
 		"oA": 0,
 		"oAP": "/library/images/spotlight-studio@3x.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/library/images/stormtrooper-art-board.png": {
+		"ft": 32768,
+		"iS": 2385091,
+		"oA": 0,
+		"oAP": "/library/images/stormtrooper-art-board.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
@@ -772,13 +832,13 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/library/js/extras/extra-scripts-min.js": {
+	"/library/js/a11y.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/library/js/extras/extra-scripts-min-min.js",
+		"oAP": "/library/js/a11y-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -790,28 +850,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/library/js/extras/extra-scripts-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/library/js/extras/min/extra-scripts-min-min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/library/js/extras/min/extra-scripts-min-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/library/js/extras/min/extra-scripts-min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/library/js/extras/min/extra-scripts-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -838,57 +876,13 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"/library/js/libs/modernizr.custom.min-min.js": {
+	"/library/js/min/a11y-min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/library/js/libs/modernizr.custom.min-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/library/js/libs/modernizr.custom.min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/library/js/libs/modernizr.custom.min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/library/js/min/extra-scripts-min-min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/library/js/min/extra-scripts-min-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/library/js/min/extra-scripts-min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/library/js/min/extra-scripts-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/library/js/min/scripts-min-min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/library/js/min/scripts-min-min-min.js",
+		"oAP": "/library/js/min/a11y-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -912,17 +906,6 @@
 		"oAP": "/library/js/min/scripts-min.js.map",
 		"oF": 0
 		},
-	"/library/js/min/theme-customizer-min-min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/library/js/min/theme-customizer-min-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"/library/js/min/theme-customizer-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -934,17 +917,6 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"/library/js/scripts-min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/library/js/scripts-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"/library/js/scripts.js": {
 		"bF": 0,
 		"ft": 64,
@@ -952,17 +924,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/library/js/scripts-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/library/js/theme-customizer-min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/library/js/theme-customizer-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1908,12 +1869,12 @@
 		"oAP": "/sidebar.php",
 		"oF": 0
 		},
-	"/single-custom_type.php": {
+	"/single-jetpack-portfolio.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/single-custom_type.php",
+		"oAP": "/single-jetpack-portfolio.php",
 		"oF": 0
 		},
 	"/single.php": {
@@ -2072,7 +2033,7 @@
 "projectSettings": {
 	"abortBuildOnError": 1,
 	"allowInjectionReloads": 1,
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerEnableIEGrid": 0,

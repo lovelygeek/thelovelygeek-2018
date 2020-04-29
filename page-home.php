@@ -123,7 +123,7 @@
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post ); ?> 
 							
-								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo wp_html_excerpt( get_the_title(), 45, '...'  ); ?></a></span></li>   
+								<li><span class="thumb"><?php the_post_thumbnail( 'thumbnail' ); ?></span> <?php the_category( ' ' ); ?> <span class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo wp_html_excerpt( get_the_title(), 45, '...'  ); ?></a></span></li>   
 					
 						<?php
 						endforeach; 

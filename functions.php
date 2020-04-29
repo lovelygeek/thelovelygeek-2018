@@ -14,31 +14,35 @@
 *
 */
 
-/* LOAD TEMPLATE DEVELOPMENT FUNCTIONS
+/* Plate development and debug functions
 (not required but helper stuff for debugging and development)
 */
 // require_once( 'library/plate.php' );
 
-/* CUSTOMIZE THE WORDPRESS ADMIN 
+/* WordPress Admin functions (for customizing the WP Admin)
 (also not required so comment it out if you don't need it)
 */
 require_once( 'library/admin.php' );
 
-/*
-*-------------------------------------------------
-* PLATE LUNCH
-*
-* Let's get everything on the plate and eat!
-* 
-*-------------------------------------------------
-*/
+// WordPress Customizer functions and enqueues
+// include( get_template_directory_uri() . '/library/customizer.php' );
 
-// mmmmmmmmmmmmm dig in!
+require_once( 'library/customizer.php' );
+
+
+
+/************************************
+ * PLATE LUNCH
+ * 
+ * Let's get everything on the plate. Mmmmmmmm.
+ * 
+ ************************************/
+
 add_action( 'after_setup_theme', 'plate_lunch' );
 
 function plate_lunch() {
 
-    // editor stylee
+    // editor style
     add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
     // let's get language support going, if you need it
@@ -74,6 +78,23 @@ function plate_lunch() {
     // clean up the default WP excerpt
     add_filter( 'excerpt_more', 'plate_excerpt_more' );
 
+    // new body_open() function added in WP 5.2
+    // https://generatewp.com/wordpress-5-2-action-that-every-theme-should-use/
+    if ( ! function_exists( 'wp_body_open' ) ) {
+        /**
+         * Fire the wp_body_open action.
+         *
+         * Added for backwards compatibility to support WordPress versions prior to 5.2.0.
+         */
+        function wp_body_open() {
+            /**
+             * Triggered after the opening <body> tag.
+             */
+            do_action( 'wp_body_open' );
+        }
+    }
+
+
 } /* end plate lunch */
 
 
@@ -82,7 +103,7 @@ function plate_lunch() {
 // Thumbnail sizes
 add_image_size( 'plate-image-600', 600, 600, true );
 add_image_size( 'plate-image-300', 300, 300, true );
-add_image_size( 'plate-image-300', 150, 150, true );
+add_image_size( 'plate-image-150', 150, 150, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -121,7 +142,7 @@ function plate_custom_image_sizes( $sizes ) {
 add_image_size( 'single-post-feat-img', 654, 9999 ); //592 pixels wide (and unlimited height)
 add_image_size( 'blog-listing-feat-img', 455, 596, true ); //455 pixels wide, 596 pixels wide, crop mode
 add_image_size('featured_preview', 55, 55, true); // for showing featured image column in admin
- 
+
 /*
 The function above adds the ability to use the dropdown menu to select
 the new images sizes you have just created from within the media manager
@@ -215,7 +236,6 @@ add_action( 'woocommerce_before_shop_loop_item', 'myprefix_woocommerce_template_
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
 
 
-
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
@@ -263,139 +283,6 @@ function plate_register_sidebars() {
 	*/
 } // don't remove this bracket!
 
-/************* Ban/Limit Email Domains for Gravity Form Email Fields ********************/
-
-
-/**
- * Gravity Wiz // Gravity Forms // Email Domain Validator
- *
- * This snippets allows you to exclude a list of invalid domains or include a list of valid domains for your Gravity Form Email fields.
- *
- * @version   1.4
- * @author    David Smith <david@gravitywiz.com>
- * @license   GPL-2.0+
- * @link      http://gravitywiz.com/banlimit-email-domains-for-gravity-form-email-fields/
- */
-class GW_Email_Domain_Validator {
-
-    private $_args;
-
-    function __construct($args) {
-
-        $this->_args = wp_parse_args( $args, array(
-            'form_id' => false,
-            'field_id' => false,
-            'domains' => false,
-            'validation_message' => __( 'Sorry, <strong>%s</strong> email accounts are not eligible for this form.' ),
-            'mode' => 'ban' // also accepts "limit"
-        ) );
-
-        // convert field ID to an array for consistency, it can be passed as an array or a single ID
-        if($this->_args['field_id'] && !is_array($this->_args['field_id']))
-            $this->_args['field_id'] = array($this->_args['field_id']);
-
-        $form_filter = $this->_args['form_id'] ? "_{$this->_args['form_id']}" : '';
-
-        add_filter("gform_validation{$form_filter}", array($this, 'validate'));
-
-    }
-
-    function validate($validation_result) {
-
-        $form = $validation_result['form'];
-
-        foreach($form['fields'] as &$field) {
-
-            // if this is not an email field, skip
-            if(RGFormsModel::get_input_type($field) != 'email')
-                continue;
-
-            // if field ID was passed and current field is not in that array, skip
-            if($this->_args['field_id'] && !in_array($field['id'], $this->_args['field_id']))
-                continue;
-
-            $page_number = GFFormDisplay::get_source_page( $form['id'] );
-            if( $page_number > 0 && $field->pageNumber != $page_number ) {
-                continue;
-            }
-
-            if( GFFormsModel::is_field_hidden( $form, $field, array() ) ) {
-            	continue;
-            }
-
-            $domain = $this->get_email_domain($field);
-
-            // if domain is valid OR if the email field is empty, skip
-            if($this->is_domain_valid($domain) || empty($domain))
-                continue;
-
-            $validation_result['is_valid'] = false;
-            $field['failed_validation'] = true;
-            $field['validation_message'] = sprintf($this->_args['validation_message'], $domain);
-
-        }
-
-        $validation_result['form'] = $form;
-        return $validation_result;
-    }
-
-    function get_email_domain( $field ) {
-        $email = explode( '@', rgpost( "input_{$field['id']}" ) );
-        return trim( rgar( $email, 1 ) );
-    }
-
-    function is_domain_valid( $domain ) {
-
-        $mode   = $this->_args['mode'];
-	    $domain = strtolower( $domain );
-
-        foreach( $this->_args['domains'] as $_domain ) {
-
-	        $_domain = strtolower( $_domain );
-
-            $full_match   = $domain == $_domain;
-            $suffix_match = strpos( $_domain, '.' ) === 0 && $this->str_ends_with( $domain, $_domain );
-            $has_match    = $full_match || $suffix_match;
-
-            if( $mode == 'ban' && $has_match ) {
-                return false;
-            } else if( $mode == 'limit' && $has_match ) {
-                return true;
-            }
-
-        }
-
-        return $mode == 'limit' ? false : true;
-    }
-
-    function str_ends_with( $string, $text ) {
-
-        $length      = strlen( $string );
-        $text_length = strlen( $text );
-
-        if( $text_length > $length ) {
-            return false;
-        }
-
-        return substr_compare( $string, $text, $length - $text_length, $text_length ) === 0;
-    }
-
-}
-
-class GWEmailDomainControl extends GW_Email_Domain_Validator { }
-
-# Configuration
-
-new GW_Email_Domain_Validator( array(
-    'form_id' => 1,
-    'field_id' => 2,
-    'domains' => array( 'beardoholic.com' ),
-    'validation_message' => __( 'Oh no! Your email is not eligible for this form. Perhaps you should stop being so spammy! 🐷' ),
-    'mode' => 'ban'
-) );
-
-
-
 
 /*********************
 COMMENTS
@@ -408,7 +295,7 @@ add_filter( 'avatar_defaults', 'new_default_avatar' );
 function new_default_avatar ( $avatar_defaults ) {
 
     //Set the URL where the image file for your avatar is located
-    $new_avatar_url = get_stylesheet_directory_uri() . '/library/images/custom-gravatar.jpg';
+    $new_avatar_url = get_stylesheet_directory_uri() . '/library/images/custom-gravatar.png';
 
     // var_dump($new_avatar_url);
 
@@ -423,9 +310,9 @@ function plate_comments( $comment, $args, $depth ) {
 
    $GLOBALS['comment'] = $comment; ?>
 
-    <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
+    <div id="comment-<?php comment_ID(); ?>" <?php comment_class('comment-wrap'); ?>>
 
-        <article class="cf">
+        <article class="article-comment">
 
             <header class="comment-author vcard">
 
@@ -443,21 +330,25 @@ function plate_comments( $comment, $args, $depth ) {
                   $bgauthemail = get_comment_author_email();
                 ?>
 
-                <img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_theme_file_uri(); ?>/library/images/custom-gravatar.jpg" />
+                <img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=256" class="load-gravatar avatar avatar-48 photo" height="64" width="64" src="<?php echo get_theme_file_uri(); ?>/library/images/custom-gravatar.png" />
 
                 <?php // end custom gravatar call ?>
 
-                <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'platetheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'platetheme' ),'  ','') ) ?>
+                <div class="comment-meta">
 
-                <time datetime="<?php echo comment_time('Y-m-j'); ?>">
+                    <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'platetheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'platetheme' ),'  ','') ) ?>
 
-                    <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'platetheme' )); ?> </a>
+                    <time datetime="<?php echo comment_time('Y-m-j'); ?>">
 
-                </time>
+                        <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'platetheme' )); ?> </a>
+
+                    </time>
+                
+                </div>
 
             </header>
 
-            <?php if ($comment->comment_approved == '0') : ?>
+            <?php if ( $comment->comment_approved == '0' ) : ?>
 
                 <div class="alert alert-info">
 
@@ -467,20 +358,23 @@ function plate_comments( $comment, $args, $depth ) {
 
             <?php endif; ?>
 
-            <section class="comment_content cf">
+            <section class="comment-content">
 
                 <?php comment_text() ?>
 
             </section>
 
-            <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+            <div class="comment-reply">
 
+                <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                
+            </div>
+            
         </article>
 
     <?php // </li> is added by WordPress automatically ?>
 
-<?php
-} // don't remove this bracket!
+<?php } // don't remove this bracket!
 
 
 /*
@@ -503,10 +397,10 @@ http://www.longren.io/add-schema-org-markup-to-any-wordpress-theme/
 
 function html_schema() {
 
-    $schema = 'http://schema.org/';
+    $schema = 'https://schema.org/';
  
     // Is single post
-    if( is_single()) {
+    if( is_single() ) {
         $type = "Article";
     }
 
@@ -516,7 +410,7 @@ function html_schema() {
     }
 
     // Is static front page
-    else if( is_front_page()) {
+    else if( is_front_page() ) {
         $type = "Website";
     }
 
@@ -552,13 +446,13 @@ function plate_head_cleanup() {
     remove_action( 'wp_head', 'wlwmanifest_link' );
 
     // previous link
-    remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+    remove_action( 'wp_head', 'parent_post_rel_link' );
 
     // start link
-    remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+    remove_action( 'wp_head', 'start_post_rel_link' );
 
     // links for adjacent posts
-    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head' );
 
     // WP version
     remove_action( 'wp_head', 'wp_generator' );
@@ -643,12 +537,55 @@ function plate_scripts_and_styles() {
         // adding scripts file in the footer
         wp_enqueue_script( 'plate-js', get_theme_file_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
+        // accessibility (a11y) scripts
+        wp_enqueue_script( 'plate-a11y', get_theme_file_uri() . '/library/js/a11y.js', array( 'jquery' ), '', true );
+
         $wp_styles->add_data( 'plate-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
         // plate extra scripts. Uncomment to use. Or better yet, copy what you need to the main scripts folder or on the page(s) you need it
         // wp_enqueue_script( 'plate-extra-js', get_theme_file_uri() . '/library/js/extras/extra-scripts.js', array( 'jquery' ), '', true );
 
     }
+}
+
+
+/*********************
+GUTENBERG ENQUEUES
+
+These are kept out of the main enqueue
+function in case you don't need them.
+*********************/
+
+/**
+ * 
+ * Gutenberg Editor Styles
+ * 
+ * Enqueue block editor style for Gutenberg
+ * This applies to the admin editor *only*,
+ * (e.g. not on the front end);
+ * 
+ */
+
+add_action( 'enqueue_block_editor_assets', 'plate_block_editor_styles' );
+
+function plate_block_editor_styles() {
+    
+    wp_enqueue_style( 'plate-block-editor-styles', get_theme_file_uri( '/library/css/editor.css' ), false, '1.0', 'all' );
+
+}
+
+/**
+ * Gutenberg Front End Styles
+ * 
+ * Enqueue front end styles for Gutenberg.
+ * 
+ */
+add_action( 'enqueue_block_assets', 'plate_gutenberg_styles' );
+
+function plate_gutenberg_styles() {
+
+    wp_enqueue_style( 'plate-gutenberg-styles', get_theme_file_uri( '/library/css/gutenberg.css' ), false, '1.0', 'all' );
+
 }
 
 /****************************************
@@ -734,48 +671,23 @@ function disable_emojicons_tinymce( $plugins ) {
 // Remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
 // This only works for the main content box, not using ACF or other page builders.
 // Added small bit of javascript in scripts.js that will work everywhere. 
+// Keeping this in in case people are still using it.
 add_filter('the_content', 'plate_filter_ptags_on_images');
 
 function plate_filter_ptags_on_images( $content ) {
 
-    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+    return preg_replace('/<pp>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 
 }
 
 
-// This removes the annoying […] to a Read More link
-function plate_excerpt_more( $more ) {
-
+// Simple function to remove the [...] from excerpt and add a 'Read More �' link.
+function plate_excerpt_more($more) {
     global $post;
-
-     // edit here if you like
-    //return '...  <p><a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Continue Reading &#8250;', 'platetheme' ) .'</a></p>';
-
+    // edit here if you like
+    return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'platetheme' ) .'</a>';
 }
 
-/**
- * ADDED BY THE LOVELY GEEK	
- * Filter the except length to 20 words.
- *
- * @param int $length Excerpt length.
- * @return int (Maybe) modified excerpt length.
- */
-function wpdocs_custom_excerpt_length( $length ) {
-    return 30;
-}
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
-
-
-// ADDED BY THE LOVELY GEEK	- adds continue reading to manual and automatic excerpts
-function custom_excerpt($text) {  // custom 'read more' link
-   if (strpos($text, '[...]')) {
-      $excerpt = strip_tags(str_replace('[...]', '&nbsp;<p><a href="'.get_permalink().'">Continue Reading &#8250;</a></p>', $text), "<a>");
-   } else {
-      $excerpt = '' . strip_tags($text) . '&nbsp;<p><a href="'.get_permalink().'">Continue Reading &#8250;</a></p>';
-   }
-   return $excerpt;
-}
-add_filter('the_excerpt', 'custom_excerpt');
 
 
 /*********************
@@ -806,11 +718,15 @@ function plate_theme_support() {
     // Custom Header Image
     add_theme_support( 'custom-header', array(
 
-        'default-image'          => get_template_directory_uri() . '/library/images/header-image.png',
-        'default-text-color'     => 'ffffff',
-        'header-text'            => true,
-        'uploads'                => true,
-        'wp-head-callback'       => 'plate_style_header',
+            'default-image'      => get_template_directory_uri() . '/library/images/header-image.png',
+            'default-text-color' => '000',
+            'width'              => 1440,
+            'height'             => 220,
+            'flex-width'         => true,
+            'flex-height'        => true,
+            'header-text'        => true,
+            'uploads'            => true,
+            'wp-head-callback'   => 'plate_style_header',
 
         ) 
     );
@@ -819,7 +735,7 @@ function plate_theme_support() {
     add_theme_support( 'custom-logo', array(
 
         'height'      => 100,
-        'width'       => 400,
+        'width'       => 100,
         'flex-height' => true,
         'flex-width'  => true,
         'header-text' => array( 'site-title', 'site-description' ),
@@ -833,8 +749,8 @@ function plate_theme_support() {
     // To add another menu, uncomment the second line and change it to whatever you want. You can have even more menus.
     register_nav_menus( array(
 
-          'main-nav' => __( 'The Main Menu', 'platetheme' ),   // main nav in header
-          // 'footer-links' => __( 'Footer Links', 'platetheme' ) // secondary nav in footer. Uncomment to use or edit.
+        'main-nav' => __( 'The Main Menu', 'platetheme' ),   // main nav in header
+        // 'footer-links' => __( 'Footer Links', 'platetheme' ) // secondary nav in footer. Uncomment to use or edit.
 
         )
     );
@@ -894,22 +810,76 @@ function plate_theme_support() {
     // .alignwide styles added to _768up
     add_theme_support( 'align-wide' );
 
-    add_theme_support( 'editor-color-palette',
-        // Change to your colors
-        '#0056ac',
-        '#99bbde',
-        '#004181',
-        '#001c3a',
-        'f23e2f',
-        'dedede',
-        'aaaaaa',
-        '222222'
-    );
+    add_theme_support( 'editor-color-palette', array(
+        array(
+            'name' => __( 'studio bio blue', 'platetheme' ),
+            'slug' => 'studio-bio-blue',
+            'color' => '#0056ac',
+        ),
+        array(
+            'name' => __( 'studio bio light blue', 'platetheme' ),
+            'slug' => 'studio-bio-light-blue',
+            'color' => '#99bbde',
+        ),
+        array(
+            'name' => __( 'studio bio midnight', 'platetheme' ),
+            'slug' => 'studio-bio-midnight',
+            'color' => '#001c3a',
+        ),
+        array(
+            'name' => __( 'studio bio purple', 'platetheme' ),
+            'slug' => 'studio-bio-purple',
+            'color' => '#cc0099',
+        ),
+        array(
+            'name' => __( 'studio bio red', 'platetheme' ),
+            'slug' => 'studio-bio-red',
+            'color' => '#f23e2f',
+        ),
+        array(
+            'name' => __( 'grey 70', 'platetheme' ),
+            'slug' => 'grey-70',
+            'color' => '#444444',
+        ),
+        array(
+            'name' => __( 'grey 20', 'platetheme' ),
+            'slug' => 'grey-20',
+            'color' => '#cccccc',
+        ),
+    ) );
+
+
+    // Adds responsive embeds to Gutenberg blocks
+    add_theme_support( 'responsive-embeds' );
+
+    // Adds default Gutenberg styles to custom blocks
+    // Delete/comment out if you are adding your own block styles
+    add_theme_support( 'wp-block-styles' );
 
     // To limit the Gutenberg editor to your theme colors, uncomment this
     // add_theme_support( 'disable-custom-colors' );
 
 } /* end plate theme support */
+
+
+/** 
+ * $content_width.
+ * 
+ * We need this to pass the theme check. Massive eye roll.
+ * IT DOESN'T MAKE SENSE WITH RESPONSIVE LAYOUTS.
+ * I'm looking at you, WordPress Trac peoples.
+ * 
+ * Probably best to not touch this unless you really want to
+ * assign a maximum content width.
+ * 
+ * https://codex.wordpress.org/Content_Width
+ * 
+ */
+
+// commented by default now as it breaks Instagram Gutenberg Block embeds.
+if ( ! isset( $content_width ) ) {
+	// $content_width = '100%';
+}
 
 
 /* 
@@ -935,103 +905,6 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 }
 
-
-/****************************************
-* CUSTOMIZER *
-****************************************/
-
-// Needs updating as of WP 4.9.X
-
-add_action( 'customize_register', 'plate_register_theme_customizer' );
-
-function plate_register_theme_customizer( $wp_customize ) {
-
-    // Uncomment this to see what's going on if you make a lot of changes
-    // echo '<pre>';
-    // var_dump( $wp_customize );  
-    // echo '</pre>';
-
-    // Customize title and tagline sections and labels
-    $wp_customize->get_section( 'title_tagline' )->title = __( 'Site Name and Description', 'platetheme' );  
-    $wp_customize->get_control( 'blogname' )->label = __( 'Site Name', 'platetheme' );  
-    $wp_customize->get_control( 'blogdescription' )->label = __( 'Site Description', 'platetheme' );  
-    $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-    $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-
-    // Customize the Front Page Settings
-    $wp_customize->get_section( 'static_front_page' )->title = __( 'Homepage Preferences', 'platetheme' );
-    $wp_customize->get_section( 'static_front_page' )->priority = 20;
-    $wp_customize->get_control( 'show_on_front' )->label = __( 'Choose Homepage Preference:', 'platetheme' );  
-    $wp_customize->get_control( 'page_on_front' )->label = __( 'Select Homepage:', 'platetheme' );  
-    $wp_customize->get_control( 'page_for_posts' )->label = __( 'Select Blog Homepage:', 'platetheme' );  
-
-    // Customize Background Settings
-    $wp_customize->get_section( 'background_image' )->title = __( 'Background Styles', 'platetheme' );  
-    $wp_customize->get_control( 'background_color' )->section = 'background_image'; 
-
-    // Customize Header Image Settings  
-    $wp_customize->add_section( 'header_text_styles' , array(
-
-        'title'      => __( 'Header Text Styles', 'platetheme' ), 
-        'priority'   => 30
-
-        ) 
-    );
-
-    $wp_customize->get_control( 'display_header_text' )->section = 'header_text_styles';  
-    $wp_customize->get_control( 'header_textcolor' )->section = 'header_text_styles'; 
-    $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage'; 
-
-}
-
-
-// Custom scripts + styles for theme customizer
-add_action( 'customize_preview_init', 'plate_customizer_scripts' );
-
-function plate_customizer_scripts() {
-
-    wp_enqueue_script( 'plate_theme_customizer', get_template_directory_uri() . '/library/js/theme-customizer.js', array( 'jquery', 'customize-preview' ), '', true);
-
-    // register customizer stylesheet
-    wp_register_style( 'plate-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
-    wp_enqueue_style( 'plate-customizer' );
-
-}
-
-
-// Callback function for updating header styles
-function plate_style_header() {
-
-    $text_color = get_header_textcolor();
-  
-    ?>
-  
-    <style type="text/css">
-
-        header.header .site-title a {
-          color: #<?php echo esc_attr( $text_color ); ?>;
-        }
-      
-        <?php if( display_header_text() != true ): ?>
-        .site-title, .site-description {
-          display: none;
-        } 
-        <?php endif; ?>
-
-        #banner .header-image {
-          max-width: 100%;
-          height: auto;
-        }
-
-        .customize-control-description {
-          font-style: normal;
-        }
-
-    </style>
-
-  <?php 
-
-}
 
 /*********************
 RELATED POSTS FUNCTION
@@ -1064,63 +937,63 @@ RELATED POSTS FUNCTION
  *   Set the widget title.
  */
 
-function plate_related_posts($display = 'category', $qty = 3, $images = true, $title = 'Keep Reading') {
+function plate_related_posts( $display = 'category', $qty = 5, $images = true, $title = 'Related Posts' ) {
     global $post;
     $show = false;
     $post_qty = (int) $qty;
-    switch ($display) :
+    switch ( $display ) :
         case 'tag':
-            $tags = wp_get_post_tags($post->ID);
-            if ($tags) {
+            $tags = wp_get_post_tags( $post->ID) ;
+            if ( $tags ) {
                 $show = true;
                 $tag_ids = array();
-                foreach ($tags as $individual_tag) {
+                foreach ( $tags as $individual_tag ) {
                     $tag_ids[] = $individual_tag->term_id;
                 }
                 $args = array(
                     'tag__in' => $tag_ids,
-                    'post__not_in' => array($post->ID),
+                    'post__not_in' => array( $post->ID ),
                     'posts_per_page' => $post_qty,
                     'ignore_sticky_posts' => 1
                 );
             }
             break;
         default :
-            $categories = get_the_category($post->ID);
-            if ($categories) {
+            $categories = get_the_category( $post->ID );
+            if ( $categories ) {
                 $show = true;
                 $category_ids = array();
-                foreach ($categories as $individual_category) {
+                foreach ( $categories as $individual_category ) {
                     $category_ids[] = $individual_category->term_id;
                 }
                 $args = array(
                     'category__in' => $category_ids,
-                    'post__not_in' => array($post->ID),
+                    'post__not_in' => array( $post->ID ),
                     'showposts' => $post_qty,
                     'ignore_sticky_posts' => 1
                 );
             }
     endswitch;
-    if ($show == true) {
-        $related = new wp_query($args);
-        if ($related->have_posts()) {
-            $layout = '<div class="related-posts cf">';
-            $layout .= '<h3>' . strip_tags($title) . '</h3>';
-            $layout .= '<div class="m-all t-all d-all cf">';
-            while ($related->have_posts()) {
+    if ( $show == true ) {
+        $related = new wp_query( $args );
+        if ( $related->have_posts() ) {
+            $layout = '<div class="related-posts">';
+            $layout .= '<h3>' . strip_tags( $title ) . '</h3>';
+            $layout .= '<ul class="nostyle related-posts-list">';
+            while ( $related->have_posts() ) {
                 $related->the_post();
-                $layout .= '<div class="related-post d-1of3 t-1of3 m-all">';
-                if ($images == true) {
+                $layout .= '<li class="related-post">';
+                if ( $images == true ) {
                     $layout .= '<span class="related-thumb">';
-                    $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_post_thumbnail('','plate-image-600') . '</a>';
+                    $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_post_thumbnail() . '</a>';
                     $layout .= '</span>';
                 }
                 $layout .= '<span class="related-title">';
-                $layout .= '<p><a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a></p>';
+                $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a>';
                 $layout .= '</span>';
-                $layout .= '</div>';
+                $layout .= '</li>';
             }
-            $layout .= '</div>';
+            $layout .= '</ul>';
             $layout .= '</div>';
             echo $layout;
         }
@@ -1133,7 +1006,7 @@ function plate_related_posts($display = 'category', $qty = 3, $images = true, $t
 PAGE NAVI
 *********************/
 
-/* 
+/** 
 * Numeric Page Navi (built into the theme by default).
 * (Updated 2018-05-17)
 * 
@@ -1142,19 +1015,21 @@ PAGE NAVI
 * function will play nice. Example:
 * 
 * plate_page_navi( $query );
-•
-• Also make sure your query has pagination set, e.g.:
+*
+* Also make sure your query has pagination set, e.g.:
 * $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 * (or something similar)
-• See the codex: https://codex.wordpress.org/Pagination
-
+* See the codex: https://codex.wordpress.org/Pagination
+* 
+* @param array $wp_query
+*
 */
 
-function plate_page_navi( $query_wp ) {
-    $pages = $query_wp->max_num_pages;
+function plate_page_navi( $wp_query ) {
+    $pages = $wp_query->max_num_pages;
     $big = 999999999; // need an unlikely integer
 
-    if ($pages > 1) {
+    if ( $pages > 1 ) {
         $page_current = max(1, get_query_var('paged'));
 
         echo '<nav class="pagination">';
@@ -1188,11 +1063,22 @@ add_filter( 'body_class', 'plate_body_class' );
 
 function plate_body_class( $classes ) {
 
+    // Adds new classes for blogroll page (list of blog posts)
+    // good for containing full-width images from Gutenberg
+    // Added: 2018-12-07
+    global $wp_query;
+
+    if ( isset( $wp_query ) && (bool) $wp_query->is_posts_page ) {
+        $classes[] = 'blogroll page-blog';
+    }
+
     global $post;
 
     if ( isset( $post ) ) {
 
-        /* $classes[] = $post->post_type . '-' . $post->post_name; *//*Un comment this if you want the post_type-post_name body class */
+        /* Un comment below if you want the post_type-post_name body class */
+        /* $classes[] = $post->post_type . '-' . $post->post_name; */
+        
         $pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true);
         $classes[] = sanitize_html_class( str_replace( '.', '-', $pagetemplate ), '' );
         $classes[] = $post->post_name;
@@ -1236,6 +1122,10 @@ function plate_body_class( $classes ) {
         // Add the current page to our body class array
         $classes[] = "{$post->post_type}-{$post->post_name}";
 
+    }
+
+    if ( is_page_template('single-full.php') ) {
+        $classes[] = 'single-full';
     }
 
     return $classes;
@@ -1318,16 +1208,17 @@ if ( ! function_exists( 'plate_time_link' ) ) :
  */
 function plate_time_link() {
 
-    $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-    // if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-    //   $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-    // }
+    $time_string = 'Posted on: <time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+    if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+      $time_string = 'Posted on: <time class="entry-date published" datetime="%1$s">%2$s</time> | Updated: <time class="updated" datetime="%3$s">%4$s</time>';
+    }
 
-    $time_string = sprintf( $time_string,
-        get_the_date( DATE_W3C ),
-        get_the_date(),
-        get_the_modified_date( DATE_W3C ),
-        get_the_modified_date()
+    $time_string = sprintf(
+        $time_string,
+        esc_attr( get_the_date( DATE_W3C ) ),
+        esc_html( get_the_date() ),
+        esc_attr( get_the_modified_date( DATE_W3C ) ),
+        esc_html( get_the_modified_date() )
     );
 
     // Wrap the time string in a link, and preface it with 'Posted on'.
@@ -1335,15 +1226,58 @@ function plate_time_link() {
 
         /* translators: %s: post date */
         __( '<span class="screen-reader-text">Posted on</span> %s', 'platetheme' ),
-        '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+        $time_string
 
     );
 }
 endif;
 
 
+
+/** 
+ * Dashboard Widget
+ * 
+ * Add a widget to the dashboard in the WP Admin.
+ * Great to add instructions or info for clients.
+ *  
+ * If you don't need/want this, just remove it or 
+ * comment it out.
+ * 
+ * Customize it...yeaaaahhh...but don't criticize it.
+ * 
+ * 
+ */
+
+function plate_add_dashboard_widgets() {
+
+    // Call the built-in dashboard widget function with our callback
+    wp_add_dashboard_widget(
+        'plate_dashboard_widget', // Widget slug. Also the HTML id for styling in admin.scss.
+        __( 'Welcome to Plate!', 'platetheme' ), // Title.
+        'plate_dashboard_widget_init' // Display function (below)
+    );
+}
+add_action( 'wp_dashboard_setup', 'plate_add_dashboard_widgets' );
+
+// Create the function to output the contents of our Dashboard Widget.
+function plate_dashboard_widget_init() {
+
+    // helper vars for links and images and stuffs.
+    $url = get_admin_url();
+    $img = get_theme_file_uri() . '/library/images/logo.svg';
+
+    echo '<div class="dashboard-image"><img src=' . $img . '" width="96" height="96" /></div>';
+    echo '<h3>You\'ve arrived at the WordPress Dashboard aka the \'Site Admin\' or \'WordPress Admin\' or simply the \'Admin\'.</h3>'; 
+    echo '<p><strong>Thank you for using the <a href="https://github.com/joshuaiz/plate" target="_blank">Plate</a> theme by <a href="https://studio.bio/" target="_blank">studio.bio</a>!</strong></p>'; 
+    echo '<p>You can add your own message(s) or HTML here. Edit the <code>plate_dashboard_widget_init()</code> function in <code>functions.php</code> at line 1225. Styles are in <code>admin.scss</code>. Or if you don\'t want or need this, just delete the function. Have it your way.</p>';
+    echo '<p>This is a great place for site instructions, links to help or resources, and to add your contact info for clients.</p>';
+    echo '<p>Make sure to remind them about the <code>Screen Options</code> tab on the top right. Often clients do not know about that and that they can show or hide or rearrange these Dashboard Widgets or show/hide boxes on any edit screen.</p>';
+    
+}
+
+
 // Live Reload for Grunt during development
-//If your site is running locally it will load the livereload js file into the footer. This makes it possible for the browser to reload after a change has been made. 
+// If your site is running locally it will load the livereload js file into the footer. This makes it possible for the browser to reload after a change has been made. 
 if ( in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1')) ) {
 
     function livereload_script() {
