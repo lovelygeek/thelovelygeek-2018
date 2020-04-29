@@ -1694,9 +1694,11 @@ article#post-not-found h1 {
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
-.post-navigation p {
-  background-color: #C6893F;
-  color: #fff; }
+.post-navigation {
+  padding-top: 30px; }
+  .post-navigation p {
+    background-color: #C6893F;
+    color: #fff; }
 
 .previous_post_link {
   float: left; }
