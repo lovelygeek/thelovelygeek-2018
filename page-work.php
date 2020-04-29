@@ -49,7 +49,7 @@
 	<div class="wrap">
 		<div id="inner-service-left" class="d-1of2 t-1of2 m-all">
 			<h5>Web Design + Development</h5>
-			<p>Whether you're starting from scratch or giving your current site a refresh, I can create a custom site that aligns with your target audience using WordPress or Squarespace. This ensures I can meet your website needs at any budget. You'll be equipped with a beautiful and functional website that sets you and users up for success.</p>
+			<p>Whether you're starting from scratch or giving your current site a refresh, I can create a custom site that aligns with your target audience using WordPress or Squarespace. This ensures I can meet your website needs at any budget. You'll be equipped with a beautiful and functional website that sets you and your users up for success.</p>
 			<p style="text-align:center;"><a href="<?php echo home_url(); ?>/studio/contact/" class="button">I wanna launch my site!</a></p>
 		</div>
 		
