@@ -388,7 +388,7 @@ POSTS & CONTENT STYLES
 *********************/
 
 #hero-image {
-	background-image: url(../images/feat-img-hero@2x.png);
+	background-image: url(../images/feat-img-hero@2x.jpg);
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -469,6 +469,7 @@ POSTS & CONTENT STYLES
 	text-align:center;
 	
 	h5 {color:$tlg-dark-aqua;}
+	h6 {margin-bottom:-20px;}
 	span.numerals {font-family:$numerals; font-size:2.250em;}
 	.package {background-color: white; padding:15px;}
 	.inner-package {background-color:$white; border:1px solid $tlg-main-aqua; padding:0px 25px 30px;}

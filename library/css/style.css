@@ -1407,7 +1407,7 @@ style a page via class
 POSTS & CONTENT STYLES
 *********************/
 #hero-image {
-  background-image: url(../images/feat-img-hero@2x.png);
+  background-image: url(../images/feat-img-hero@2x.jpg);
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -1494,6 +1494,8 @@ POSTS & CONTENT STYLES
   text-align: center; }
   #available-packages h5 {
     color: #009CA6; }
+  #available-packages h6 {
+    margin-bottom: -20px; }
   #available-packages span.numerals {
     font-family: "Rozha One", serif;
     font-size: 2.250em; }

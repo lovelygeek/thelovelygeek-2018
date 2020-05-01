@@ -630,15 +630,15 @@
 		"opt": 1,
 		"q": 100
 		},
-	"/library/images/feat-img-hero.png": {
-		"ft": 32768,
-		"iS": 3115769,
+	"/library/images/feat-img-hero@2x.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"jF": 0,
 		"oA": 0,
-		"oAP": "/library/images/feat-img-hero.png",
+		"oAP": "/library/images/feat-img-hero@2x.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
+		"opt": 1,
 		"q": 100
 		},
 	"/library/images/feat-img-hero@2x.png": {
@@ -754,8 +754,8 @@
 		"oA": 0,
 		"oAP": "/library/images/retainer-packages-bg.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
