@@ -1231,6 +1231,9 @@ h2, .h2 {
   margin-top: 0.88em;
   font-size: 4.750em; }
 
+h2.woocommerce-loop-product__title {
+  font-family: "classico-urw", sans-serif; }
+
 h3, .h3 {
   font-family: "Prata", serif;
   font-size: 2.125em;
