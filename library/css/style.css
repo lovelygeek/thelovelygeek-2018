@@ -1493,7 +1493,7 @@ POSTS & CONTENT STYLES
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: 50px 0;
+  padding: 50px 0 100px;
   text-align: center; }
   #available-packages h5 {
     color: #009CA6; }
@@ -1509,6 +1509,15 @@ POSTS & CONTENT STYLES
     background-color: #fff;
     border: 1px solid #88DBDF;
     padding: 0px 25px 30px; }
+
+#creative-process {
+  text-align: center; }
+  #creative-process .stage {
+    color: #fff;
+    background-color: #009CA6;
+    padding: 15px; }
+    #creative-process .stage h6 {
+      color: #fff; }
 
 #faqs {
   background-color: #fff;

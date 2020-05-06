@@ -14,7 +14,7 @@
 
 		<div id="inner-content" class="wrap cf">
 
-			<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+			<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/Blog">
 
 				<!--Most recent post-->
 				<?php

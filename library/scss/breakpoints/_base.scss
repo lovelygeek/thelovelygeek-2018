@@ -467,7 +467,7 @@ POSTS & CONTENT STYLES
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    padding: 50px 0;	 	
+    padding: 50px 0 100px;	 	
 	text-align:center;
 	
 	h5 {color:$tlg-dark-aqua;}
@@ -475,6 +475,17 @@ POSTS & CONTENT STYLES
 	span.numerals {font-family:$numerals; font-size:2.250em;}
 	.package {background-color: white; padding:15px;}
 	.inner-package {background-color:$white; border:1px solid $tlg-main-aqua; padding:0px 25px 30px;}
+}
+
+#creative-process {
+	text-align:center;
+	
+	.stage {
+		color:$white;
+		background-color:$tlg-dark-aqua;
+		padding:15px;
+		h6 {color:$white;}
+	}
 }
 
 #faqs {background-color:$white; padding:50px 0;}
