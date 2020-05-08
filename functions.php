@@ -937,70 +937,69 @@ RELATED POSTS FUNCTION
  *   Set the widget title.
  */
 
-function plate_related_posts( $display = 'category', $qty = 5, $images = true, $title = 'Related Posts' ) {
+function plate_related_posts($display = 'category', $qty = 3, $images = true, $title = 'Keep Reading') {
     global $post;
     $show = false;
     $post_qty = (int) $qty;
-    switch ( $display ) :
+    switch ($display) :
         case 'tag':
-            $tags = wp_get_post_tags( $post->ID) ;
-            if ( $tags ) {
+            $tags = wp_get_post_tags($post->ID);
+            if ($tags) {
                 $show = true;
                 $tag_ids = array();
-                foreach ( $tags as $individual_tag ) {
+                foreach ($tags as $individual_tag) {
                     $tag_ids[] = $individual_tag->term_id;
                 }
                 $args = array(
                     'tag__in' => $tag_ids,
-                    'post__not_in' => array( $post->ID ),
+                    'post__not_in' => array($post->ID),
                     'posts_per_page' => $post_qty,
                     'ignore_sticky_posts' => 1
                 );
             }
             break;
         default :
-            $categories = get_the_category( $post->ID );
-            if ( $categories ) {
+            $categories = get_the_category($post->ID);
+            if ($categories) {
                 $show = true;
                 $category_ids = array();
-                foreach ( $categories as $individual_category ) {
+                foreach ($categories as $individual_category) {
                     $category_ids[] = $individual_category->term_id;
                 }
                 $args = array(
                     'category__in' => $category_ids,
-                    'post__not_in' => array( $post->ID ),
+                    'post__not_in' => array($post->ID),
                     'showposts' => $post_qty,
                     'ignore_sticky_posts' => 1
                 );
             }
     endswitch;
-    if ( $show == true ) {
-        $related = new wp_query( $args );
-        if ( $related->have_posts() ) {
-            $layout = '<div class="related-posts">';
-            $layout .= '<h3>' . strip_tags( $title ) . '</h3>';
-            $layout .= '<ul class="nostyle related-posts-list">';
-            while ( $related->have_posts() ) {
+    if ($show == true) {
+        $related = new wp_query($args);
+        if ($related->have_posts()) {
+            $layout = '<div class="related-posts cf">';
+            $layout .= '<h3>' . strip_tags($title) . '</h3>';
+            $layout .= '<div class="m-all t-all d-all cf">';
+            while ($related->have_posts()) {
                 $related->the_post();
-                $layout .= '<li class="related-post">';
-                if ( $images == true ) {
+                $layout .= '<div class="related-post d-1of3 t-1of3 m-all">';
+                if ($images == true) {
                     $layout .= '<span class="related-thumb">';
-                    $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_post_thumbnail() . '</a>';
+                    $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_post_thumbnail('','plate-image-600') . '</a>';
                     $layout .= '</span>';
                 }
                 $layout .= '<span class="related-title">';
-                $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a>';
+                $layout .= '<p><a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a></p>';
                 $layout .= '</span>';
-                $layout .= '</li>';
+                $layout .= '</div>';
             }
-            $layout .= '</ul>';
+            $layout .= '</div>';
             $layout .= '</div>';
             echo $layout;
         }
         wp_reset_query();
     }
 }
-
 
 /*********************
 PAGE NAVI
@@ -1210,7 +1209,7 @@ function plate_time_link() {
 
     $time_string = 'Posted on: <time class="entry-date published updated" datetime="%1$s">%2$s</time>';
     if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-      $time_string = 'Posted on: <time class="entry-date published" datetime="%1$s">%2$s</time> | Updated: <time class="updated" datetime="%3$s">%4$s</time>';
+      $time_string = 'Posted on: <time class="entry-date published" datetime="%1$s">%2$s</time>';
     }
 
     $time_string = sprintf(
