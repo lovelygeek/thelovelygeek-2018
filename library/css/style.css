@@ -1599,7 +1599,8 @@ article#post-not-found h1 {
 
 .archive-title {
   font-family: "Prata", serif;
-  font-style: normal; }
+  font-style: normal;
+  font-size: 2.75em; }
 
 .taxonomy-description {
   text-align: center;
