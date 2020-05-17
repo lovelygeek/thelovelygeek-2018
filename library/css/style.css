@@ -1512,11 +1512,14 @@ POSTS & CONTENT STYLES
 
 #creative-process {
   text-align: center; }
+  #creative-process .outer-stage {
+    min-height: 330px; }
   #creative-process .stage {
     color: #fff;
     background-color: #009CA6;
-    padding: 15px; }
-    #creative-process .stage h6 {
+    padding: 15px 50px;
+    text-align: left; }
+    #creative-process .stage h5 {
       color: #fff; }
 
 #faqs {
@@ -1684,7 +1687,7 @@ article#post-not-found h1 {
       border-right: 0; }
   .entry-content blockquote {
     font-family: "Prata", serif;
-    margin: 0 0 1.5em 1.75em;
+    margin: 2em 0 2em 1.75em;
     padding: 0 0 0 0.75em;
     color: #999999;
     position: relative; }

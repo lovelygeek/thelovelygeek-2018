@@ -480,11 +480,14 @@ POSTS & CONTENT STYLES
 #creative-process {
 	text-align:center;
 	
+	.outer-stage {min-height:330px;}
+	
 	.stage {
 		color:$white;
 		background-color:$tlg-dark-aqua;
-		padding:15px;
-		h6 {color:$white;}
+		padding:15px 50px;
+		text-align:left;
+		h5 {color:$white;}
 	}
 }
 
@@ -704,7 +707,7 @@ article#post-not-found h1 {
 
     blockquote {
 	    font-family: $serif;
-		margin: 0 0 1.5em 1.75em;
+		margin: 2em 0 2em 1.75em;
 		padding: 0 0 0 0.75em;
 		color: $meta-gray;
 		position: relative;	    
