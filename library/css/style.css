@@ -1511,7 +1511,8 @@ POSTS & CONTENT STYLES
     padding: 0px 25px 30px; }
 
 #creative-process {
-  text-align: center; }
+  text-align: center;
+  padding: 50px 0; }
   #creative-process .outer-stage {
     min-height: 330px; }
   #creative-process .stage {
@@ -1519,8 +1520,10 @@ POSTS & CONTENT STYLES
     background-color: #009CA6;
     padding: 15px 50px;
     text-align: left; }
-    #creative-process .stage h5 {
+    #creative-process .stage h5, #creative-process .stage h6 {
       color: #fff; }
+    #creative-process .stage h6 {
+      margin-bottom: -50px; }
 
 #faqs {
   background-color: #fff;

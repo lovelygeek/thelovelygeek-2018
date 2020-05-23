@@ -70,29 +70,25 @@
 			
 			<div class="outer-stage d-1of2 t-1of2 m-all">
 				<div class="stage">
-					<h5>Discovery</h5>	
-					<p>You’ll fill out a detailed questionnaire which we’ll review in a discovery call. We’ll discuss your goals/needs and learn about your target audience. We’ll map out your site in the form of a site architecture and develop a strategy for content.</p>
+					<?php the_field('stage_1'); ?>
 				</div>	
 			</div>
 			
 			<div class="outer-stage d-1of2 t-1of2 m-all last-col">
 				<div class="stage">
-					<h5>Design</h5>	
-					<p>Next we’ll move into wireframes where we establish content placement and visual hierarchy. I’ll put together a moodboard based on your branding, and then we’ll move into the design.  This is where we put it all together  and you’ll get a live prototype of your website.</p>
+					<?php the_field('stage_2'); ?>
 				</div>	
 			</div>					
 
 			<div class="outer-stage d-1of2 t-1of2 m-all">
 				<div class="stage">
-					<h5>Development</h5>	
-					<p>After signing off on the design, it will be developed into a living breathing website. You’ll receive two rounds of QA (quality assurance) plus a one hour training walking you through your site and how to enter content.</p>
+					<?php the_field('stage_3'); ?>
 				</div>	
 			</div>
 			
 			<div class="outer-stage d-1of2 t-1of2 m-all last-col">
 				<div class="stage">
-					<h5>Launch</h5>	
-					<p>Once the site has been finalized and final payment received, you’ll sign a launch agreement. Then it’s time to launch your site! You’ll recieve a social media launch kit to announce your new site. Pop, fizz, clink! 🥂</p>
+					<?php the_field('stage_4'); ?>
 				</div>	
 			</div>			
 		</div>

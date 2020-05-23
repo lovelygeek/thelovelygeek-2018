@@ -479,6 +479,7 @@ POSTS & CONTENT STYLES
 
 #creative-process {
 	text-align:center;
+	padding:50px 0;
 	
 	.outer-stage {min-height:330px;}
 	
@@ -487,7 +488,8 @@ POSTS & CONTENT STYLES
 		background-color:$tlg-dark-aqua;
 		padding:15px 50px;
 		text-align:left;
-		h5 {color:$white;}
+		h5, h6 {color:$white;}
+		h6 {margin-bottom:-50px;}
 	}
 }
 
