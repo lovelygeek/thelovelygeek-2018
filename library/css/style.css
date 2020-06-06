@@ -1252,7 +1252,8 @@ h5, .h5 {
   text-transform: lowercase;
   line-height: 28px; }
 
-h6, .h6 {
+h6, .h6, .portfolio-entry-title {
+  font-family: "classico-urw", sans-serif;
   font-weight: 400;
   font-size: 1em;
   letter-spacing: 2px;
@@ -1445,6 +1446,13 @@ POSTS & CONTENT STYLES
   #featured-projects h3 {
     padding-bottom: 25px; }
 
+#all-projects {
+  text-align: center;
+  padding-top: 3em; }
+
+.portfolio-featured-image img {
+  border: 10px solid #fff !important; }
+
 #services-offered {
   padding: 30px 0 90px 0; }
   #services-offered h3 {
@@ -1575,6 +1583,12 @@ article .inner-article, #inner-spotlight, .inner-page, #shop-grid {
 .press-item {
   padding: 0 30px 0 20px;
   min-height: 130px; }
+
+.project-tags span {
+  display: none; }
+
+.project-tags a {
+  color: rgba(0, 0, 0, 0.6); }
 
 .header-category {
   text-align: center;

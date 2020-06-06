@@ -184,6 +184,11 @@ add_filter('the_excerpt_rss', 'featuredtoRSS');
 add_filter('the_content_feed', 'featuredtoRSS');
 
 
+/************* DISABLE IMAGE SCALING *********************/
+
+add_filter( 'big_image_size_threshold', '__return_false' );
+
+
 
 /************* FEAT IMG COLUMN IN ADMIN *********************/
 // GET FEATURED IMAGE
