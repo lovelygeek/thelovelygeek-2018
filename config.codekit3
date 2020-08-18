@@ -1775,6 +1775,14 @@
 		"oAP": "/page-retainer.php",
 		"oF": 0
 		},
+	"/page-services.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/page-services.php",
+		"oF": 0
+		},
 	"/page-shop.php": {
 		"cB": 0,
 		"ft": 8192,

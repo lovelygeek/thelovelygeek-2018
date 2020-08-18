@@ -1239,6 +1239,11 @@ h3, .h3 {
   font-size: 2.125em;
   font-weight: 300; }
 
+h3 span.script {
+  font-family: "smooth_stoneregular", serif !important;
+  font-size: 1.5em;
+  text-transform: lowercase; }
+
 h4, .h4 {
   font-size: 1.333em;
   font-weight: 400;
@@ -1259,6 +1264,10 @@ h6, .h6, .portfolio-entry-title {
   letter-spacing: 2px;
   color: #009CA6;
   text-transform: uppercase; }
+
+span.numerals {
+  font-family: "Rozha One", serif;
+  font-size: 2.250em; }
 
 /*********************
 HEADER STYLES
@@ -1410,6 +1419,33 @@ style a page via class
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+.text-align-center, #services-block, #six-col-block h3, #six-col-block p {
+  text-align: center; }
+
+.outer-white-border, article.post, #spotlight, article.page, article#post-not-found {
+  border: 3px solid #fff;
+  padding: 1em; }
+
+.inner-card {
+  background-color: #fff;
+  padding: 10px 20px;
+  margin-top: -10px; }
+  .inner-card h3 {
+    font-size: 30px; }
+  .inner-card h6 {
+    margin-bottom: -20px; }
+  .inner-card p.button {
+    margin-top: 0px; }
+
+#services-block {
+  margin: 50px 0; }
+
+#six-col-block {
+  background-color: #fff;
+  padding: 10px 0 50px; }
+  #six-col-block ul {
+    list-style-type: none; }
+
 #hero-image {
   background-image: url(../images/feat-img-hero@2x.jpg);
   height: 50%;
@@ -1420,7 +1456,7 @@ POSTS & CONTENT STYLES
   padding: 15% 0;
   color: #fff; }
 
-#intro-block, #featured-projects {
+#intro-block {
   background: #fff; }
 
 #intro-block {
@@ -1433,14 +1469,15 @@ POSTS & CONTENT STYLES
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: 100px 0;
+  padding: 70px 0;
   color: #fff; }
   #good-fit h5 {
     color: #fff;
     text-align: center; }
 
 #featured-projects {
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 40px; }
   #featured-projects h2 {
     display: none; }
   #featured-projects h3 {
@@ -1547,9 +1584,7 @@ POSTS & CONTENT STYLES
   margin-top: 10px; }
 
 article.post, #spotlight, article.page, article#post-not-found {
-  border: 3px solid #fff;
-  margin-bottom: 40px;
-  padding: 1em; }
+  margin-bottom: 40px; }
 
 article .inner-article, #inner-spotlight, .inner-page, #shop-grid {
   background-color: #fff;

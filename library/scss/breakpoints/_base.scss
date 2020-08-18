@@ -137,6 +137,12 @@ h3, .h3 {
     font-weight:300;
 }
 
+h3 span.script {
+	font-family:$script!important;
+	font-size: 1.5em;
+	text-transform: lowercase;	
+	}
+
 h4, .h4 {
     font-size: 1.333em;
     font-weight:400;
@@ -160,6 +166,8 @@ h6, .h6, .portfolio-entry-title {
     color:$tlg-dark-aqua;
     text-transform:uppercase;
 }
+
+span.numerals {font-family:$numerals; font-size:2.250em;}
 
 /*********************
 HEADER STYLES
@@ -390,6 +398,37 @@ style a page via class
 POSTS & CONTENT STYLES
 *********************/
 
+.text-align-center {
+	text-align:center;
+}
+
+.outer-white-border {
+	border: 3px solid #fff;
+	padding: 1em;
+}
+
+.inner-card {
+	background-color:$white; 
+	padding: 10px 20px;
+    margin-top: -10px;
+    
+    h3 {font-size:30px;}
+    h6 {margin-bottom:-20px;}
+    p.button {margin-top: 0px;}
+}
+
+#services-block {
+	@extend .text-align-center;
+	margin:50px 0;
+}
+
+#six-col-block {
+	background-color:$white;
+	padding:10px 0 50px;
+	h3, p {@extend .text-align-center;}
+	ul {list-style-type: none;}
+}
+
 #hero-image {
 	background-image: url(../images/feat-img-hero@2x.jpg);
     height: 50%;
@@ -401,7 +440,7 @@ POSTS & CONTENT STYLES
 	color:$white;
 }	
 
-#intro-block, #featured-projects {background:$white;}
+#intro-block {background:$white;}
 
 #intro-block {padding: 2% 0;}
 
@@ -412,7 +451,7 @@ POSTS & CONTENT STYLES
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    padding: 100px 0;	 
+    padding: 70px 0;	 
 	color:$white;
 	
 	h5 {color:$white; text-align:center;}
@@ -420,6 +459,7 @@ POSTS & CONTENT STYLES
 
 #featured-projects {
 	text-align:center;
+	margin-bottom:40px;
 	h2 {display:none;}
 	h3 {padding-bottom: 25px;}
 	}
@@ -510,9 +550,8 @@ POSTS & CONTENT STYLES
 #content {margin-top:10px;}
 
 article.post, #spotlight, article.page, article#post-not-found {
-	border:3px solid $white;
+	@extend .outer-white-border;
 	margin-bottom:40px;
-	padding:1em;
 }
 	
 article .inner-article, #inner-spotlight, .inner-page, #shop-grid {
@@ -1165,7 +1204,7 @@ FOOTER STYLES
 			font-size: 100%;
 			font: inherit;
 			vertical-align: baseline;
-    	}
+    	} 
     }
     
     img {
