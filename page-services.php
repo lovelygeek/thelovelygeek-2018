@@ -24,19 +24,15 @@
 
 <div id="services-block" class="cf">
 	<h1>Services</h1>
-	<p>Strategic website design and development plus additional support for your digital needs.</p>
+	<p>Strategic website design and additional support for your digital needs.</p>
 	
 	<div class="wrap">
 		
 		<div class="d-1of2 t-1of2 m-all">
 			<div class="outer-white-border">
-				<img src="https://via.placeholder.com/600x420" alt="placeholder">
+				<img src="<?php the_field('left_card_image'); ?>" alt="supporting image for service description" />
 				<div class="inner-card">
-					<h3>Web Design & Development</h3>	
-					<p>Whether you’re starting from scratch or giving your current site a refresh, I can create a custom site that aligns with your target audience using WordPress or Squarespace. This ensures I can meet your website needs at any budget. You’ll be equipped with a beautiful and functional website that sets you and your users up for success.</p>
-					<h6>Investment Begins At</h6>
-					<p><span class="numerals">$2,000</span></p>
-					<p class="button"><a href="#">Learn More</a></p>				
+					<?php the_field('left_content'); ?>				
 				</div>	
 			</div>
 		</div>
@@ -44,13 +40,9 @@
 	
 		<div class="d-1of2 t-1of2 m-all">
 			<div class="outer-white-border">
-				<img src="https://via.placeholder.com/600x420" alt="placeholder">
+				<img src="<?php the_field('right_card_image'); ?>" alt="supporting image for service description" />
 				<div class="inner-card">	
-					<h3>Creative Retainer Packages</h3>
-					<p>Maybe you already have a website but you need help with keeping it maintained. Perhaps you started to DIY and want to be guided by a professional. Or it could be that you simply don’t have time to do all the things. My monthly creating retainer packages are the perfect solution for businesses that have ongoing design and marketing needs.</p>
-					<h6>Investment Begins At</h6>
-					<p><span class="numerals">$300/</span> MONTH</p>
-					<p class="button"><a href="#">Learn More</a></p>
+					<?php the_field('right_content'); ?>	
 				</div>	
 			</div>
 		</div>
@@ -63,52 +55,14 @@
 <div id="six-col-block" class="cf">
 	
 	<div class="wrap">
+		<?php the_field('heading_opt_text'); ?>
 		
-		<h3>Additional Offerings</h3>
-		<p>Here are a few other things I can do either on an hourly basis or as part of my retainer packages.</p>
-		
-		<div class="d-1of6">
-			<ul>
-				<li>App Design</li>
-				<li>Business Cards</li>
-				<li>Digital Ad Design</li>
-			</ul>	
-		</div>
-		<div class="d-1of6">
-			<ul>
-				<li>App Design</li>
-				<li>Business Cards</li>
-				<li>Digital Ad Design</li>
-			</ul>	
-		</div>	
-		<div class="d-1of6">
-			<ul>
-				<li>App Design</li>
-				<li>Business Cards</li>
-				<li>Digital Ad Design</li>
-			</ul>	
-		</div>	
-		<div class="d-1of6">
-			<ul>
-				<li>App Design</li>
-				<li>Business Cards</li>
-				<li>Digital Ad Design</li>
-			</ul>	
-		</div>	
-		<div class="d-1of6">
-			<ul>
-				<li>App Design</li>
-				<li>Business Cards</li>
-				<li>Digital Ad Design</li>
-			</ul>	
-		</div>	
-		<div class="d-1of6">
-			<ul>
-				<li>App Design</li>
-				<li>Business Cards</li>
-				<li>Digital Ad Design</li>
-			</ul>	
-		</div>			
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_1'); ?></div>
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_2'); ?></div>
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_3'); ?></div>
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_4'); ?></div>
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_5'); ?></div>
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_6'); ?></div>		
 	</div>	
 
 </div>
@@ -117,7 +71,7 @@
 <div id="featured-projects" class="cf">
 	<div class="wrap">
 		<h3>Featured Design Work</h3>
-		<?php echo do_shortcode('[portfolio display_types=false display_content=false display_tags=false columns=3 showposts=3 orderby=rand]'); ?>	
+		<?php echo do_shortcode('[portfolio display_types=false display_content=false display_tags=true columns=3 showposts=3 orderby=rand]'); ?>	
 		<p class="button"><a href="#">View More Work</a></p>	
 	</div>	
 </div>		
@@ -137,6 +91,7 @@
 	</div>
 </div>
 
+
 <div id="kind-words" class="cf">
 	<div class="wrap">
 		<h3>A few <span class="script">kind words</span> from some lovely clients</h3>
@@ -144,4 +99,9 @@
 	</div>	
 </div>		
 
+
+<div id="book-cta" class="cf">
+	<?php the_field('call_to_action'); ?>	
+</div>
+	
 <?php get_footer(); ?>

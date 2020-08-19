@@ -1239,7 +1239,7 @@ h3, .h3 {
   font-size: 2.125em;
   font-weight: 300; }
 
-h3 span.script {
+h3 span.script, span.script {
   font-family: "smooth_stoneregular", serif !important;
   font-size: 1.5em;
   text-transform: lowercase; }
@@ -1419,7 +1419,7 @@ style a page via class
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-.text-align-center, #services-block, #six-col-block h3, #six-col-block p {
+.text-align-center, #services-block, #six-col-block h3, #six-col-block p, #kind-words {
   text-align: center; }
 
 .outer-white-border, article.post, #spotlight, article.page, article#post-not-found {
@@ -1437,6 +1437,23 @@ POSTS & CONTENT STYLES
   .inner-card p.button {
     margin-top: 0px; }
 
+#book-cta {
+  background-image: url(../images/retainer-packages-bg.png);
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 50px 0 100px;
+  text-align: center;
+  margin-bottom: -50px; }
+  #book-cta p {
+    margin-top: -20px; }
+  #book-cta span.script {
+    padding: 0 20px;
+    font-size: 3em; }
+
+/* Services Page */
 #services-block {
   margin: 50px 0; }
 
@@ -1446,6 +1463,40 @@ POSTS & CONTENT STYLES
   #six-col-block ul {
     list-style-type: none; }
 
+#featured-projects {
+  text-align: center;
+  margin-bottom: 40px; }
+  #featured-projects h3 {
+    padding-bottom: 25px; }
+
+#kind-words {
+  background-color: #fff;
+  padding: 40px 0; }
+
+.testimonial-entry-content p {
+  font-family: "Prata", serif;
+  font-size: 1.125em;
+  color: rgba(31, 31, 31, 0.6); }
+
+.testimonial-entry-title {
+  text-transform: uppercase;
+  font-weight: 400 !important; }
+
+#good-fit {
+  background-image: url(../images/stormtrooper-art-board.png);
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 70px 0;
+  color: #fff; }
+  #good-fit h5 {
+    color: #fff;
+    text-align: center;
+    text-transform: none; }
+
+/* Service Detail Pages */
 #hero-image {
   background-image: url(../images/feat-img-hero@2x.jpg);
   height: 50%;
@@ -1461,27 +1512,6 @@ POSTS & CONTENT STYLES
 
 #intro-block {
   padding: 2% 0; }
-
-#good-fit {
-  background-image: url(../images/stormtrooper-art-board.png);
-  height: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  padding: 70px 0;
-  color: #fff; }
-  #good-fit h5 {
-    color: #fff;
-    text-align: center; }
-
-#featured-projects {
-  text-align: center;
-  margin-bottom: 40px; }
-  #featured-projects h2 {
-    display: none; }
-  #featured-projects h3 {
-    padding-bottom: 25px; }
 
 #all-projects {
   text-align: center;
@@ -1505,15 +1535,6 @@ POSTS & CONTENT STYLES
 
 #inner-service-right {
   border-left: 1px solid #80CDD4; }
-
-#book-cta {
-  background-color: #fff;
-  text-align: center;
-  padding: 50px 0; }
-  #book-cta h4 {
-    margin-bottom: -60px; }
-  #book-cta h2 {
-    color: #009CA6; }
 
 #select-categories {
   background: #fff;

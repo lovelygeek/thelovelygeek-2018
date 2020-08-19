@@ -137,7 +137,7 @@ h3, .h3 {
     font-weight:300;
 }
 
-h3 span.script {
+h3 span.script, span.script {
 	font-family:$script!important;
 	font-size: 1.5em;
 	text-transform: lowercase;	
@@ -417,6 +417,22 @@ POSTS & CONTENT STYLES
     p.button {margin-top: 0px;}
 }
 
+#book-cta {
+	background-image: url(../images/retainer-packages-bg.png);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 50px 0 100px;	 	
+	text-align:center;
+	margin-bottom:-50px;
+	p {margin-top:-20px;}
+	span.script {padding: 0 20px; font-size:3em;}
+}
+
+/* Services Page */
+
 #services-block {
 	@extend .text-align-center;
 	margin:50px 0;
@@ -428,6 +444,41 @@ POSTS & CONTENT STYLES
 	h3, p {@extend .text-align-center;}
 	ul {list-style-type: none;}
 }
+
+#featured-projects {
+	text-align:center;
+	margin-bottom:40px;
+	h3 {padding-bottom: 25px;}
+	}
+
+#kind-words {
+	@extend .text-align-center;
+	background-color:$white;
+	padding:40px 0;
+}
+
+.testimonial-entry-content p {
+	font-family:$serif;
+	font-size:1.125em;	
+	color: lighten($text-color, 12%);
+}
+
+.testimonial-entry-title {text-transform:uppercase; font-weight:400!important;}
+
+#good-fit {
+	background-image: url(../images/stormtrooper-art-board.png);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 70px 0;	 
+	color:$white;
+	
+	h5 {color:$white; text-align:center; text-transform:none;}
+}
+
+/* Service Detail Pages */
 
 #hero-image {
 	background-image: url(../images/feat-img-hero@2x.jpg);
@@ -444,25 +495,9 @@ POSTS & CONTENT STYLES
 
 #intro-block {padding: 2% 0;}
 
-#good-fit {
-	background-image: url(../images/stormtrooper-art-board.png);
-    height: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    padding: 70px 0;	 
-	color:$white;
-	
-	h5 {color:$white; text-align:center;}
-}
 
-#featured-projects {
-	text-align:center;
-	margin-bottom:40px;
-	h2 {display:none;}
-	h3 {padding-bottom: 25px;}
-	}
+
+
 
 #all-projects {text-align:center; padding-top:3em;}	
  .portfolio-featured-image img {border:10px solid $white!important;}
@@ -474,16 +509,6 @@ POSTS & CONTENT STYLES
 }
 #inner-service-right, #inner-service-left {padding:20px 50px;}
 #inner-service-right {border-left:1px solid #80CDD4;}
-
-#book-cta {
-	background-color:$white;
-	text-align:center;
-	padding:50px 0;
-	h4 {margin-bottom: -60px;}
-	h2 {
-		color:$tlg-dark-aqua;
-	}
-}
 
 #select-categories {
 	background:$white; 
