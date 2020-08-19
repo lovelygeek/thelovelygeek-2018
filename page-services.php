@@ -72,7 +72,7 @@
 	<div class="wrap">
 		<h3>Featured Design Work</h3>
 		<?php echo do_shortcode('[portfolio display_types=false display_content=false display_tags=true columns=3 showposts=3 orderby=rand]'); ?>	
-		<p class="button"><a href="#">View More Work</a></p>	
+		<p class="button"><a href="<?php echo home_url(); ?>/work">View More Work</a></p>	
 	</div>	
 </div>		
 
