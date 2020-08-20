@@ -1419,7 +1419,7 @@ style a page via class
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-.text-align-center, #services-block, #six-col-block h3, #six-col-block p, #kind-words {
+.text-align-center, #services-block, #six-col-block h3, #six-col-block p, #kind-words, #all-projects, #client-list {
   text-align: center; }
 
 .outer-white-border, article.post, #spotlight, article.page, article#post-not-found {
@@ -1453,6 +1453,12 @@ POSTS & CONTENT STYLES
     padding: 0 20px;
     font-size: 3em; }
 
+#pp-archive {
+  padding-top: 50px; }
+
+.pp {
+  padding-bottom: 3%; }
+
 /* Services Page */
 #services-block {
   margin: 50px 0; }
@@ -1468,6 +1474,8 @@ POSTS & CONTENT STYLES
   margin-bottom: 40px; }
   #featured-projects h3 {
     padding-bottom: 25px; }
+  #featured-projects img {
+    border: 5px solid #fff; }
 
 #kind-words {
   background-color: #fff;
@@ -1496,6 +1504,33 @@ POSTS & CONTENT STYLES
     text-align: center;
     text-transform: none; }
 
+/* Work Page */
+#all-projects {
+  padding-top: 3em; }
+  #all-projects .portfolio-entry {
+    padding: 1em;
+    border: 3px solid #fff; }
+  #all-projects .portfolio-entry-header {
+    background-color: #fff;
+    text-align: left; }
+  #all-projects h2.portfolio-entry-title {
+    font-family: "Prata", serif;
+    text-transform: none;
+    font-size: 1.5em;
+    font-weight: normal;
+    letter-spacing: 0px;
+    padding: 0 20px; }
+  #all-projects .project-tags {
+    padding: 0 20px 20px; }
+
+#client-list {
+  background-color: #fff;
+  padding: 30px 0 80px; }
+  #client-list .list {
+    text-align: left; }
+    #client-list .list h3 {
+      font-size: 1.25em; }
+
 /* Service Detail Pages */
 #hero-image {
   background-image: url(../images/feat-img-hero@2x.jpg);
@@ -1512,13 +1547,6 @@ POSTS & CONTENT STYLES
 
 #intro-block {
   padding: 2% 0; }
-
-#all-projects {
-  text-align: center;
-  padding-top: 3em; }
-
-.portfolio-featured-image img {
-  border: 10px solid #fff !important; }
 
 #services-offered {
   padding: 30px 0 90px 0; }
@@ -2156,6 +2184,8 @@ GLOBAL STYLES
     margin-top: 40px; }
   .post-content {
     padding: 40px 0 0 40px; }
+  .jetpack-testimonial .post-content {
+    padding-top: 0px; }
   #shop-grid .grid-item {
     min-height: 250px; }
   /*********************
@@ -2329,7 +2359,7 @@ be seen on the Desktop.
     padding-left: 40px; }
   .single .hentry {
     padding: 3em 13em; }
-  .single .jetpack-portfolio {
+  .single .jetpack-portfolio, .single .jetpack-testimonial {
     padding: 3em; }
   .inner-page {
     padding: 3em 13em; }

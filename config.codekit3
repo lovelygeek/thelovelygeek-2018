@@ -25,6 +25,14 @@
 		"oAP": "/archive-custom_type.php",
 		"oF": 0
 		},
+	"/archive-jetpack-portfolio.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/archive-jetpack-portfolio.php",
+		"oF": 0
+		},
 	"/archive.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1912,6 +1920,14 @@
 		"oAP": "/single-jetpack-portfolio.php",
 		"oF": 0
 		},
+	"/single-jetpack-testimonial.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/single-jetpack-testimonial.php",
+		"oF": 0
+		},
 	"/single.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1946,6 +1962,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/taxonomy-custom_cat.php",
+		"oF": 0
+		},
+	"/taxonomy-jetpack-portfolio-tag.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/taxonomy-jetpack-portfolio-tag.php",
 		"oF": 0
 		},
 	"/templates/archive-loop.php": {

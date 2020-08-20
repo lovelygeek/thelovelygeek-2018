@@ -411,7 +411,7 @@ POSTS & CONTENT STYLES
 	background-color:$white; 
 	padding: 10px 20px;
     margin-top: -10px;
-    
+       
     h3 {font-size:30px;}
     h6 {margin-bottom:-20px;}
     p.button {margin-top: 0px;}
@@ -431,6 +431,9 @@ POSTS & CONTENT STYLES
 	span.script {padding: 0 20px; font-size:3em;}
 }
 
+#pp-archive {padding-top:50px;}
+.pp {padding-bottom:3%;}
+
 /* Services Page */
 
 #services-block {
@@ -449,7 +452,9 @@ POSTS & CONTENT STYLES
 	text-align:center;
 	margin-bottom:40px;
 	h3 {padding-bottom: 25px;}
-	}
+	
+	img {border:5px solid $white;}
+}
 
 #kind-words {
 	@extend .text-align-center;
@@ -478,6 +483,28 @@ POSTS & CONTENT STYLES
 	h5 {color:$white; text-align:center; text-transform:none;}
 }
 
+/* Work Page */
+
+#all-projects {
+	@extend .text-align-center; 
+	padding-top:3em;
+	.portfolio-entry {padding:1em; border:3px solid $white;}
+	.portfolio-entry-header {background-color:$white; text-align: left;}
+	h2.portfolio-entry-title {font-family:$serif; text-transform:none; font-size:1.5em; font-weight:normal; letter-spacing:0px; padding:0 20px;}
+	.project-tags {padding:0 20px 20px;}
+}
+
+#client-list {
+	@extend .text-align-center;
+	background-color:$white;
+	padding:30px 0 80px;
+	
+	.list {
+		text-align:left;
+		h3 {font-size:1.25em;}
+	}
+}
+
 /* Service Detail Pages */
 
 #hero-image {
@@ -496,11 +523,6 @@ POSTS & CONTENT STYLES
 #intro-block {padding: 2% 0;}
 
 
-
-
-
-#all-projects {text-align:center; padding-top:3em;}	
- .portfolio-featured-image img {border:10px solid $white!important;}
 
 #services-offered {
 	padding:30px 0 90px 0;
