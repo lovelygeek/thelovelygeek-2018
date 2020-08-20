@@ -1486,6 +1486,9 @@ POSTS & CONTENT STYLES
   font-size: 1.125em;
   color: rgba(31, 31, 31, 0.6); }
 
+.testimonial-featured-image {
+  display: none; }
+
 .testimonial-entry-title {
   text-transform: uppercase;
   font-weight: 400 !important; }
