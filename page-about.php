@@ -28,43 +28,8 @@
 
 				<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-					<?php // Edit the loop in /templates/loop. Or roll your own. ?>
-					<?php get_template_part( 'templates/loop'); ?>
-					
-					<?php if( have_rows('press_grid') ): ?>
-					
-						<div id="inner-spotlight" class="m-all t-all d-all cf">
-							
-							<h3>Press</h3>
-					
-						<?php while( have_rows('press_grid') ): the_row(); 
-					
-							// vars
-							$title = get_sub_field('title');
-							$link = get_sub_field('link');
-							$publication = get_sub_field('publication');
-							?>
-					
-							<div class="press-item d-1of2 t-1of2 m-all">
-								<p><h5><?php echo $publication; ?></h5>
-					
-								<?php if( $link ): ?>
-									<a href="<?php echo $link; ?>">
-								<?php endif; ?>
-					
-									<?php echo $title; ?>
-					
-								<?php if( $link ): ?>
-									</a></p>
-								<?php endif; ?>
-					
-							</div>
-					
-						<?php endwhile; ?>
-					
-						</div>
-					
-					<?php endif; ?>
+				loop
+
 
 				</main>
 

@@ -10,8 +10,12 @@
 <?php get_header(); ?>
 
 <div id="all-projects" class="cf">
-	<h1>Design Work</h1>
-	<p>A selection of pieces from my design portfolio.<br />Additional work-in-progress can be viewed on <a href="https://dribbble.com/LovelyGeek" title="@LovelyGeek on dribbble"><i class="fab fa-dribbble"></i> dribbble</a> and my code on <a href="https://github.com/lovelygeek" title="@LovelyGeek on GitHub"><i class="fab fa-github"></i> GitHub</a>.</p>
+	
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<h1><?php the_title(); ?></h1>
+		<?php the_content(); ?>
+	<?php endwhile; endif; ?>
+	
 	<div class="wrap">
 		<?php echo do_shortcode('[portfolio display_types=false display_content=false display_tags=true columns=2 orderby=rand]'); ?>		
 	</div>	

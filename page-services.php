@@ -23,8 +23,11 @@
 <?php get_header(); ?>
 
 <div id="services-block" class="cf">
-	<h1>Services</h1>
-	<p>Strategic website design and additional support for your digital needs.</p>
+	
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<h1><?php the_title(); ?></h1>
+		<?php the_content(); ?>
+	<?php endwhile; endif; ?>
 	
 	<div class="wrap">
 		

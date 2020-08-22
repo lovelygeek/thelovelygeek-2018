@@ -1533,6 +1533,8 @@ POSTS & CONTENT STYLES
     text-align: left; }
     #client-list .list h3 {
       font-size: 1.25em; }
+    #client-list .list p {
+      font-size: smaller; }
 
 /* Service Detail Pages */
 #hero-image {
