@@ -133,7 +133,7 @@
 
 					<div id="logo" class="d-1of4 t-1of4 m-all" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_theme_file_uri(); ?>/library/images/the-lovely-geek-logo.svg" /></a></div>
 
-					<nav class="header-nav d-3of4 t-3of4 m-all last-col" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<nav class="header-nav m-all last-col" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
 					<?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
 
