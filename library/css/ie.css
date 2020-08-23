@@ -471,6 +471,9 @@ article.post {
 .inner-page {
   padding: 3em 13em; }
 
+body.page-about .inner-page {
+  padding: 4em 4em 0; }
+
 #shop-grid .grid-item {
   min-height: 300px; }
 
