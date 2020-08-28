@@ -1419,7 +1419,7 @@ style a page via class
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-.text-align-center, #services-block, #six-col-block h3, #six-col-block p, #kind-words, #all-projects, #client-list {
+.text-align-center, #services-block, #six-col-block h3, #six-col-block p, #kind-words, #all-projects, #client-list, #about-extended h3, #experience, #awards-press h3 {
   text-align: center; }
 
 .outer-white-border, article.post, #spotlight, article.page, article#post-not-found {
@@ -1535,6 +1535,21 @@ POSTS & CONTENT STYLES
       font-size: 1.25em; }
     #client-list .list p {
       font-size: smaller; }
+
+/* About Page */
+#experience {
+  padding: 30px 0 60px;
+  background: #009CA6;
+  color: #fff; }
+  #experience h5 {
+    text-transform: none;
+    color: #fff;
+    margin-bottom: 1em; }
+  #experience img.dg {
+    padding: 5px 0; }
+
+#awards-press {
+  background-color: #fff; }
 
 /* Service Detail Pages */
 #hero-image {
@@ -2373,7 +2388,14 @@ be seen on the Desktop.
   #shop-grid .grid-item {
     min-height: 300px; }
   ul.wpp-list li, ul.featured-posts li {
-    height: 90px; } }
+    height: 90px; }
+  .aboutText {
+    column-count: 2;
+    column-gap: 40px;
+    padding-bottom: 60px;
+    column-fill: balance; }
+    .aboutText p.first {
+      margin-top: 0; } }
 
 /*********************
 LARGE VIEWING SIZE

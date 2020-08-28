@@ -60,5 +60,75 @@
 	</div>
 
 
+<div id="about-extended" class="cf">
+	<div class="wrap">
+		<h3>It all <span class="script">started</span> in high school…</h3>
+		<div class="aboutText"><?php the_field('about_extended'); ?></div>
+	</div>		
+</div>		
+	
+
+
+<div id="experience" class="cf">
+
+	<div class="wrap">
+		
+		<h5>Some of my previous experience</h5>
+
+		<div class="d-1of4 t-1of2 m-1of2">
+			<img src="<?php echo get_theme_file_uri(); ?>/library/images/logo-t29.svg" alt="Three29">
+			<p>Lead Designer<br />2015-2019</p>
+		</div>
+		
+		<div class="d-1of4 t-1of2 m-1of2">
+			<img src="<?php echo get_theme_file_uri(); ?>/library/images/logo-digitalgear.svg" alt="Digital Gear" class="dg">
+			<p>Lead Web Designer<br />2011-2015</p>
+		</div>
+
+		<div class="d-1of4 t-1of2 m-1of2">
+			<img src="<?php echo get_theme_file_uri(); ?>/library/images/logo-aisac.svg" alt="The Art Instutite of California - Sacramento">
+			<p>Bachelor of Science<br />Web Design & Interactive Media</p>
+		</div>
+		
+		<div class="d-1of4 t-1of2 m-1of2">
+			<img src="<?php echo get_theme_file_uri(); ?>/library/images/logo-intel.svg" alt="Intel">
+			<p>Assistant Web Master<br />2005</p>
+		</div>		
+		
+	</div>
+
+</div>
+
+
+<div id="awards-press" class="cf">
+	<div class="wrap">
+		<h3>Awards & Press</h3>
+		
+		<div class="d-1of2 t-1of-2 m-all"><?php the_field('left_col'); ?></div>
+		<div class="d-1of2 t-1of-2 m-all"><?php the_field('right_col'); ?></div>
+	</div>		
+</div>	
+
+
+<div id="six-col-block" class="cf">
+	
+	<div class="wrap">
+		<?php the_field('heading_opt_text'); ?>
+		
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_1'); ?></div>
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_2'); ?></div>
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_3'); ?></div>
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_4'); ?></div>
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_5'); ?></div>
+		<div class="d-1of6 t-1of3 m-1of3"><?php the_field('col_6'); ?></div>		
+	</div>	
+
+</div>
+
+
+<div id="book-cta" class="cf">
+	<?php the_field('call_to_action'); ?>	
+</div>
+
 
 <?php get_footer(); ?>

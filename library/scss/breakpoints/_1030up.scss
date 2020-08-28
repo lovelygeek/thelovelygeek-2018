@@ -39,3 +39,12 @@ body.page-about .inner-page { padding:4em 4em 0;}
 ul.wpp-list li, ul.featured-posts li {
 height:90px;			
 }
+
+.aboutText {
+    column-count: 2;
+    column-gap: 40px;
+    padding-bottom: 60px;
+    column-fill: balance;
+    
+    p.first {margin-top:0;}
+}

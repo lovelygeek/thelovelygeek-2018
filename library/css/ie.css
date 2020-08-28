@@ -480,6 +480,14 @@ body.page-about .inner-page {
 ul.wpp-list li, ul.featured-posts li {
   height: 90px; }
 
+.aboutText {
+  column-count: 2;
+  column-gap: 40px;
+  padding-bottom: 60px;
+  column-fill: balance; }
+  .aboutText p.first {
+    margin-top: 0; }
+
 /*
 you can call the larger styles if you want, but there's really no need
 */
