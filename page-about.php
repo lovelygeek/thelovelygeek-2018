@@ -110,6 +110,73 @@
 </div>	
 
 
+<div id="top-three" class="cf">
+	<div class="wrap">
+		<?php the_field('top_three_intro'); ?>
+		
+		<div class="d-1of3 t-1of3 m-all">
+			<h5><?php the_field('first_col_header'); ?></h5>
+			<?php 
+			$image = get_field('first_col_feat_img');
+			if( !empty( $image ) ): ?>
+			    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+			<?php endif; ?>
+			<div class="inner-card"><?php the_field('first_col'); ?></div>
+		</div>
+		<div class="d-1of3 t-1of3 m-all">
+			<h5><?php the_field('middle_col_header'); ?></h5>
+			<?php 
+			$image = get_field('middle_col_feat_img');
+			if( !empty( $image ) ): ?>
+			    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+			<?php endif; ?>
+			<div class="inner-card"><?php the_field('middle_col'); ?></div>
+		</div>
+		<div class="d-1of3 t-1of3 m-all">
+			<h5><?php the_field('last_col_header'); ?></h5>
+			<?php 
+			$image = get_field('last_col_feat_img');
+			if( !empty( $image ) ): ?>
+			    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+			<?php endif; ?>
+			<div class="inner-card"><?php the_field('last_col'); ?></div>
+		</div>										
+		<div class="d-all t-all m-all"><p class="button"><a href="<?php echo home_url(); ?>/blog">View the blog</a></p></div>
+	</div>
+	
+		
+</div>
+
+<div id="fun-facts" class="cf">
+
+	<div class="wrap">
+		
+		<h5>A few fun facts about me</h5>
+
+		<div class="d-1of4 t-1of2 m-1of2">
+			<img src="<?php echo get_theme_file_uri(); ?>/library/images/icon-flute.svg" alt="flute" class="flute">
+			<p><?php the_field('fact_1'); ?></p>
+		</div>
+		
+		<div class="d-1of4 t-1of2 m-1of2">
+			<img src="<?php echo get_theme_file_uri(); ?>/library/images/icon-vader.svg" alt="darth vader">
+			<p><?php the_field('fact_2'); ?></p>
+		</div>
+
+		<div class="d-1of4 t-1of2 m-1of2">
+			<img src="<?php echo get_theme_file_uri(); ?>/library/images/icon-doxie.svg" alt="doxie" class="doxie">
+			<p><?php the_field('fact_3'); ?></p>
+		</div>
+		
+		<div class="d-1of4 t-1of2 m-1of2">
+			<img src="<?php echo get_theme_file_uri(); ?>/library/images/icon-spiritual.svg" alt="moon stars">
+			<p><?php the_field('fact_4'); ?></p>
+		</div>		
+		
+	</div>
+
+</div>
+
 <div id="six-col-block" class="cf">
 	
 	<div class="wrap">
@@ -127,7 +194,9 @@
 
 
 <div id="book-cta" class="cf">
-	<?php the_field('call_to_action'); ?>	
+<h2>Ready to work with me?</h2>
+<p>Get in touch to schedule your complimentary 15 minute discovery call.</p>
+<div class="wrap"><a href="<?php echo home_url(); ?>/services/" class="button">View My Services</a> <span class="script">or</span> <a href="<?php echo home_url(); ?>/services/contact/" class="button">Inquire Now</a></div>		
 </div>
 
 

@@ -217,28 +217,28 @@ ul, ol {
     list-style-type: none;
 }
 
-ul.wpp-list li, ul.featured-posts li {
+ul.wpp-list li, ul.featured-posts li, ul.display-posts-listing li {
 		border-bottom:1px solid $tlg-light-aqua; 
-		padding:20px;
+		padding:20px 0;
 		list-style:none;				
 }
 
 .jetpack-recipe .jetpack-recipe-meta li {background-image: none;}
 	
-ul.featured-posts li {
+ul.featured-posts li, ul.display-posts-listing li {
 	overflow: hidden;
     float: none;
     clear: both;
     }	
 	
-ul.featured-posts li img {
+ul.featured-posts li img, ul.display-posts-listing li img {
 	display: inline;
     float: left;
     margin: 0 5px 0 0;
     border: none;
     }
     
-img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {vertical-align: middle; border-radius: 50%; max-width: 50px; max-height:50px;} 
+img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img, ul.display-posts-listing li img {vertical-align: middle; border-radius: 50%; max-width: 50px; max-height:50px;} 
 
 .wpp-post-title {
     font-weight: normal;
@@ -511,10 +511,11 @@ POSTS & CONTENT STYLES
 /* About Page */
 
 #about-extended {
+	margin-top: -40px;
 	h3 {@extend .text-align-center;}
 }
 
-#experience {
+#experience, #fun-facts {
 	padding:30px 0 60px;
 	background:$tlg-dark-aqua;
 	@extend .text-align-center;
@@ -523,8 +524,21 @@ POSTS & CONTENT STYLES
 	img.dg {padding:5px 0;}
 }
 
+#top-three {
+	@extend .text-align-center;
+	padding:30px 0 60px;
+	.inner-card {text-align:left;}
+	h5 {margin-top:20px;}
+}
+
+#fun-facts {
+	img.flute {padding: 18px 0;}
+	img.doxie {padding:3px 0;}
+}
+
 #awards-press {
 	background-color:$white;
+	padding:30px 0 60px;
 	h3 {@extend .text-align-center;}
 }
 

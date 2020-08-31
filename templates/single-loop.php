@@ -37,7 +37,7 @@
 			
 		</footer> <?php // end article footer ?>
 
-        <hr />
+        
         <?php comments_template(); ?>
 
 	</article> <?php // end article ?>

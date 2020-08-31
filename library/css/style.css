@@ -1300,26 +1300,26 @@ ul, ol {
   padding-left: 0;
   list-style-type: none; }
 
-ul.wpp-list li, ul.featured-posts li {
+ul.wpp-list li, ul.featured-posts li, ul.display-posts-listing li {
   border-bottom: 1px solid rgba(136, 219, 223, 0.2);
-  padding: 20px;
+  padding: 20px 0;
   list-style: none; }
 
 .jetpack-recipe .jetpack-recipe-meta li {
   background-image: none; }
 
-ul.featured-posts li {
+ul.featured-posts li, ul.display-posts-listing li {
   overflow: hidden;
   float: none;
   clear: both; }
 
-ul.featured-posts li img {
+ul.featured-posts li img, ul.display-posts-listing li img {
   display: inline;
   float: left;
   margin: 0 5px 0 0;
   border: none; }
 
-img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img {
+img.wpp-thumbnail, img.wpp_cached_thumb wpp_featured, ul.featured-posts li img, ul.display-posts-listing li img {
   vertical-align: middle;
   border-radius: 50%;
   max-width: 50px;
@@ -1419,7 +1419,7 @@ style a page via class
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-.text-align-center, #services-block, #six-col-block h3, #six-col-block p, #kind-words, #all-projects, #client-list, #about-extended h3, #experience, #awards-press h3 {
+.text-align-center, #services-block, #six-col-block h3, #six-col-block p, #kind-words, #all-projects, #client-list, #about-extended h3, #experience, #fun-facts, #top-three, #awards-press h3 {
   text-align: center; }
 
 .outer-white-border, article.post, #spotlight, article.page, article#post-not-found {
@@ -1537,19 +1537,36 @@ POSTS & CONTENT STYLES
       font-size: smaller; }
 
 /* About Page */
-#experience {
+#about-extended {
+  margin-top: -40px; }
+
+#experience, #fun-facts {
   padding: 30px 0 60px;
   background: #009CA6;
   color: #fff; }
-  #experience h5 {
+  #experience h5, #fun-facts h5 {
     text-transform: none;
     color: #fff;
     margin-bottom: 1em; }
-  #experience img.dg {
+  #experience img.dg, #fun-facts img.dg {
     padding: 5px 0; }
 
+#top-three {
+  padding: 30px 0 60px; }
+  #top-three .inner-card {
+    text-align: left; }
+  #top-three h5 {
+    margin-top: 20px; }
+
+#fun-facts img.flute {
+  padding: 18px 0; }
+
+#fun-facts img.doxie {
+  padding: 3px 0; }
+
 #awards-press {
-  background-color: #fff; }
+  background-color: #fff;
+  padding: 30px 0 60px; }
 
 /* Service Detail Pages */
 #hero-image {

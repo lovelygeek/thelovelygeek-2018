@@ -12,8 +12,9 @@ if ( post_password_required() ) {
 <?php // You can start editing here. ?>
 
     <?php if ( have_comments() ) : ?>
-
-        <h3 id="comments-title" class="h2"><?php comments_number( __( '<span>No</span> Comments', 'platetheme' ), __( '<span>One</span> Comment', 'platetheme' ), __( '<span>%</span> Comments', 'platetheme' ) );?></h3>
+		<hr />
+		
+        <h3 id="comments-title"><?php comments_number( __( '<span>No</span> Comments', 'platetheme' ), __( '<span>One</span> Comment', 'platetheme' ), __( '<span>%</span> Comments', 'platetheme' ) );?></h3>
 
         <section class="commentlist">
 
