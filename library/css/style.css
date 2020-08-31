@@ -1120,6 +1120,9 @@ body .gform_wrapper .gform_body .gform_fields .gfield input, body .gform_wrapper
 body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_email input[type="text"] {
   width: 100%; }
 
+#portal-login-general fieldset {
+  margin: 20px 0 0px 0; }
+
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -2404,7 +2407,7 @@ be seen on the Desktop.
     padding: 3em; }
   .inner-page {
     padding: 3em 13em; }
-  body.page-about .inner-page {
+  body.page-about .inner-page, body.page-client-portal .inner-page {
     padding: 4em 4em 0; }
   #shop-grid .grid-item {
     min-height: 300px; }
