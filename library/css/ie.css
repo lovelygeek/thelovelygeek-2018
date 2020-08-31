@@ -488,6 +488,9 @@ ul.wpp-list li, ul.featured-posts li {
   .aboutText p.first {
     margin-top: 0; }
 
+.socialMedia {
+  column-count: 6; }
+
 /*
 you can call the larger styles if you want, but there's really no need
 */

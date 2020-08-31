@@ -1564,6 +1564,10 @@ POSTS & CONTENT STYLES
 #fun-facts img.doxie {
   padding: 3px 0; }
 
+#fun-facts a {
+  color: #fff;
+  text-decoration: underline; }
+
 #awards-press {
   background-color: #fff;
   padding: 30px 0 60px; }
@@ -2412,7 +2416,9 @@ be seen on the Desktop.
     padding-bottom: 60px;
     column-fill: balance; }
     .aboutText p.first {
-      margin-top: 0; } }
+      margin-top: 0; }
+  .socialMedia {
+    column-count: 6; } }
 
 /*********************
 LARGE VIEWING SIZE
