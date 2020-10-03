@@ -660,6 +660,16 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/library/images/icon-blm.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/library/images/icon-blm.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"/library/images/icon-doxie.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -680,6 +690,46 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"/library/images/icon-kindness.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/library/images/icon-kindness.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/library/images/icon-lgbtq.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/library/images/icon-lgbtq.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/library/images/icon-liberty.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/library/images/icon-liberty.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/library/images/icon-science.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/library/images/icon-science.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"/library/images/icon-spiritual.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -695,6 +745,16 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "/library/images/icon-vader.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/library/images/icon-womxn.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/library/images/icon-womxn.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,

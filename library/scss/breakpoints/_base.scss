@@ -515,6 +515,14 @@ POSTS & CONTENT STYLES
 	h3 {@extend .text-align-center;}
 }
 
+#values {
+	@extend .text-align-center;
+	background-color:$white;
+	padding-bottom:50px;
+	img {margin-bottom:-60px;}
+	h5 {margin-bottom:-10px;}
+}
+
 #experience, #fun-facts {
 	padding:30px 0 60px;
 	background:$tlg-dark-aqua;
