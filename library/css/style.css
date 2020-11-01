@@ -1788,7 +1788,7 @@ article#post-not-found h1 {
   .entry-content ul li {
     background-image: url(../images/bullet.svg);
     background-repeat: no-repeat;
-    background-position: 0 8px;
+    background-position: 0 12px;
     padding: 3px 30px; }
   .entry-content ol {
     list-style-type: none;
@@ -1803,7 +1803,7 @@ article#post-not-found h1 {
       min-height: 0.5em; }
       .entry-content ol li:before {
         position: absolute;
-        top: 0.25em;
+        top: 0.15em;
         left: -2.15em;
         width: 1em;
         height: 1em;
