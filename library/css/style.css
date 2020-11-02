@@ -1583,7 +1583,7 @@ POSTS & CONTENT STYLES
   background-color: #fff;
   padding: 30px 0 60px; }
 
-/* Service Detail Pages */
+/* Services Page */
 #hero-image {
   background-image: url(../images/feat-img-hero@2x.jpg);
   height: 50%;
@@ -1632,7 +1632,9 @@ POSTS & CONTENT STYLES
     padding: 10px 30px;
     margin-top: -9px; }
 
-#available-packages {
+/* Service Detail Pages */
+/* Web Design Service Page */
+#webdesign-packages {
   background-image: url(../images/retainer-packages-bg.png);
   height: 50%;
   background-position: center;
@@ -1641,17 +1643,17 @@ POSTS & CONTENT STYLES
   position: relative;
   padding: 50px 0 100px;
   text-align: center; }
-  #available-packages h5 {
+  #webdesign-packages h5 {
     color: #009CA6; }
-  #available-packages h6 {
+  #webdesign-packages h6 {
     margin-bottom: -20px; }
-  #available-packages span.numerals {
+  #webdesign-packages span.numerals {
     font-family: "Rozha One", serif;
     font-size: 2.250em; }
-  #available-packages .package {
+  #webdesign-packages .package {
     background-color: white;
     padding: 15px; }
-  #available-packages .inner-package {
+  #webdesign-packages .inner-package {
     background-color: #fff;
     border: 1px solid #88DBDF;
     padding: 0px 25px 30px; }
@@ -1670,6 +1672,31 @@ POSTS & CONTENT STYLES
       color: #fff; }
     #creative-process .stage h6 {
       margin-bottom: -50px; }
+
+/* Creative Retainer Service Page */
+#retainer-packages {
+  background-image: url(../images/retainer-packages-bg.png);
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 50px 0 100px;
+  text-align: center; }
+  #retainer-packages h5 {
+    color: #009CA6; }
+  #retainer-packages h6 {
+    margin-bottom: -20px; }
+  #retainer-packages span.numerals {
+    font-family: "Rozha One", serif;
+    font-size: 2.250em; }
+  #retainer-packages .package {
+    background-color: white;
+    padding: 15px; }
+  #retainer-packages .inner-package {
+    background-color: #fff;
+    border: 1px solid #88DBDF;
+    padding: 0px 25px 30px; }
 
 #faqs {
   background-color: #fff;

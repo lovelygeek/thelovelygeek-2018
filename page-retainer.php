@@ -38,7 +38,7 @@
 	</div>
 	
 
-	<div id="available-packages" class="cf">
+	<div id="retainer-packages" class="cf">
 		
 		<?php the_field('available_packages'); ?>
 		

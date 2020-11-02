@@ -36,14 +36,13 @@
 		</div>
 
 	</div>
-	
 
-	<div id="available-packages" class="cf">
+	<div id="webdesign-packages" class="cf">
 		
 		<?php the_field('available_packages'); ?>
 		
 		<div class="wrap"> 
-			<div class="d-1of2 t-1of2 m-all">
+			<div class="d-1of3 t-1of3 m-all">
 				<div class="package">
 					<div class="inner-package">
 						<?php the_field('package_col_1'); ?>
@@ -51,15 +50,28 @@
 				</div>		
 			</div>	
 
-			<div class="d-1of2 t-1of2 m-all">
+			<div class="d-1of3 t-1of3 m-all">
 				<div class="package">
 					<div class="inner-package">
 						<?php the_field('package_col_2'); ?>
 					</div>
 				</div>		
 			</div>
+			
+			<div class="d-1of3 t-1of3 m-all">
+				<div class="package">
+					<div class="inner-package">
+						<?php the_field('package_col_3'); ?>
+					</div>	
+				</div>	
+			</div>
 				
-		</div>														
+		</div>
+		
+		<div class="d-all t-all m-all">
+		<p>Not sure which platform is best for you?</p>
+		<p class="button"><a href="https://thelovelygeek.com/web/which-website-platform-should-you-use/">Start Here</a></p>			
+		</div>											
 
 	</div>
 	

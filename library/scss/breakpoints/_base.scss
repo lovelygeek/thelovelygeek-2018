@@ -551,7 +551,7 @@ POSTS & CONTENT STYLES
 	h3 {@extend .text-align-center;}
 }
 
-/* Service Detail Pages */
+/* Services Page */
 
 #hero-image {
 	background-image: url(../images/feat-img-hero@2x.jpg);
@@ -597,7 +597,11 @@ POSTS & CONTENT STYLES
 	}	
 }
 
-#available-packages {
+/* Service Detail Pages */
+
+/* Web Design Service Page */
+
+#webdesign-packages {
 	background-image: url(../images/retainer-packages-bg.png);
     height: 50%;
     background-position: center;
@@ -629,6 +633,27 @@ POSTS & CONTENT STYLES
 		h6 {margin-bottom:-50px;}
 	}
 }
+
+/* Creative Retainer Service Page */
+
+#retainer-packages {
+	background-image: url(../images/retainer-packages-bg.png);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 50px 0 100px;	 	
+	text-align:center;
+	
+	h5 {color:$tlg-dark-aqua;}
+	h6 {margin-bottom:-20px;}
+	span.numerals {font-family:$numerals; font-size:2.250em;}
+	.package {background-color: white; padding:15px;}
+	.inner-package {background-color:$white; border:1px solid $tlg-main-aqua; padding:0px 25px 30px;}
+}
+
+
 
 #faqs {background-color:$white; padding:50px 0;}
 
